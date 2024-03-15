@@ -15,6 +15,15 @@ import pandas as pd
 from io import BytesIO
 
 
+def plot_actual_vs_predicted(y_actual, y_predicted):
+    plt.figure(figsize=(8, 6))
+    plt.scatter(y_actual, y_predicted, color='blue')
+    plt.plot(y_actual, y_actual, color='red')  # Plotting the ideal line where actual = predicted
+    plt.title('Actual vs. Predicted')
+    plt.xlabel('Actual')
+    plt.ylabel('Predicted')
+    plt.show()
+
 class ASTProcessor:
 
     def __init__(self):
@@ -203,26 +212,23 @@ class ASTProcessor:
             if not estimatorManager.isFitted(estimatorMeta.name):  # You need to implement this method
                 raise Exception(f"Model {estimatorMeta.name} is not fitted. Please train the model before prediction.")
             predictions = estimatorManager.predict(estimatorMeta.name, X)
-            # print(df)
-            df['prediction'] = predictions
 
-            y_predicted = predictions
-            plt.figure(figsize=(8, 6))
-            plt.scatter(y_actual, y_predicted, color='blue')
-            plt.plot(y_actual, y_actual, color='red')  # Plotting the ideal line where actual = predicted
-            plt.title('Actual vs. Predicted')
-            plt.xlabel('Actual')
-            plt.ylabel('Predicted')
-            plt.show()
+            df['prediction'] = predictions
+            df = pd.DataFrame(df)
+            df = df.to_dict(orient='records')
+            plot_actual_vs_predicted(y_actual, predictions)
 
             df_summary = pd.DataFrame({"Actual Values": y_actual, "Predicted Values": predictions})
-
+            print(df_summary)
             buffer = BytesIO()
             plt.savefig(buffer, format='png')
             plt.close()
             plot_data = base64.b64encode(buffer.getvalue()).decode('utf-8')
-
-            return df
+            result={'table':df,
+                    'graph':plot_data,
+                    'text':''
+                    }
+            return result
         elif estimatorMeta.estimatorType == 'KNN':
             estimatorManager = KNNManager()
             print(estimatorMeta.name)
@@ -231,8 +237,27 @@ class ASTProcessor:
             print('predict er age')
             predictions = estimatorManager.predict(estimatorMeta.name, X)
             df['prediction'] = predictions
+            plot_actual_vs_predicted(y_actual, predictions)
 
 
             return df
         else:
             raise ("Model is not fitted. or did't found the model")
+
+    @staticmethod
+    def create_table(db, table_name, columns):
+        class Meta:
+            database = db
+
+        attrs = {'__module__': __name__, 'Meta': Meta}
+        for column_name, data_type in columns:
+            if data_type.lower() == 'int':
+                attrs[column_name] = IntegerField()
+            elif data_type.lower() == 'float':
+                attrs[column_name] = FloatField()
+            else:
+                attrs[column_name] = TextField()
+
+        table_class = type(table_name, (Model,), attrs)
+        db.create_tables([table_class])
+        print(f"Table {table_name} created successfully.")

@@ -34,20 +34,20 @@ function Operations() {
       toast.error("Query can't be empty");
       return;
     }
-    if (query[query.length - 1] !== ";") {
-      toast.error("Invalid Query.");
-      return;
-    }
+    // if (query[query.length - 1] !== ";") {
+    //   toast.error("Invalid Query.");
+    //   return;
+    // }
     let inputs = query.split(";");
     inputs = inputs.slice(0, inputs.length - 1);
     inputs = inputs.map((val) => val.trim() + ";");
     console.log(inputs)
-    for (let input of inputs) {
-      if (!input) {
-        toast.error("Invalid Query.");
-        return;
-      }
-    }
+    // for (let input of inputs) {
+    //   if (!input) {
+    //     toast.error("Invalid Query.");
+    //     return;
+    //   }
+    // }
     try {
       const formData = new FormData();
       formData.append("input", inputs);
