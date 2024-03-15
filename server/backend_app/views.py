@@ -37,7 +37,6 @@ def test_view(req):
 
     data = req.POST.get('input') #json.loads(req.body)
     data=data.strip()
-    print(data)
     response=query_process(data)
     return JsonResponse(response,safe=False)
 

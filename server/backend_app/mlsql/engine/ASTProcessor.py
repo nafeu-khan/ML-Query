@@ -1,3 +1,6 @@
+import threading
+
+import matplotlib
 from peewee import *
 from ..data.db import db
 import datetime
@@ -13,21 +16,12 @@ import base64
 import os
 import pandas as pd
 from io import BytesIO
-
-
-def plot_actual_vs_predicted(y_actual, y_predicted):
-    plt.figure(figsize=(8, 6))
-    plt.scatter(y_actual, y_predicted, color='blue')
-    plt.plot(y_actual, y_actual, color='red')  # Plotting the ideal line where actual = predicted
-    plt.title('Actual vs. Predicted')
-    plt.xlabel('Actual')
-    plt.ylabel('Predicted')
-    # plt.show()
+import threading
+import matplotlib
+matplotlib.use('Agg')  # Use non-GUI backend
 
 class ASTProcessor:
-
     def __init__(self):
-
         self.pp = pprint.PrettyPrinter(indent=3)
         pass
 
@@ -187,7 +181,6 @@ class ASTProcessor:
             else:
                 print("in with sql")
                 return self.predictWithSQL(currentDB, estimatorMeta, sql)
-            print('prediction finished with or without sql')
         except EstimatorMeta.DoesNotExist as e:
             raise Exception(f"{estimatorName} estimator does not exist ({e}).")
 
@@ -202,18 +195,22 @@ class ASTProcessor:
         else:
             raise NotImplementedError("prediction with non-sql training profile not implemented yet.")
 
-    def plot_actual_vs_predicted(self,y_actual, y_predicted):
+    def plot_actual_vs_predicted(self, y_actual, y_predicted):
         plt.figure(figsize=(8, 6))
         plt.scatter(y_actual, y_predicted, color='blue')
         plt.plot(y_actual, y_actual, color='red')  # Plotting the ideal line where actual = predicted
         plt.title('Actual vs. Predicted')
         plt.xlabel('Actual')
         plt.ylabel('Predicted')
-        # plt.show()
+        buffer = BytesIO()
+        plt.savefig(buffer, format='png')
+        plt.close()
+        plot_data = base64.b64encode(buffer.getvalue()).decode('utf-8')
+        return plot_data
+
     def predictWithSQL(self, currentDB, estimatorMeta, sql):
         # Assume df and X are obtained from FormulaProcessor as before
         df, X = FormulaProcessor(estimatorMeta.formula).getDfAndXFromSQL(currentDB, sql, onlyPredictors=True)
-        print("predict sql er vitore")
         y_actual = FormulaProcessor(estimatorMeta.formula).getYfromSQL(currentDB, sql)
         if estimatorMeta.estimatorType == 'LR':
             estimatorManager = LRManager()
@@ -224,31 +221,31 @@ class ASTProcessor:
             df['prediction'] = predictions
             df = pd.DataFrame(df)
             df = df.to_dict(orient='records')
-            self.plot_actual_vs_predicted(y_actual, predictions)
 
-            df_summary = pd.DataFrame({"Actual Values": y_actual, "Predicted Values": predictions})
-            print(df_summary)
-            buffer = BytesIO()
-            plt.savefig(buffer, format='png')
-            plt.close()
-            plot_data = base64.b64encode(buffer.getvalue()).decode('utf-8')
+            plot_data = self.plot_actual_vs_predicted(y_actual,predictions)
+            df_summary = pd.DataFrame({"Actual Values": y_actual, "Predicted Values": predictions}).to_dict(orient='records')
             result={'table':df,
                     'graph':plot_data,
-                    'text':''
+                    'text':'',
+                    'actvspred':df_summary
                     }
             return result
         elif estimatorMeta.estimatorType == 'KNN':
             estimatorManager = KNNManager()
-            print(estimatorMeta.name)
             if not estimatorManager.isFitted(estimatorMeta.name):
                 raise Exception(f"Model {estimatorMeta.name} is not fitted. Please train the model before prediction.")
-            print('predict er age')
             predictions = estimatorManager.predict(estimatorMeta.name, X)
             df['prediction'] = predictions
-            plot_actual_vs_predicted(y_actual, predictions)
-
-
-            return df
+            df = pd.DataFrame(df)
+            df = df.to_dict(orient='records')
+            plot_data = self.plot_actual_vs_predicted(y_actual, predictions)
+            df_summary = pd.DataFrame({"Actual Values": y_actual, "Predicted Values": predictions}).to_dict(orient='records')
+            result = {'table': df,
+                      'graph': plot_data,
+                      'text': '',
+                      'actvspred': df_summary
+                      }
+            return result
         else:
             raise ("Model is not fitted. or did't found the model")
 

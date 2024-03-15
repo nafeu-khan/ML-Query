@@ -338,7 +338,6 @@ def _parser(cmd):
     prevInput = ''
     # for single command
     # global response
-    print("in parser",response)
     return response
     #for multiple command
     # yield response

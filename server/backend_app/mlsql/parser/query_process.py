@@ -32,33 +32,30 @@ def query_process(data):
             # print(f"CREATE ESTIMATOR {model_name} MODEL_TYPE {type_name} FORMULA ${target_var}~{'+'.join(var for var in other_ftr)}$;")
             table_name =data[-1].split(';')[0]
             model_name=data[-3]
-            if table_name == None or type_name==None:
-                return {'text': "Please use proper query by order. Database is not set yet"}
             #1st query
             abc=_parser(f"CREATE ESTIMATOR salaryPredictor MODEL_TYPE {type_name} FORMULA ${target_var}~{'+'.join(var for var in other_ftr)}$;")
             abc=_parser(f"CREATE TRAINING PROFILE oneshotSalary WITH [SELECT * FROM {table_name}];")
             abc= _parser(f"TRAIN salaryPredictor WITH TRAINING PROFILE oneshotSalary;")
             result=_parser(f"PREDICT WITH TRAINING PROFILE oneshotSalary BY ESTIMATOR salaryPredictor;")
-            print(result)
             return result
         except:
             return {'text': "Please use proper query by order. Database is not set yet"}
 
 
-        """ CREATE ESTIMATOR salaryPredictor MODEL_TYPE KNN FORMULA $Species~SepalLengthCm$;
-            CREATE TRAINING PROFILE oneshotSalary WITH [SELECT * FROM Iris];
-            USE 'data/Iris.db';
-            TRAIN salaryPredictor WITH TRAINING PROFILE oneshotSalary;
-            PREDICT WITH TRAINING PROFILE oneshotSalary BY ESTIMATOR salaryPredictor;"""
+""" CREATE ESTIMATOR salaryPredictor MODEL_TYPE KNN FORMULA $Species~SepalLengthCm$;
+    CREATE TRAINING PROFILE oneshotSalary WITH [SELECT * FROM Iris];
+    USE 'data/Iris.db';
+    TRAIN salaryPredictor WITH TRAINING PROFILE oneshotSalary;
+    PREDICT WITH TRAINING PROFILE oneshotSalary BY ESTIMATOR salaryPredictor; """
 
-    '''
-    USE salarydb;
-    CREATE MODEL model_name MODEL_TYPE LR;
-    PREDICT salary for  years by model_name with salary;
-    '''
+'''
+USE salarydb;
+CREATE MODEL model_name MODEL_TYPE LR;
+PREDICT salary for  years by model_name with salary;
+'''
 
-    '''
-    USE salarydb;
-    CREATE MODEL model_name MODEL_TYPE LR;
-    PREDICT salary for years by model_name with salary;
-    '''
+'''
+USE salarydb;
+CREATE MODEL model_name MODEL_TYPE LR;
+PREDICT salary for years by model_name with salary;
+'''
