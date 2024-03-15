@@ -20,15 +20,9 @@ def query_process(data):
         try:
             data = data.split()
             target_var= data[1]
-            other_ftr=[]
-            i=3
-            while 1:
-                if(data[i].upper() != 'BY'):
-                    other_ftr.append(data[i])
-                    i+=1
-                else :
-                    break
+            other_ftr=data[3].split(',')
             print("other feature",other_ftr)
+            print('+'.join(var for var in other_ftr))
             # print(f"CREATE ESTIMATOR {model_name} MODEL_TYPE {type_name} FORMULA ${target_var}~{'+'.join(var for var in other_ftr)}$;")
             table_name =data[-1].split(';')[0]
             model_name=data[-3]
@@ -37,6 +31,7 @@ def query_process(data):
             abc=_parser(f"CREATE TRAINING PROFILE oneshotSalary WITH [SELECT * FROM {table_name}];")
             abc= _parser(f"TRAIN salaryPredictor WITH TRAINING PROFILE oneshotSalary;")
             result=_parser(f"PREDICT WITH TRAINING PROFILE oneshotSalary BY ESTIMATOR salaryPredictor;")
+            result['text']=f"target variable is {target_var} and independent variable is {other_ftr}"
             return result
         except:
             return {'text': "Please use proper query by order. Database is not set yet"}
@@ -52,6 +47,15 @@ def query_process(data):
 USE salarydb;
 CREATE MODEL model_name MODEL_TYPE LR;
 PREDICT salary for  years by model_name with salary;
+
+USE Iris;
+CREATE MODEL model_name MODEL_TYPE KNN;
+PREDICT Species FOR SepalLengthCm by model_name with Iris;
+PetalLengthCm
+
+USE Iris;
+CREATE MODEL model_name MODEL_TYPE KNN;
+PREDICT PetalLengthCm FOR SepalLengthCm,SepalWidthCm by model_name with Iris;
 '''
 
 '''

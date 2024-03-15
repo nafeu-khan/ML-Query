@@ -219,6 +219,8 @@ class ASTProcessor:
             predictions = estimatorManager.predict(estimatorMeta.name, X)
 
             df['prediction'] = predictions
+            df['actual']=y_actual
+
             df = pd.DataFrame(df)
             df = df.to_dict(orient='records')
 
