@@ -202,6 +202,14 @@ class ASTProcessor:
         else:
             raise NotImplementedError("prediction with non-sql training profile not implemented yet.")
 
+    def plot_actual_vs_predicted(self,y_actual, y_predicted):
+        plt.figure(figsize=(8, 6))
+        plt.scatter(y_actual, y_predicted, color='blue')
+        plt.plot(y_actual, y_actual, color='red')  # Plotting the ideal line where actual = predicted
+        plt.title('Actual vs. Predicted')
+        plt.xlabel('Actual')
+        plt.ylabel('Predicted')
+        # plt.show()
     def predictWithSQL(self, currentDB, estimatorMeta, sql):
         # Assume df and X are obtained from FormulaProcessor as before
         df, X = FormulaProcessor(estimatorMeta.formula).getDfAndXFromSQL(currentDB, sql, onlyPredictors=True)
@@ -216,7 +224,7 @@ class ASTProcessor:
             df['prediction'] = predictions
             df = pd.DataFrame(df)
             df = df.to_dict(orient='records')
-            plot_actual_vs_predicted(y_actual, predictions)
+            self.plot_actual_vs_predicted(y_actual, predictions)
 
             df_summary = pd.DataFrame({"Actual Values": y_actual, "Predicted Values": predictions})
             print(df_summary)
