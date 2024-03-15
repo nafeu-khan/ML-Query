@@ -22,7 +22,7 @@ def plot_actual_vs_predicted(y_actual, y_predicted):
     plt.title('Actual vs. Predicted')
     plt.xlabel('Actual')
     plt.ylabel('Predicted')
-    plt.show()
+    # plt.show()
 
 class ASTProcessor:
 
