@@ -19,8 +19,9 @@ from .mlsql.test.csvToDB import csvToDB
 @api_view(['GET','POST'])
 def initial(request):
     setup()
-
-@api_view(['GET','POST'])
+from django.http import JsonResponse
+import json
+@api_view(['GET', 'POST'])
 def test_view(req):
     if req.method == 'POST' and req.FILES['file']:
         file = req.FILES['file']
@@ -35,10 +36,25 @@ def test_view(req):
                 for chunk in file.chunks():
                     destination.write(chunk)
 
-    data = req.POST.get('input') #json.loads(req.body)
-    data=data.strip()
-    response=query_process(data)
-    return JsonResponse(response,safe=False)
+    data = req.POST.get('input')  # json.loads(req.body)
+    data = data.strip()
+    data = data.split(';')
+    print(data)
+    responses = {}  # Store responses in a dictionary
+    for index, cmd in enumerate(data):
+        if cmd != '':
+            response_key = f'response_{index}'  # Generate a unique key for each response
+            responses[response_key] = {}  # Initialize list for each response
+            # Iterate over the generator object returned by query_process
+            for response_dict in query_process(cmd):
+                responses[response_key].update(response_dict)  # Append yielded dictionaries to the list
+
+    print(responses)
+    # Now responses is a dictionary of lists (each list contains dictionaries), which can be serialized to JSON
+    response_json = json.dumps(responses)
+
+    print("response is", response_json)
+    return JsonResponse(response_json, safe=False)
 
 @api_view(['GET','POST'])
 def parser_view(req):

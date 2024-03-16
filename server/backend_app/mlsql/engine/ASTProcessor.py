@@ -238,6 +238,7 @@ class ASTProcessor:
                 raise Exception(f"Model {estimatorMeta.name} is not fitted. Please train the model before prediction.")
             predictions = estimatorManager.predict(estimatorMeta.name, X)
             df['prediction'] = predictions
+            df['actual'] = y_actual
             df = pd.DataFrame(df)
             df = df.to_dict(orient='records')
             plot_data = self.plot_actual_vs_predicted(y_actual, predictions)
