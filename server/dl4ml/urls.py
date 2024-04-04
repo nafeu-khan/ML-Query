@@ -15,14 +15,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.shortcuts import render
 from django.urls import path
 
-from backend_app.views import test_view
 
-from backend_app.views import upload
+from backend_app.views import test_view
+# def hi(request):
+#     return HttpResponse("<div><p>hi</p></div>")
+
 
 urlpatterns = [
+    path('',lambda request: render(request, 'hi.html')),
+    # path('',hi),
+    
     path('admin/', admin.site.urls),
     path('test_url/',test_view),
-    path('upload_file/', upload)
+    # path('upload_file/', upload)
 ]

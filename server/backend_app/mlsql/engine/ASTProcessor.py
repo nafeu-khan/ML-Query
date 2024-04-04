@@ -1,9 +1,7 @@
-import threading
 
 import matplotlib
 from peewee import *
 from ..data.db import db
-import datetime
 from ..data.EstimatorMeta import EstimatorMeta
 from ..data.TrainingProfile import TrainingProfile
 from ..engine.LRManager import LRManager
@@ -13,10 +11,8 @@ from ..engine.FormulaProcessor import FormulaProcessor
 import pprint
 from matplotlib import pyplot as plt
 import base64
-import os
 import pandas as pd
 from io import BytesIO
-import threading
 import matplotlib
 matplotlib.use('Agg')  # Use non-GUI backend
 
@@ -41,9 +37,7 @@ class ASTProcessor:
 
     def getEstimatorMeta(self, name):
         with db:
-            print(f"{name} check 33 e dhukse ")
             res = EstimatorMeta.select().where(EstimatorMeta.name == name).get()
-            print("res thik ase")
             return res
 
     def getTrainingProfile(self, name):
@@ -59,7 +53,7 @@ class ASTProcessor:
                                                  lr=lr,
                                                  optimizer=optimizer,
                                                  regularizer=regularizer)
-            print("in createMethod")
+
             if estimatorType == "LR":
                 LRManager().create(name)
             elif estimatorType == "KNN":
@@ -129,7 +123,7 @@ class ASTProcessor:
             self.pp.pprint(accuracyDic)
             return accuracyDic
         elif estimatorMeta.estimatorType == 'KNN':
-            estimatorManager = KNNManager()  # Assuming KNNManager is correctly implemented
+            estimatorManager = KNNManager()  
             accuracyDic = estimatorManager.trainValidate(estimatorMeta.name, XTrain, XValidation, yTrain, yValidation)
             self.postTrain(estimatorMeta)
             self.pp.pprint(accuracyDic)
@@ -138,7 +132,7 @@ class ASTProcessor:
             raise Exception(
                 f"Unrecognized estimator type {estimatorMeta.estimatorType}. Only 'LR' and 'KNN' are supported.")
 
-    def postTrain(self, estimatorMeta, stillTrainable=False):
+    def GpostTrain(self, estimatorMeta, stillTrainable=False):
         estimatorMeta.trainable = stillTrainable
         estimatorMeta.save()
 
@@ -168,21 +162,17 @@ class ASTProcessor:
             # 1 Check DB
             if currentDB is None:
                 raise Exception(f"no Database chosen to draw training data from. hint: [USE DBUrl;]")
-            print(f"estimator name holo {estimatorName}")
             # 2 Check Estimator
             estimatorMeta = self.getEstimatorMeta(estimatorName)
-            print("156 e passed")
             if estimatorMeta.isAvailable == False:
                 raise Exception(f"Estimator {estimatorMeta.name} is not availble for use.")
-            print("current db passed")
             if trainingProfileName is not None:
-                print(" with training profile name")
                 return self.predictWithTrainingProfile(currentDB, estimatorMeta, trainingProfileName)
             else:
-                print("in with sql")
                 return self.predictWithSQL(currentDB, estimatorMeta, sql)
         except EstimatorMeta.DoesNotExist as e:
-            raise Exception(f"{estimatorName} estimator does not exist ({e}).")
+            print(f"{estimatorName} estimator does not exist ({e}).")
+            return {'text':f"{estimatorName} estimator does not exist."}
 
         except TrainingProfile.DoesNotExist as e:
             raise Exception(f"{trainingProfileName} estimator does not exist ({e}.")
@@ -190,7 +180,6 @@ class ASTProcessor:
     def predictWithTrainingProfile(self, currentDB, estimatorMeta, trainingProfileName):
         trainingProfile = self.getTrainingProfile(trainingProfileName)
         if trainingProfile.sourceType == 'sql':
-            print("in function of training")
             return self.predictWithSQL(currentDB, estimatorMeta, trainingProfile.source)
         else:
             raise NotImplementedError("prediction with non-sql training profile not implemented yet.")
@@ -220,6 +209,7 @@ class ASTProcessor:
 
             df['prediction'] = predictions
             df['actual']=y_actual
+            
 
             df = pd.DataFrame(df)
             df = df.to_dict(orient='records')

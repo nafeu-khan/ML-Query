@@ -19,13 +19,13 @@ class EstimatorMeta(Model):
     
     def __str__(self):
         return f"""name: {self.name}, 
-estimatorType: {self.estimatorType}, 
-dateCreated: {self.dateCreated}, 
-isAvailable: {self.isAvailable}, 
-formula: {self.formula}, 
-loss: {self.loss}, 
-lr: {self.lr}, 
-optimizer: {self.optimizer}, 
-regularizer: {self.regularizer}, 
-trainable: {self.trainable}
-"""
+                    estimatorType: {self.estimatorType}, 
+                    dateCreated: {self.dateCreated}, 
+                    isAvailable: {self.isAvailable}, 
+                    formula: {self.formula}, 
+                    loss: {self.loss}, 
+                    lr: {self.lr}, 
+                    optimizer: {self.optimizer}, 
+                    regularizer: {self.regularizer}, 
+                    trainable: {self.trainable}
+                    """

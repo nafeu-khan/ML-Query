@@ -1,0 +1,124 @@
+{
+  "hash": "d15f544f",
+  "configHash": "ae917e98",
+  "lockfileHash": "936a2201",
+  "browserHash": "0d37e8ae",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "a3665de1",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "e7595f0b",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "ccaae0d4",
+      "needsInterop": false
+    },
+    "regenerator-runtime/runtime": {
+      "src": "../../node_modules/regenerator-runtime/runtime.js",
+      "file": "regenerator-runtime_runtime.js",
+      "fileHash": "36cb34d3",
+      "needsInterop": true
+    },
+    "@ant-design/icons": {
+      "src": "../../node_modules/@ant-design/icons/es/index.js",
+      "file": "@ant-design_icons.js",
+      "fileHash": "81bc9de7",
+      "needsInterop": false
+    },
+    "antd": {
+      "src": "../../node_modules/antd/es/index.js",
+      "file": "antd.js",
+      "fileHash": "893c6d03",
+      "needsInterop": false
+    },
+    "antd/es/input/TextArea": {
+      "src": "../../node_modules/antd/es/input/TextArea.js",
+      "file": "antd_es_input_TextArea.js",
+      "fileHash": "4b140403",
+      "needsInterop": false
+    },
+    "antd/es/upload/Upload": {
+      "src": "../../node_modules/antd/es/upload/Upload.js",
+      "file": "antd_es_upload_Upload.js",
+      "fileHash": "1bcb38da",
+      "needsInterop": false
+    },
+    "react-hot-toast": {
+      "src": "../../node_modules/react-hot-toast/dist/index.mjs",
+      "file": "react-hot-toast.js",
+      "fileHash": "f7188df6",
+      "needsInterop": false
+    },
+    "react-icons/bi": {
+      "src": "../../node_modules/react-icons/bi/index.mjs",
+      "file": "react-icons_bi.js",
+      "fileHash": "929eb963",
+      "needsInterop": false
+    },
+    "react-icons/fa6": {
+      "src": "../../node_modules/react-icons/fa6/index.mjs",
+      "file": "react-icons_fa6.js",
+      "fileHash": "58ab25da",
+      "needsInterop": false
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/react-icons/fa/index.mjs",
+      "file": "react-icons_fa.js",
+      "fileHash": "b19b6a9e",
+      "needsInterop": false
+    },
+    "react-speech-recognition": {
+      "src": "../../node_modules/react-speech-recognition/lib/index.js",
+      "file": "react-speech-recognition.js",
+      "fileHash": "343721f4",
+      "needsInterop": true
+    },
+    "ag-grid-react": {
+      "src": "../../node_modules/ag-grid-react/lib/main.js",
+      "file": "ag-grid-react.js",
+      "fileHash": "63814cab",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-PEH4OUYE": {
+      "file": "chunk-PEH4OUYE.js"
+    },
+    "chunk-4Y7BD36E": {
+      "file": "chunk-4Y7BD36E.js"
+    },
+    "chunk-O26PCQG7": {
+      "file": "chunk-O26PCQG7.js"
+    },
+    "chunk-QDF5IHVR": {
+      "file": "chunk-QDF5IHVR.js"
+    },
+    "chunk-WYTG7TQD": {
+      "file": "chunk-WYTG7TQD.js"
+    },
+    "chunk-EPGT2ENA": {
+      "file": "chunk-EPGT2ENA.js"
+    },
+    "chunk-FBRNPY62": {
+      "file": "chunk-FBRNPY62.js"
+    },
+    "chunk-NDASCCDJ": {
+      "file": "chunk-NDASCCDJ.js"
+    },
+    "chunk-UM3JHGVO": {
+      "file": "chunk-UM3JHGVO.js"
+    },
+    "chunk-CEQRFMJQ": {
+      "file": "chunk-CEQRFMJQ.js"
+    }
+  }
+}

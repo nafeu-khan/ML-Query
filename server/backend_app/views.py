@@ -1,6 +1,5 @@
 import json
 import os
-
 from django.http import JsonResponse, StreamingHttpResponse, HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
@@ -13,14 +12,12 @@ from .mlsql.parser.query_process import query_process
 from .mlsql.test.csvToDB import csvToDB
 
 
-# Create your views here.
 @csrf_exempt
-# Create your views here.
-@api_view(['GET','POST'])
-def initial(request):
-    setup()
-from django.http import JsonResponse
-import json
+
+# @api_view(['GET','POST'])
+# def initial(request):
+#     setup()
+
 @api_view(['GET', 'POST'])
 def test_view(req):
     if req.method == 'POST' and req.FILES['file']:
@@ -39,43 +36,41 @@ def test_view(req):
     data = req.POST.get('input')  # json.loads(req.body)
     data = data.strip()
     data = data.split(';')
-    print(data)
-    responses = {}  # Store responses in a dictionary
+    # print(data)
+    responses = {}  
     for index, cmd in enumerate(data):
         if cmd != '':
-            response_key = f'response_{index}'  # Generate a unique key for each response
-            responses[response_key] = {}  # Initialize list for each response
-            # Iterate over the generator object returned by query_process
+            responses[f'response_{index}'] = {}
             for response_dict in query_process(cmd):
-                responses[response_key].update(response_dict)  # Append yielded dictionaries to the list
+                responses[f'response_{index}'].update(response_dict)  # Append yielded dictionaries to the list
 
-    print(responses)
-    # Now responses is a dictionary of lists (each list contains dictionaries), which can be serialized to JSON
+    # print(responses)
+    
     response_json = json.dumps(responses)
 
-    print("response is", response_json)
+    # print("response is", response_json)
     return JsonResponse(response_json, safe=False)
 
-@api_view(['GET','POST'])
-def parser_view(req):
-    data=json.loads(req.body)
-    data = data.get("inpt")
-    return JsonResponse(_parser(data))
+# @api_view(['GET','POST'])
+# def parser_view(req):
+#     data=json.loads(req.body)
+#     data = data.get("inpt")
+#     return JsonResponse(_parser(data))
 
-@api_view(['GET','POST'])
-def upload(req):
-    if req.method == 'POST' and req.FILES['file']:
-        file = req.FILES['file']
-        file_name = file.name
-        current_directory = os.path.dirname(__file__)
-        file_path = os.path.join(current_directory, file_name)
-        # Open the file and write the uploaded content to it
-        with open(file_path, 'wb+') as destination:
-            for chunk in file.chunks():
-                destination.write(chunk)
-        return HttpResponse('File uploaded successfully!')
+# @api_view(['GET','POST'])
+# def upload(req):
+#     if req.method == 'POST' and req.FILES['file']:
+#         file = req.FILES['file']
+#         file_name = file.name
+#         current_directory = os.path.dirname(__file__)
+#         file_path = os.path.join(current_directory, file_name)
+#         # Open the file and write the uploaded content to it
+#         with open(file_path, 'wb+') as destination:
+#             for chunk in file.chunks():
+#                 destination.write(chunk)
+#         return HttpResponse('File uploaded successfully!')
 
-    return HttpResponse('No file uploaded.')
+#     return HttpResponse('No file uploaded.')
 
 
 """

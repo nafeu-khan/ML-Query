@@ -83,7 +83,6 @@ def p_create_model(p):
         optimizer = p[lastPos]
         lastPos += 2
         regularizer = p[lastPos]
-    print("in create function \n ",name,estimatorType,formula,loss,lr,optimizer,regularizer)
     try:
         estimator = ASTProcessor.createEstimator(name=name, 
                                                 estimatorType=estimatorType, 
@@ -123,7 +122,6 @@ def p_training_profile(p):
         epoch = p[12]
     if length > 14:
         shuffle = p[14]
-    print("in train function \n ", name, "\n ", sql, "\n ",)
     try:
         profile = ASTProcessor.createTrainingProfile(name=name, sql=sql, validationSplit=validationSplit, batchSize=batchSize, epoch=epoch, shuffle=shuffle)
         print(f"Created training profile:\n{profile}")
@@ -160,9 +158,7 @@ def p_predict(p):
     printMatchedRule('p_predict')
     global currentState, currentDB
     currentState = PREDICT
-
     length = len(p)
-
     sql = p[3]
     estimatorName = p[6]
     trainingProfileName = None
@@ -177,6 +173,7 @@ def p_predict(p):
 
         # print(df.to_string()) # TODO, use an internal state in parser and print with arrows and exit commands.
     except Exception as e:
+        response = {'text':e}
         printError(e)
     pass
 
@@ -266,80 +263,63 @@ parser = yacc.yacc(debug=True)
 # with open("parser/parser.dill", "wb") as f:
 #     dill.dump(parser, f)
 
-def welcome():
-    print(f'''
-******** Welcome to MLSQL (version egg)*******
-The first open-source SQL for Machine Learning
-**********************************************
-''')
-    pass
+# def welcome():
+#     print(f'''
+# ******** Welcome to MLSQL (version egg)*******
+# The first open-source SQL for Machine Learning
+# **********************************************
+# ''')
+#     pass
 
-def p_create_table(p):
-    '''exp : CREATE TABLE WORD DELIMITER'''
-    printMatchedRule('p_create_table')
-    print("in table")
-    # pass
-    table_name = p[3]
-    columns = p[5]  # This will be a list of tuples [(column_name, data_type), ...]
+# def p_create_table(p):
+#     '''exp : CREATE TABLE WORD DELIMITER'''
+#     printMatchedRule('p_create_table')
+#     print("in table")
+#     # pass
+#     table_name = p[3]
+#     columns = p[5]  # This will be a list of tuples [(column_name, data_type), ...]
 
-    try:
-        ASTProcessor.create_table(currentDB, table_name, columns)
-        print(f"Table {table_name} created with columns {columns}")
-    except Exception as e:
-        printError(e)
+#     try:
+#         ASTProcessor.create_table(currentDB, table_name, columns)
+#         print(f"Table {table_name} created with columns {columns}")
+#     except Exception as e:
+#         printError(e)
 
-def p_table_columns(p):
-    '''table_columns : table_column ',' table_column
-                     | table_column'''
-    if len(p) == 4:
-        p[0] = p[1] + [p[3]]
-    else:
-        p[0] = [p[1]]
+# def p_table_columns(p):
+#     '''table_columns : table_column ',' table_column
+#                      | table_column'''
+#     if len(p) == 4:
+#         p[0] = p[1] + [p[3]]
+#     else:
+#         p[0] = [p[1]]
 
-def p_table_column(p):
-    '''table_column : WORD data_type'''
-    p[0] = (p[1], p[2])
+# def p_table_column(p):
+#     '''table_column : WORD data_type'''
+#     p[0] = (p[1], p[2])
 
 
-def p_data_type(p):
-    '''data_type : INT
-                 | FLOAT
-                 | CHAR
-                 | TEXT'''  # Add more data types as needed
-    p[0] = p[1]
+# def p_data_type(p):
+#     '''data_type : INT
+#                  | FLOAT
+#                  | CHAR
+#                  | TEXT'''  
+#     p[0] = p[1]
 
 
 
 def _parser(cmd):
-    # welcome()
-    # print("Current directory is: " + currentDBURL)
-
     userInput  = ''
     prevInput = ''
-    # print("\033[32m",'MLSQL>', end=" ")
     print('MLSQL>', end=" ")
-    # for cmd in sql_commands:
     userInput = cmd  #input().strip()
 
-    # if userInput == 'exit':
-    #     break
-    #
-    # if len(userInput) == 0:
-    #     continue
-    #
-    #
-    # if userInput[-1] != ';':
-    #     prevInput += ' ' + userInput
-    #     continue
     data = prevInput + userInput
     print(f"parsing {data}")
     p = parser.parse(data)
-    print(p)
     prevInput = ''
     # for single command
-    # global response
+        # global response
     return response
     #for multiple command
     # yield response
-        # pass
 

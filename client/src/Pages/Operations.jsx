@@ -36,16 +36,16 @@ function Operations() {
   const handleExecute = async () => {
     setRowData();
     if (fileList.length === 0) {
-      message.error("File is missing");
-      return;
+      // message.error("File is missing");
+      // return;
     }
     if (!query) {
       toast.error("Query can't be empty");
-      return;
+      // return;
     }
     if (query[query.length - 1] !== ";") {
       toast.error("Invalid Query.");
-      return;
+      // return;
     }
     let inputs = query.split(";");
     inputs = inputs.slice(0, inputs.length - 1);
@@ -65,7 +65,8 @@ function Operations() {
         method: "POST",
         body: formData,
       });
-      const d = await res.json();
+      let d = await res.json();
+      d = JSON.parse(d)
       console.log(d);
       setData((prev) => [...prev, d]);
     } catch (error) {
@@ -74,10 +75,12 @@ function Operations() {
   };
 
   return (
-    <div className="mt-10 max-w-2xl mx-auto">
+    <div
+      className={`mt-10 ${data.length > 0 ? "w-full" : "max-w-2xl"} mx-auto`}
+    >
       <Toaster />
-      <div className="text-center">
-        <Radio.Group
+      {/* <div className="text-center">
+        {/* <Radio.Group
           size="large"
           value={type}
           onChange={(e) => setType(e.target.value)}
@@ -100,48 +103,60 @@ function Operations() {
               </span>
             </div>
           </Radio.Button>
-        </Radio.Group>
-      </div>
+        </Radio.Group> */}
+      {/* </div> */} 
       {type === "audio" && (
         <AudioInput
           audioTranscript={audioTranscript}
           setAudioTranscript={setAudioTranscript}
         />
       )}
-      <div className="mt-2  grid sticky top-0 bg-white z-50 py-4 ">
-        <h1 className="text-left font-secondary text-lg font-semibold mb-2 ">
-          Enter your query:
-        </h1>
-        <TextArea
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          rows={5}
-          placeholder="Enter your SQL query"
-          className="font-secondary text-gray-800"
-        />
-        <div className="mt-4">
-          <Upload
-            className="!text-xl"
-            fileList={fileList.map((file) => ({ ...file, status: "done" }))}
-            beforeUpload={(file) => {
-              setFileList([{ uid: file.uid, name: file.name, status: "done" }]);
-              return false;
-            }}
-            onChange={(e) => setFileList(e.fileList)}
+      <div
+        className={`grid ${
+          data.length > 0 ? "grid-cols-2 gap-8" : "grid-cols-1"
+        }  w-full`}
+      >
+        <div className="mt-2  flex flex-col  bg-white z-50 py-4 ">
+          <h1 className="text-left font-secondary text-2xl font-semibold mb-4 ">
+            Enter your query:
+          </h1>
+          <TextArea
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            rows={5}
+            placeholder="Enter your SQL query"
+            className="font-secondary text-gray-800 text-lg"
+          />
+          <div className="mt-4">
+            <Upload
+              className="!text-2xl"
+              fileList={fileList.map((file) => ({ ...file, status: "done" }))}
+              beforeUpload={(file) => {
+                setFileList([
+                  { uid: file.uid, name: file.name, status: "done" },
+                ]);
+                return false;
+              }}
+              onChange={(e) => setFileList(e.fileList)}
+            >
+              {fileList.length === 0 && (
+                <Button icon={<UploadOutlined />}>Upload File</Button>
+              )}
+            </Upload>
+          </div>
+          <button
+            className="mt-4 w-28 ml-auto text-xl bg-blue-500 rounded text-white p-2 px-4 font-secondary font-semibold"
+            onClick={handleExecute}
           >
-            {fileList.length === 0 && (
-              <Button icon={<UploadOutlined />}>Upload File</Button>
-            )}
-          </Upload>
+            Execute
+          </button>
         </div>
-        <button
-          className="mt-4 w-24 ml-auto bg-blue-500 rounded text-white p-2 px-4 font-secondary font-semibold"
-          onClick={handleExecute}
-        >
-          Execute
-        </button>
+        {data.length > 0 && (
+          <div className="relative top-8">
+            <ShowLog data={data} setData={setData} />
+          </div>
+        )}
       </div>
-      {data.length > 0 && <ShowLog data={data} setData={setData} />}
     </div>
   );
 }

@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 class FormulaProcessor:
 
     def __init__(self, formula):
-
+            #  ~RAD + AGE,TAX~
         self.formula = formula
         yX = self.stringFilter(re.split(r'\~+', self.formula))
         
