@@ -1831,7 +1831,7 @@
         "kind": 2,
         "importPath": "server.backend_app.views",
         "description": "server.backend_app.views",
-        "peekOfCode": "def test_view(req):\n    for key in req.FILES.keys():\n        print(\"Key:\", key)\n    if req.method == 'POST':\n        current_directory = os.path.dirname(__file__)\n        if 'file' in req.FILES:\n            print(\"in file\")\n            file = req.FILES['file']\n            file_name = file.name\n            file_path = os.path.join(current_directory, f'./mlsql/data/files/{file_name}')",
+        "peekOfCode": "def test_view(req):\n    if req.method == 'POST':\n        current_directory = os.path.dirname(__file__)\n        if 'file' in req.FILES:\n            file = req.FILES['file']\n            file_name = file.name\n            file_path = os.path.join(current_directory, f'./mlsql/data/files/{file_name}')\n            if file_name.endswith('.csv'):\n                csvToDB(file)\n            else:",
         "detail": "server.backend_app.views",
         "documentation": {}
     },

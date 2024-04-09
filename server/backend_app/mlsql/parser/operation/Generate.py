@@ -54,7 +54,9 @@ def select_algorithm(operation_type, algorithm_name='default', **kwargs):
             "CLUSTERING": clustering_algorithms
         }
         selected_algorithms = algorithms.get(operation_type.upper(), prediction_algorithms)
-        return selected_algorithms.get(algorithm_name.upper())
+        algo= selected_algorithms.get(algorithm_name.upper())
+        print(algo)
+        return algo
 
 def display_results(operation_type, y_test=None, y_pred=None, model=None, features=None, df=None):
     if operation_type.upper() == "PREDICTION":
@@ -140,7 +142,7 @@ def generate(command):
         print(f"Predictions saved to {output_file}")
     elif "USING MODEL" in command.upper() and y is not None:
         '''GENERATE DISPLAY OF CLASSIFICATION Species USING MODEL iris_knn  WITH ACCURACY 10 LABEL ProductID FEATURES SepalLengthCm SepalWidthCm FROM Iris ;'''
-        model_name=command_parts[command_parts.index("MODEL") + 2] if "MODEL" in command_parts  else "iris_knn"
+        model_name=command_parts[command_parts.index("MODEL") + 1] if "MODEL" in command_parts  else "iris_knn"
         print(model_name)
         test_s= int(command_parts.index("TEST") + 2) if "TEST" in command_parts  else 0.2
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= test_s, random_state=42)
@@ -157,35 +159,21 @@ def generate(command):
         ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else 0
         if operation_type.upper() == "CLASSIFICATION" and y_test is not None:
             accuracy = accuracy_score(y_test, y_pred)*100
-            response['text']=f"r2_score is less than = {accuracy}"
-            print("Accuracy:", accuracy)
             if accuracy < float(ex_ac):
-                try:
-                    url = os.path.join(os.path.dirname(__file__), f"../model/{model_name}.pkl")
-                    with open(url, 'wb') as file:
-                        pickle.dump(model, file)
-                        response['text']=f"Model {model_name} is created as {model_name}.pkl"
-                except:
-                    url = os.path.join(os.path.dirname(__file__), f"../model/{model_name}.dill")
-                    with open(url, 'wb') as file:
-                        dill.dump(model, file)
-                        response['text']=f"Model {model_name} is created as {model_name}.dill"
-
+                response['text']=f"accuracy is less than {accuracy}"
                 return response
+            response['text']=f"accuracy is {accuracy}"
+            print("Accuracy:", accuracy)
         elif operation_type.upper() == "PREDICTION" and y_test is not None:
             accuracy = r2_score(y_test, y_pred)
             print("R2 Score:", accuracy)
-            response['text']=f"r2_score is less than = {accuracy}"
+            if accuracy < float(ex_ac):
+                response['text']=f"r2_score is less than {accuracy}"
+                return response
+            response['text']=f"r2_score is {accuracy}"
             print(response['text'],ex_ac)   
             print("r2_score:", accuracy)
-            if accuracy < float(ex_ac):
-                url = os.path.join(os.path.dirname(__file__), f"../model/{model_name}.pkl")
-                with open(url, 'wb') as file:
-                    pickle.dump(model, file)
-                return response
-            url = os.path.join(os.path.dirname(__file__), f"../model/{model_name}.pkl")
-            with open(url, 'wb') as file:
-                pickle.dump(model, file)
+        # print(response)
     elif y is not None and operation_type !="CLUSTERING":
         test_s= int(command_parts.index("TEST") + 2) if "TEST" in command_parts  else 0.2
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= test_s, random_state=42)
@@ -207,9 +195,9 @@ def generate(command):
             print(response['text'])
             if accuracy < float(ex_ac):
                 response['text']=f"Accuracy is less than {accuracy}"
-                url = os.path.join(os.path.dirname(__file__), f"../model/{algorithm_name}.pkl")
-                with open(url, 'wb') as file:
-                    pickle.dump(model, file)
+                # url = os.path.join(os.path.dirname(__file__), f"../model/{algorithm_name}_{dataset_train_name}.pkl")
+                # with open(url, 'wb') as file:
+                #     pickle.dump(model, file)
                 return response
             
         elif operation_type.upper() == "PREDICTION" and y_test is not None:
@@ -219,13 +207,14 @@ def generate(command):
             print("R^2 Score:", accuracy)
             if accuracy < float(ex_ac):
                 response['text']=f"r2_score is less than  {accuracy}"
-                url = os.path.join(os.path.dirname(__file__), f"../model/{model_name}.pkl")
-                with open(url, 'wb') as file:
-                    pickle.dump(model, file)
                 return response
-            url = os.path.join(os.path.dirname(__file__), f"../model/{model_name}.pkl")
-            with open(url, 'wb') as file:
-                pickle.dump(model, file)
+                # url = os.path.join(os.path.dirname(__file__), f"../model/{model_name}.pkl")
+            #     with open(url, 'wb') as file:
+            #         pickle.dump(model, file)
+            #     return response
+            # url = os.path.join(os.path.dirname(__file__), f"../model/{model_name}.pkl")
+            # with open(url, 'wb') as file:
+            #     pickle.dump(model, file)
     else:
         n_cluster =command_parts[command_parts.index("CLUSTER")+2] if "CLUSTER"  in command_parts else 3
         if algorithm_name == 'default':
@@ -248,7 +237,7 @@ def generate(command):
         response['graph']=display_results(operation_type, y_test if y is not None else None, y_pred, model, features, df)
         # print(operation_type, y_test if y is not None else None, y_pred, model, features, df)
         # print(response['graph'])
-        
+    print(response)
     return response
 
 

@@ -20,24 +20,19 @@ from .mlsql.test.csvToDB import csvToDB
 
 @api_view(['GET', 'POST'])
 def test_view(req):
-    for key in req.FILES.keys():
-        print("Key:", key)
     if req.method == 'POST':
         current_directory = os.path.dirname(__file__)
         if 'file' in req.FILES:
-            print("in file")
             file = req.FILES['file']
             file_name = file.name
             file_path = os.path.join(current_directory, f'./mlsql/data/files/{file_name}')
             if file_name.endswith('.csv'):
-                print("hi ")
                 csvToDB(file)
             else:
                 with open(file_path, 'wb+') as destination:
                     for chunk in file.chunks():
                         destination.write(chunk)
         if 'test' in req.FILES:
-            print("in test")
             file = req.FILES['test']
             file_name = file.name
             file_path = os.path.join(current_directory, f'./mlsql/data/files/{file_name}')
@@ -57,7 +52,6 @@ def test_view(req):
                 responses[f'response_{index}'].update(response_dict)  # Append yielded dictionaries to the list
 
     # print(responses)
-    
     response_json = json.dumps(responses)
 
     # print("response is", response_json)

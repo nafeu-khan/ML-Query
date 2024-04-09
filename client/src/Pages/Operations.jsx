@@ -51,10 +51,11 @@ function Operations() {
     try {
       const formData = new FormData();
       formData.append("input", inputs);
-      console.log(fileList[0].originFileObj)
-      if(fileList && fileList[0] && fileList.originFileObj) formData.append("file", fileList[0].originFileObj);
-      if(testFileList && testFileList[0] && testFileList.originFileObj) formData.append("test", testFileList[0].originFileObj);
-      console.log(formData)
+      if(fileList && fileList[0] && fileList[0].originFileObj) formData.append("file", fileList[0].originFileObj);
+      if(testFileList && testFileList[0] && testFileList[0].originFileObj) formData.append("test", testFileList[0].originFileObj);
+
+
+
       const res = await fetch("http://localhost:8000/test_url/", {
         method: "POST",
         body: formData,

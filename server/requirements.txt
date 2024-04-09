@@ -6,4 +6,3 @@ pandas==2.2.1
 peewee==3.17.1
 ply==3.11
 scikit_learn==1.4.0
-dill
