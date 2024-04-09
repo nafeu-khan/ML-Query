@@ -130,4 +130,10 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
+FILE_UPLOAD_HANDLERS = [
+    'django.core.files.uploadhandler.MemoryFileUploadHandler',  # Handle file uploads in memory
+    'django.core.files.uploadhandler.TemporaryFileUploadHandler',  # Handle file uploads using temporary files
+]
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+FILE_UPLOAD_MAX_MEMORY_SIZE = 90242880 

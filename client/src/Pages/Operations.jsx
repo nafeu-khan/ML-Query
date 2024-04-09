@@ -1,5 +1,5 @@
 import { UploadOutlined } from "@ant-design/icons";
-import { Button, Radio, message } from "antd";
+import { Button, Radio } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import Upload from "antd/es/upload/Upload";
 import React, { useState } from "react";
@@ -23,31 +23,23 @@ function Operations() {
   const [query, setQuery] = useState("");
   const [rowData, setRowData] = useState();
   const [fileList, setFileList] = useState([]);
-  const [data, setData] = useState([
-    // {
-    //   text: "Selected lol",
-    //   table: [
-    //     { name: "ahnaf", age: 20 },
-    //     { name: "shifat", age: 19 },
-    //   ],
-    // },
-  ]);
+  const [data, setData] = useState([]);
+  const [showTestFile, setTestFile] = useState(false);
+  const [testFileList, setTestFileList] = useState([]);
 
   const handleExecute = async () => {
     setRowData();
-    if (fileList.length === 0) {
-      // message.error("File is missing");
-      // return;
-    }
+
     if (!query) {
       toast.error("Query can't be empty");
-      // return;
+      return;
     }
-    if (query[query.length - 1] !== ";") {
+    let inputs = query.trim();
+    if (inputs[inputs.length - 1] !== ";") {
       toast.error("Invalid Query.");
-      // return;
+      return;
     }
-    let inputs = query.split(";");
+    inputs = inputs.split(";");
     inputs = inputs.slice(0, inputs.length - 1);
     inputs = inputs.map((val) => val.trim() + ";");
     for (let input of inputs) {
@@ -59,14 +51,16 @@ function Operations() {
     try {
       const formData = new FormData();
       formData.append("input", inputs);
-      formData.append("file", fileList[0].originFileObj);
-
+      console.log(fileList[0].originFileObj)
+      if(fileList && fileList[0] && fileList.originFileObj) formData.append("file", fileList[0].originFileObj);
+      if(testFileList && testFileList[0] && testFileList.originFileObj) formData.append("test", testFileList[0].originFileObj);
+      console.log(formData)
       const res = await fetch("http://localhost:8000/test_url/", {
         method: "POST",
         body: formData,
       });
       let d = await res.json();
-      d = JSON.parse(d)
+      d = JSON.parse(d);
       console.log(d);
       setData((prev) => [...prev, d]);
     } catch (error) {
@@ -79,8 +73,8 @@ function Operations() {
       className={`mt-10 ${data.length > 0 ? "w-full" : "max-w-2xl"} mx-auto`}
     >
       <Toaster />
-      {/* <div className="text-center">
-        {/* <Radio.Group
+      <div className="text-center">
+        <Radio.Group
           size="large"
           value={type}
           onChange={(e) => setType(e.target.value)}
@@ -103,8 +97,8 @@ function Operations() {
               </span>
             </div>
           </Radio.Button>
-        </Radio.Group> */}
-      {/* </div> */} 
+        </Radio.Group>
+      </div>
       {type === "audio" && (
         <AudioInput
           audioTranscript={audioTranscript}
@@ -122,7 +116,11 @@ function Operations() {
           </h1>
           <TextArea
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              let q = e.target.value.toLowerCase().includes(" over ");
+              setTestFile(q);
+            }}
             rows={5}
             placeholder="Enter your SQL query"
             className="font-secondary text-gray-800 text-lg"
@@ -130,7 +128,10 @@ function Operations() {
           <div className="mt-4">
             <Upload
               className="!text-2xl"
-              fileList={fileList.map((file) => ({ ...file, status: "done" }))}
+              fileList={fileList.map((file) => ({
+                ...file,
+                status: "done",
+              }))}
               beforeUpload={(file) => {
                 setFileList([
                   { uid: file.uid, name: file.name, status: "done" },
@@ -144,6 +145,28 @@ function Operations() {
               )}
             </Upload>
           </div>
+          {showTestFile && (
+            <div className="mt-4">
+              <Upload
+                className="!text-2xl"
+                fileList={testFileList.map((file) => ({
+                  ...file,
+                  status: "done",
+                }))}
+                beforeUpload={(file) => {
+                  setTestFileList([
+                    { uid: file.uid, name: file.name, status: "done" },
+                  ]);
+                  return false;
+                }}
+                onChange={(e) => setTestFileList(e.fileList)}
+              >
+                {testFileList.length === 0 && (
+                  <Button icon={<UploadOutlined />}>Upload Test File</Button>
+                )}
+              </Upload>
+            </div>
+          )}
           <button
             className="mt-4 w-28 ml-auto text-xl bg-blue-500 rounded text-white p-2 px-4 font-secondary font-semibold"
             onClick={handleExecute}

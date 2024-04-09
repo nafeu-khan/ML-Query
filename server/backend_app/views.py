@@ -20,23 +20,35 @@ from .mlsql.test.csvToDB import csvToDB
 
 @api_view(['GET', 'POST'])
 def test_view(req):
-    if req.method == 'POST' and req.FILES['file']:
-        file = req.FILES['file']
-        file_name = file.name
-        if file_name.endswith('.csv'):
-            csvToDB(file)
-        else:
-            current_directory = os.path.dirname(__file__)
-            file_path = os.path.join(current_directory, f'./mlsql/data/{file_name}')
-            # Open the file and write the uploaded content to it
+    for key in req.FILES.keys():
+        print("Key:", key)
+    if req.method == 'POST':
+        current_directory = os.path.dirname(__file__)
+        if 'file' in req.FILES:
+            print("in file")
+            file = req.FILES['file']
+            file_name = file.name
+            file_path = os.path.join(current_directory, f'./mlsql/data/files/{file_name}')
+            if file_name.endswith('.csv'):
+                print("hi ")
+                csvToDB(file)
+            else:
+                with open(file_path, 'wb+') as destination:
+                    for chunk in file.chunks():
+                        destination.write(chunk)
+        if 'test' in req.FILES:
+            print("in test")
+            file = req.FILES['test']
+            file_name = file.name
+            file_path = os.path.join(current_directory, f'./mlsql/data/files/{file_name}')
             with open(file_path, 'wb+') as destination:
                 for chunk in file.chunks():
                     destination.write(chunk)
-
+        
     data = req.POST.get('input')  # json.loads(req.body)
     data = data.strip()
     data = data.split(';')
-    # print(data)
+    print(data)
     responses = {}  
     for index, cmd in enumerate(data):
         if cmd != '':

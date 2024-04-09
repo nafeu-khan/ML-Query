@@ -455,6 +455,15 @@
         "documentation": {}
     },
     {
+        "label": "category_encoders",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "category_encoders",
+        "description": "category_encoders",
+        "detail": "category_encoders",
+        "documentation": {}
+    },
+    {
         "label": "pickle",
         "kind": 6,
         "isExtraImport": true,
@@ -598,6 +607,54 @@
         "importPath": "seaborn",
         "description": "seaborn",
         "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "plot",
+        "importPath": "sympy",
+        "description": "sympy",
+        "isExtraImport": true,
+        "detail": "sympy",
+        "documentation": {}
+    },
+    {
+        "label": "plot",
+        "importPath": "sympy",
+        "description": "sympy",
+        "isExtraImport": true,
+        "detail": "sympy",
+        "documentation": {}
+    },
+    {
+        "label": "TPOTRegressor",
+        "importPath": "tpot",
+        "description": "tpot",
+        "isExtraImport": true,
+        "detail": "tpot",
+        "documentation": {}
+    },
+    {
+        "label": "TPOTClassifier",
+        "importPath": "tpot",
+        "description": "tpot",
+        "isExtraImport": true,
+        "detail": "tpot",
+        "documentation": {}
+    },
+    {
+        "label": "TPOTRegressor",
+        "importPath": "tpot",
+        "description": "tpot",
+        "isExtraImport": true,
+        "detail": "tpot",
+        "documentation": {}
+    },
+    {
+        "label": "TPOTClassifier",
+        "importPath": "tpot",
+        "description": "tpot",
+        "isExtraImport": true,
+        "detail": "tpot",
         "documentation": {}
     },
     {
@@ -1072,16 +1129,7 @@
         "kind": 2,
         "importPath": "server.backend_app.mlsql.parser.operation.construct",
         "description": "server.backend_app.mlsql.parser.operation.construct",
-        "peekOfCode": "def select_algorithm(operation_type, algorithm_name='default', **kwargs):\n    prediction_algorithms = {\n        \"LR\": LinearRegression(),\n        \"RF\": RandomForestRegressor(),\n        \"SVR\": SVR(),\n        \"KNN\": KNeighborsRegressor(),\n        \"GB\": GradientBoostingRegressor(),\n        \"default\": RandomForestRegressor()\n    }\n    classification_algorithms = {",
-        "detail": "server.backend_app.mlsql.parser.operation.construct",
-        "documentation": {}
-    },
-    {
-        "label": "display_results",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.operation.construct",
-        "description": "server.backend_app.mlsql.parser.operation.construct",
-        "peekOfCode": "def display_results(operation_type, y_test=None, y_pred=None, model=None, features=None, df=None):\n    if operation_type.upper() == \"PREDICTION\":\n        plt.figure(figsize=(10, 6))\n        plt.scatter(y_test, y_pred, alpha=0.6)\n        plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--', lw=4)\n        plt.xlabel('Measured')\n        plt.ylabel('Predicted')\n        plt.title('Actual vs Predicted Values')\n        # plt.show()\n    elif operation_type.upper() == \"CLASSIFICATION\":",
+        "peekOfCode": "def select_algorithm(operation_type, algorithm_name='default', **kwargs):\n    print(algorithm_name)\n    if algorithm_name == 'default':\n        if operation_type.upper() == \"PREDICTION\":\n            return TPOTRegressor(generations=5, population_size=20, verbosity=2)\n        elif operation_type.upper() == \"CLASSIFICATION\":\n            return TPOTClassifier(generations=5, population_size=20, verbosity=2)\n    else:\n        prediction_algorithms = {\n            \"LR\": LinearRegression(),",
         "detail": "server.backend_app.mlsql.parser.operation.construct",
         "documentation": {}
     },
@@ -1090,7 +1138,7 @@
         "kind": 2,
         "importPath": "server.backend_app.mlsql.parser.operation.construct",
         "description": "server.backend_app.mlsql.parser.operation.construct",
-        "peekOfCode": "def construct(command):\n    '''\n    CONSTRUCT ModelName AS SUPERVISED FOR CLUSTERING USING KMeans WITH CLASS 5 TEST ON M FROM Boston;\n    '''\n    try:\n        command_parts = command.split(\" \")\n        operation_types = [\"PREDICTION\", \"CLASSIFICATION\", \"CLUSTERING\"]\n        operation_type = next((word for word in operation_types if word in command), \"PREDICTION\") ###\n        dataset_train_name = command_parts[command_parts.index(\"FROM\") + 1]\n        # features_start_index = command_parts.index(\"FEATURES\") + 1",
+        "peekOfCode": "def construct(command):\n    '''  \n        CONSTRUCT ModelName AS SUPERVISED  ALGORITHM KMeans OF CLUSTERING WITH CLASS 5 FROM Boston;\n        CONSTRUCT ModelName AS SUPERVISED FOR medv FEATURES age,rad ALGORITHM LR OF PREDICTION TEST ON .3 FROM Boston;\n    '''\n    command_parts = command.split()\n    operation_types = [\"PREDICTION\", \"CLASSIFICATION\", \"CLUSTERING\"]\n    operation_type = command_parts[command_parts.index(\"OF\")+ 1]\n    dataset_train_name = command_parts[command_parts.index(\"FROM\") + 1].split(';')[0]\n    model_name=command_parts[command_parts.index(\"CONSTRUCT\") + 1]",
         "detail": "server.backend_app.mlsql.parser.operation.construct",
         "documentation": {}
     },
@@ -1099,7 +1147,7 @@
         "kind": 2,
         "importPath": "server.backend_app.mlsql.parser.operation.Generate",
         "description": "server.backend_app.mlsql.parser.operation.Generate",
-        "peekOfCode": "def select_algorithm(operation_type, algorithm_name='default', **kwargs):\n    prediction_algorithms = {\n        \"LR\": LinearRegression(),\n        \"RF\": RandomForestRegressor(),\n        \"SVR\": SVR(),\n        \"KNN\": KNeighborsRegressor(),\n        \"GB\": GradientBoostingRegressor(),\n        \"default\": RandomForestRegressor()\n    }\n    classification_algorithms = {",
+        "peekOfCode": "def select_algorithm(operation_type, algorithm_name='default', **kwargs):\n    print(algorithm_name)\n    if algorithm_name == 'default':\n        if operation_type.upper() == \"PREDICTION\":\n            return TPOTRegressor(generations=5, population_size=20, verbosity=2)\n        elif operation_type.upper() == \"CLASSIFICATION\":\n            return TPOTClassifier(generations=5, population_size=20, verbosity=2)\n    else:\n        prediction_algorithms = {\n            \"LR\": LinearRegression(),",
         "detail": "server.backend_app.mlsql.parser.operation.Generate",
         "documentation": {}
     },
@@ -1108,7 +1156,7 @@
         "kind": 2,
         "importPath": "server.backend_app.mlsql.parser.operation.Generate",
         "description": "server.backend_app.mlsql.parser.operation.Generate",
-        "peekOfCode": "def display_results(operation_type, y_test=None, y_pred=None, model=None, features=None, df=None):\n    if operation_type.upper() == \"PREDICTION\":\n        plt.figure(figsize=(10, 6))\n        plt.scatter(y_test, y_pred, alpha=0.6)\n        plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--', lw=4)\n        plt.xlabel('Measured')\n        plt.ylabel('Predicted')\n        plt.title('Actual vs Predicted Values')\n        # plt.show()\n    elif operation_type.upper() == \"CLASSIFICATION\":",
+        "peekOfCode": "def display_results(operation_type, y_test=None, y_pred=None, model=None, features=None, df=None):\n    if operation_type.upper() == \"PREDICTION\":\n        plt.figure(figsize=(10, 6))\n        plt.scatter(y_test, y_pred, alpha=0.6)\n        plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--', lw=4)\n        plt.xlabel('Measured')\n        plt.ylabel('Predicted')\n        plt.title('Actual vs Predicted Values')\n    elif operation_type.upper() == \"CLASSIFICATION\":\n        cm = confusion_matrix(y_test, y_pred)",
         "detail": "server.backend_app.mlsql.parser.operation.Generate",
         "documentation": {}
     },
@@ -1117,7 +1165,7 @@
         "kind": 2,
         "importPath": "server.backend_app.mlsql.parser.operation.Generate",
         "description": "server.backend_app.mlsql.parser.operation.Generate",
-        "peekOfCode": "def generate(command):\n    '''GENERATE DISPLAY OF PREDICTION MonthlySales ALGORITHM GB WITH ACCURACY 100 LABEL ProductID FEATURES Age,Price,StockLevel FROM retail OVER retailTestData'''\n    command_parts = command.split(\" \")\n    print(command_parts)\n    try:\n        operation_types = [\"PREDICTION\", \"CLASSIFICATION\", \"CLUSTERING\"]\n        operation_type = next((word for word in operation_types if word in command), \"PREDICTION\") ###\n        dataset_train_name = command_parts[command_parts.index(\"FROM\") + 1].split(';')[0]\n        features=command_parts[command_parts.index(\"FEATURES\") + 1].split(',')\n        algorithm_name = command_parts[command_parts.index(\"ALGORITHM\")+ 1] if \"ALGORITHM\" in command_parts else None  ####",
+        "peekOfCode": "def generate(command):\n    '''GENERATE DISPLAY OF PREDICTION MonthlySales ALGORITHM GB WITH ACCURACY 100 LABEL ProductID FEATURES Age,Price,StockLevel FROM retail OVER retailTestData'''\n    command_parts = command.split(\" \")\n    try:\n        operation_types = [\"PREDICTION\", \"CLASSIFICATION\", \"CLUSTERING\"]\n        operation_type = next((word for word in operation_types if word in command), \"PREDICTION\") ###\n        dataset_train_name = command_parts[command_parts.index(\"FROM\") + 1].split(';')[0]\n        features=command_parts[command_parts.index(\"FEATURES\") + 1].split(',')\n        algorithm_name = command_parts[command_parts.index(\"ALGORITHM\")+ 1] if \"ALGORITHM\" in command_parts else None  ####\n    except:",
         "detail": "server.backend_app.mlsql.parser.operation.Generate",
         "documentation": {}
     },
@@ -1774,7 +1822,7 @@
         "kind": 2,
         "importPath": "server.backend_app.mlsql.test.csvToDB",
         "description": "server.backend_app.mlsql.test.csvToDB",
-        "peekOfCode": "def csvToDB(csv_file):\n    df = pd.read_csv(csv_file)\n    file_name,_=os.path.splitext(csv_file.name)\n    current_directory = os.path.dirname(__file__)\n    file_location=os.path.join(current_directory,f'../data/{file_name}.db')\n    conn = sqlite3.connect(file_location)\n    # Write the DataFrame to a SQLite table\n    df.to_sql(file_name, conn, index=False, if_exists='replace')\n    # Commit changes and close the connection\n    conn.commit()",
+        "peekOfCode": "def csvToDB(csv_file):\n    df = pd.read_csv(csv_file)\n    file_name,_=os.path.splitext(csv_file.name)\n    current_directory = os.path.dirname(__file__)\n    file_location=os.path.join(current_directory,f'../data/files/{file_name}.db')\n    conn = sqlite3.connect(file_location)\n    df.to_sql(file_name, conn, index=False, if_exists='replace')\n    conn.commit()\n    conn.close()\n    print(\"CSV dataset successfully converted to SQLite database.\")",
         "detail": "server.backend_app.mlsql.test.csvToDB",
         "documentation": {}
     },
@@ -1783,7 +1831,7 @@
         "kind": 2,
         "importPath": "server.backend_app.views",
         "description": "server.backend_app.views",
-        "peekOfCode": "def test_view(req):\n    if req.method == 'POST' and req.FILES['file']:\n        file = req.FILES['file']\n        file_name = file.name\n        if file_name.endswith('.csv'):\n            csvToDB(file)\n        else:\n            current_directory = os.path.dirname(__file__)\n            file_path = os.path.join(current_directory, f'./mlsql/data/{file_name}')\n            # Open the file and write the uploaded content to it",
+        "peekOfCode": "def test_view(req):\n    for key in req.FILES.keys():\n        print(\"Key:\", key)\n    if req.method == 'POST':\n        current_directory = os.path.dirname(__file__)\n        if 'file' in req.FILES:\n            print(\"in file\")\n            file = req.FILES['file']\n            file_name = file.name\n            file_path = os.path.join(current_directory, f'./mlsql/data/files/{file_name}')",
         "detail": "server.backend_app.views",
         "documentation": {}
     },
@@ -1909,7 +1957,7 @@
         "kind": 5,
         "importPath": "server.dl4ml.settings",
         "description": "server.dl4ml.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nFILE_UPLOAD_HANDLERS = [",
         "detail": "server.dl4ml.settings",
         "documentation": {}
     },
@@ -1918,7 +1966,7 @@
         "kind": 5,
         "importPath": "server.dl4ml.settings",
         "description": "server.dl4ml.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nFILE_UPLOAD_HANDLERS = [\n    'django.core.files.uploadhandler.MemoryFileUploadHandler',  # Handle file uploads in memory",
         "detail": "server.dl4ml.settings",
         "documentation": {}
     },
@@ -1927,7 +1975,7 @@
         "kind": 5,
         "importPath": "server.dl4ml.settings",
         "description": "server.dl4ml.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nFILE_UPLOAD_HANDLERS = [\n    'django.core.files.uploadhandler.MemoryFileUploadHandler',  # Handle file uploads in memory\n    'django.core.files.uploadhandler.TemporaryFileUploadHandler',  # Handle file uploads using temporary files",
         "detail": "server.dl4ml.settings",
         "documentation": {}
     },
@@ -1936,7 +1984,7 @@
         "kind": 5,
         "importPath": "server.dl4ml.settings",
         "description": "server.dl4ml.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nFILE_UPLOAD_HANDLERS = [\n    'django.core.files.uploadhandler.MemoryFileUploadHandler',  # Handle file uploads in memory\n    'django.core.files.uploadhandler.TemporaryFileUploadHandler',  # Handle file uploads using temporary files\n]",
         "detail": "server.dl4ml.settings",
         "documentation": {}
     },
@@ -1945,7 +1993,16 @@
         "kind": 5,
         "importPath": "server.dl4ml.settings",
         "description": "server.dl4ml.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nFILE_UPLOAD_HANDLERS = [\n    'django.core.files.uploadhandler.MemoryFileUploadHandler',  # Handle file uploads in memory\n    'django.core.files.uploadhandler.TemporaryFileUploadHandler',  # Handle file uploads using temporary files\n]\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nFILE_UPLOAD_MAX_MEMORY_SIZE = 90242880",
+        "detail": "server.dl4ml.settings",
+        "documentation": {}
+    },
+    {
+        "label": "FILE_UPLOAD_HANDLERS",
+        "kind": 5,
+        "importPath": "server.dl4ml.settings",
+        "description": "server.dl4ml.settings",
+        "peekOfCode": "FILE_UPLOAD_HANDLERS = [\n    'django.core.files.uploadhandler.MemoryFileUploadHandler',  # Handle file uploads in memory\n    'django.core.files.uploadhandler.TemporaryFileUploadHandler',  # Handle file uploads using temporary files\n]\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nFILE_UPLOAD_MAX_MEMORY_SIZE = 90242880",
         "detail": "server.dl4ml.settings",
         "documentation": {}
     },
@@ -1954,7 +2011,16 @@
         "kind": 5,
         "importPath": "server.dl4ml.settings",
         "description": "server.dl4ml.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nFILE_UPLOAD_MAX_MEMORY_SIZE = 90242880",
+        "detail": "server.dl4ml.settings",
+        "documentation": {}
+    },
+    {
+        "label": "FILE_UPLOAD_MAX_MEMORY_SIZE",
+        "kind": 5,
+        "importPath": "server.dl4ml.settings",
+        "description": "server.dl4ml.settings",
+        "peekOfCode": "FILE_UPLOAD_MAX_MEMORY_SIZE = 90242880",
         "detail": "server.dl4ml.settings",
         "documentation": {}
     },
