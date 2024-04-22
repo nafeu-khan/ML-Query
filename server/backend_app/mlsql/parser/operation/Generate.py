@@ -234,7 +234,7 @@ def generate(command):
         if operation_type.upper() == "CLASSIFICATION" and y_test is not None:
             ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else 0
             accuracy = accuracy_score(y_test, y_pred)*100
-            response['text']+=f"Accuracy is {accuracy}"
+            response['text']+=f"Accuracy is {accuracy} \n"
             # print(response['text'])
             if accuracy < float(ex_ac):
                 response['text']=f"Accuracy is less than {accuracy}. "
@@ -250,7 +250,7 @@ def generate(command):
         elif operation_type.upper() == "PREDICTION" and y_test is not None:
             ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else 0
             accuracy = r2_score(y_test, y_pred)*100
-            response['text']+=f"R-squared is  {accuracy}"
+            response['text']+=f"R-squared is  {accuracy} \n"
             print("R-squared Score:", accuracy)
             if accuracy < float(ex_ac):
                 response['text']=f"R-squared_score is less than  {accuracy}"
