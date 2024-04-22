@@ -1,5 +1,6 @@
 import base64
 import io
+import json
 import sqlite3
 import uuid
 from altair import X2Datum
@@ -21,13 +22,16 @@ from sympy import plot
 import dill
 from tpot import TPOTRegressor, TPOTClassifier
 
-def select_algorithm(operation_type, algorithm_name='default', **kwargs):
-    print(algorithm_name)
-    if algorithm_name == 'default':
+def select_algorithm(operation_type, algorithm_name='AUTO_ML', **kwargs):
+    # print(algorithm_name)
+    if algorithm_name == 'AUTO_ML':
         if operation_type.upper() == "PREDICTION":
-            return TPOTRegressor(generations=5, population_size=20, verbosity=2)
+            tpot_regressor = TPOTRegressor(generations=2, population_size=20, verbosity=2)
+            return tpot_regressor
         elif operation_type.upper() == "CLASSIFICATION":
-            return TPOTClassifier(generations=5, population_size=20, verbosity=2)
+            tpot_classifier = TPOTClassifier(generations=5, population_size=20, verbosity=2)
+            return tpot_classifier
+
     else:
         prediction_algorithms = {
             "LR": LinearRegression(),
@@ -54,15 +58,16 @@ def select_algorithm(operation_type, algorithm_name='default', **kwargs):
             "CLUSTERING": clustering_algorithms
         }
         selected_algorithms = algorithms.get(operation_type.upper(), prediction_algorithms)
+        # print(selected_algorithms)
         algo= selected_algorithms.get(algorithm_name.upper())
-        print(algo)
+        # print(algo)
         return algo
 
 def display_results(operation_type, y_test=None, y_pred=None, model=None, features=None, df=None):
     if operation_type.upper() == "PREDICTION":
         plt.figure(figsize=(10, 6))
-        plt.scatter(y_test, y_pred, alpha=0.6)
-        plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--', lw=4)
+        plt.scatter(y_test, y_pred,alpha=0.6)
+        plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k-o', lw=4)
         plt.xlabel('Measured')
         plt.ylabel('Predicted')
         plt.title('Actual vs Predicted Values')
@@ -84,14 +89,16 @@ def display_results(operation_type, y_test=None, y_pred=None, model=None, featur
                     
     buffer = io.BytesIO()
     plt.savefig(buffer, format='png')
+    url = os.path.join(os.path.dirname(__file__), f"../graph/graph_.png")
+    plt.savefig(url, format='png')
     buffer.seek(0)
     plot_data = base64.b64encode(buffer.getvalue()).decode('utf-8')
     plt.close() 
     return plot_data
 
-def generate(command):
+def generate(command):  
     '''GENERATE DISPLAY OF PREDICTION MonthlySales ALGORITHM GB WITH ACCURACY 100 LABEL ProductID FEATURES Age,Price,StockLevel FROM retail OVER retailTestData'''
-    command_parts = command.split(" ")
+    command_parts = [part for part in command.split(" ") if part.strip()]
     try:
         operation_types = ["PREDICTION", "CLASSIFICATION", "CLUSTERING"]
         operation_type = next((word for word in operation_types if word in command), "PREDICTION") ###
@@ -100,7 +107,7 @@ def generate(command):
         algorithm_name = command_parts[command_parts.index("ALGORITHM")+ 1] if "ALGORITHM" in command_parts else None  ####
     except:
         pass
-    print(command_parts)
+    # print(command_parts)
     # df = pd.read_csv(dataset_train_name)
     url = os.path.join(os.path.dirname(__file__), f"../../data/files/{dataset_train_name}.db")
     conn = sqlite3.connect(url)
@@ -109,7 +116,7 @@ def generate(command):
     X = df[features]
     y = None
     global model,accuracy,label_name,response
-    response={}
+    response={'text':'','graph':'','table':''}
     model=None 
     accuracy = None
     if operation_type !=  "CLUSTERING":
@@ -119,43 +126,72 @@ def generate(command):
                 target = command_parts[command_parts.index("PREDICTION") + 1]
             y = df[target]
     if "OVER" in command:
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-        url = os.path.join(os.path.dirname(__file__), f"../../data/{command_parts[command_parts.index("OVER") + 1]}.csv")
+        url = os.path.join(os.path.dirname(__file__), f"../../data/{command_parts[command_parts.index('OVER') + 1]}.csv")
         df = pd.read_csv(url)
         if "USING MODEL" in command.upper():
+            model_name=command_parts[command_parts.index("MODEL") + 1] if "MODEL" in command_parts  else "iris_knn"
             url = os.path.join(os.path.dirname(__file__), f"../model/{model_name}.pkl")
-            with open(url, 'rb') as file:
-                model= pickle.load(file)
+            try:
+                with open(url, 'rb') as file:
+                    model= pickle.load(file)
+            except:
+                response["text"]=f"Model: [{model_name}] Not found"
+                return response
         else:
-            model = select_algorithm(operation_type, algorithm_name)
+            test_s= float(command_parts[command_parts.index("TEST") + 2]) if "TEST" in command_parts  else 20
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= test_s/100, random_state=42)
+            # print(operation_type,algorithm_name)
+            model = select_algorithm(operation_type, algorithm_name.upper())
+            # print(model)
             model.fit(X_train, y_train)
         
         X=df[features]
         y_test=df[target]
         y_pred = model.predict(df[features])
+        print(y_pred)
         output_file = command_parts[command_parts.index("OVER") + 1] + "_predictions.csv"
         if y is not None:
             df["prediction"] = y_pred
-        # df.to_csv(output_file, index=False)
-        print(df)
-        response["table"]=df.to_dict(orient="records")
+        if "LABEL" in command_parts:
+            label=command_parts[command_parts.index("LABEL") + 1]
+            df.insert(0, label, range(1,len(df)+1))
+        response['table']=df.to_dict(orient="records")
+        url = os.path.join(os.path.dirname(__file__), f"../table/table_.csv")
+        df.to_csv(url, index=False)
+        if operation_type.upper() == "CLASSIFICATION" and y_test is not None:
+            # ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else 0
+            accuracy = accuracy_score(y_test, y_pred)*100
+            response['text']+=f"Accuracy is {accuracy}"
+        elif operation_type.upper() == "PREDICTION" and y_test is not None:
+            # ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else 0
+            accuracy = r2_score(y_test, y_pred)*100
+            response['text']+=f"r2_score is  {accuracy}"
         print(f"Predictions saved to {output_file}")
     elif "USING MODEL" in command.upper() and y is not None:
         '''GENERATE DISPLAY OF CLASSIFICATION Species USING MODEL iris_knn  WITH ACCURACY 10 LABEL ProductID FEATURES SepalLengthCm SepalWidthCm FROM Iris ;'''
         model_name=command_parts[command_parts.index("MODEL") + 1] if "MODEL" in command_parts  else "iris_knn"
-        print(model_name)
-        test_s= int(command_parts.index("TEST") + 2) if "TEST" in command_parts  else 0.2
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= test_s, random_state=42)
+        test_s= float(command_parts[command_parts.index("TEST") + 2]) if "TEST" in command_parts  else 20
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= test_s/100, random_state=42)
         url = os.path.join(os.path.dirname(__file__), f"../model/{model_name}.pkl")
-        with open(url, 'rb') as file:
-            model= pickle.load(file)
+        try:
+            with open(url, 'rb') as file:
+                model= pickle.load(file)
+        except:
+            response["text"]=f"Model [{model_name}] Not found"
+            return response
         y_pred = model.predict(X_test)
         y_pred_df = pd.DataFrame(y_pred, index=y_test.index, columns=["Predicted"])
-        df_combined = pd.concat([X,y_test, y_pred_df], axis=1)
+        # print(X_test,X_test.shape)
+        # print(y_pred,y_pred.shape)
+        df_combined = pd.concat([X_test,y_test,y_pred_df], axis=1)
+        # print(df_combined)
         if "LABEL" in command_parts:
             label=command_parts[command_parts.index("LABEL") + 1]
             df_combined.insert(0, label, range(1,len(df_combined)+1))
-        response['table']= pd.DataFrame(df_combined).to_dict(orient="records")
+        df_combined=pd.DataFrame(df_combined)
+        response['table']= df_combined.to_dict(orient="records")
+        url = os.path.join(os.path.dirname(__file__), f"../table/table_.csv")
+        df_combined.to_csv(url, index=False)
         ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else 0
         if operation_type.upper() == "CLASSIFICATION" and y_test is not None:
             accuracy = accuracy_score(y_test, y_pred)*100
@@ -165,7 +201,7 @@ def generate(command):
             response['text']=f"accuracy is {accuracy}"
             print("Accuracy:", accuracy)
         elif operation_type.upper() == "PREDICTION" and y_test is not None:
-            accuracy = r2_score(y_test, y_pred)
+            accuracy = r2_score(y_test, y_pred)*100
             print("R2 Score:", accuracy)
             if accuracy < float(ex_ac):
                 response['text']=f"r2_score is less than {accuracy}"
@@ -175,39 +211,59 @@ def generate(command):
             print("r2_score:", accuracy)
         # print(response)
     elif y is not None and operation_type !="CLUSTERING":
-        test_s= int(command_parts.index("TEST") + 2) if "TEST" in command_parts  else 0.2
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= test_s, random_state=42)
-        model = select_algorithm(operation_type, algorithm_name)
+        test_s= float(command_parts[command_parts.index("TEST") + 2]) if "TEST" in command_parts  else 20
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= test_s/100, random_state=42)
+        if not algorithm_name:   algorithm_name='AUTO_ML'
+        model = select_algorithm(operation_type, algorithm_name.upper())
+        # print(model)
         model.fit(X_train, y_train)
+        if "TPOT" in str(model): 
+            # print(model,"======")
+            # print(model.fitted_pipeline_.steps,"*********")
+            response['text']+=f"{json.dumps( str(model.fitted_pipeline_.steps[0]))}\n"
+            # print(response["text"])
         y_pred = model.predict(X_test)
         y_pred_df = pd.DataFrame(y_pred, index=y_test.index, columns=["Predicted"])
         df_combined = pd.concat([X_test,y_test, y_pred_df], axis=1)
-        url = os.path.join(os.path.dirname(__file__), f"../table/table_.csv")
-        df_combined.to_csv(url, index=False)
         if "LABEL" in command_parts:
             label=command_parts[command_parts.index("LABEL") + 1]
             df_combined.insert(0, label, range(1,len(df_combined)+1))
         response['table']=df_combined.to_dict(orient="records")
+        url = os.path.join(os.path.dirname(__file__), f"../table/table_.csv")
+        df_combined.to_csv(url, index=False)
         if operation_type.upper() == "CLASSIFICATION" and y_test is not None:
             ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else 0
             accuracy = accuracy_score(y_test, y_pred)*100
-            response['text']=f"Accuracy is {accuracy}"
-            print(response['text'])
+            response['text']+=f"Accuracy is {accuracy}"
+            # print(response['text'])
             if accuracy < float(ex_ac):
-                response['text']=f"Accuracy is less than {accuracy}"
-                # url = os.path.join(os.path.dirname(__file__), f"../model/{algorithm_name}_{dataset_train_name}.pkl")
-                # with open(url, 'wb') as file:
-                #     pickle.dump(model, file)
-                return response
-            
+                response['text']=f"Accuracy is less than {accuracy}. "
+                if algorithm_name!="AUTO_ML":
+                    response['text']+=f" Trying another model "
+                    model = select_algorithm(operation_type, "AUTO_ML")
+                    model.fit(X_train, y_train)
+                    response['text']+=f"{json.dumps( str(model.fitted_pipeline_.steps[0]))} \n"
+                    y_pred = model.predict(X_test)
+                    y_pred_df = pd.DataFrame(y_pred, index=y_test.index, columns=["Predicted"])
+                    df_combined = pd.concat([X_test,y_test, y_pred_df], axis=1)
+                    response['table']=df_combined.to_dict(orient="records")
         elif operation_type.upper() == "PREDICTION" and y_test is not None:
             ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else 0
             accuracy = r2_score(y_test, y_pred)*100
-            response['text']=f"r2_score is  {accuracy}"
-            print("R^2 Score:", accuracy)
+            response['text']+=f"R-squared is  {accuracy}"
+            print("R-squared Score:", accuracy)
             if accuracy < float(ex_ac):
-                response['text']=f"r2_score is less than  {accuracy}"
-                return response
+                response['text']=f"R-squared_score is less than  {accuracy}"
+                if algorithm_name!="AUTO_ML":
+                    response['text']+=f"Trying another model"
+                    model = select_algorithm(operation_type, "AUTO_ML")
+                    model.fit(X_train, y_train)
+                    response['text']+=f"{json.dumps( str(model.fitted_pipeline_.steps[0]))}\n"
+                    y_pred = model.predict(X_test)
+                    y_pred_df = pd.DataFrame(y_pred, index=y_test.index, columns=["Predicted"])
+                    df_combined = pd.concat([X_test,y_test, y_pred_df], axis=1)
+                    response['table']=df_combined.to_dict(orient="records")
+                # return response
                 # url = os.path.join(os.path.dirname(__file__), f"../model/{model_name}.pkl")
             #     with open(url, 'wb') as file:
             #         pickle.dump(model, file)
@@ -219,7 +275,7 @@ def generate(command):
         n_cluster =command_parts[command_parts.index("CLUSTER")+2] if "CLUSTER"  in command_parts else 3
         if algorithm_name == 'default':
             algorithm_name = KMeans
-        model = select_algorithm(operation_type, algorithm_name,n_clusters=n_cluster)
+        model = select_algorithm(operation_type, algorithm_name.upper(),n_clusters=n_cluster)
         X = pd.DataFrame(X.select_dtypes(include=[np.number]))
         model.fit(X)
         y_pred = model.labels_
@@ -227,17 +283,18 @@ def generate(command):
         # y_pred_df = pd.DataFrame(y_pred, index=y_test.index, columns=["Predicted"])
         df['Class'] = y_pred.tolist()
         df=pd.DataFrame(df)
-        df=df.to_dict(orient='records')
-        response['table']=df
-    print(command_parts)
+        response['table']=df.to_dict(orient='records')
+        url = os.path.join(os.path.dirname(__file__), f"../table/table_.csv")
+        df.to_csv(url, index=False)
+    # print(command_parts)
 
     if "DISPLAY" in command_parts:
-        print("graph=======")
         print(features,len(features))
         response['graph']=display_results(operation_type, y_test if y is not None else None, y_pred, model, features, df)
         # print(operation_type, y_test if y is not None else None, y_pred, model, features, df)
-        # print(response['graph'])
-    print(response)
+        if (response['graph']):
+            print("graph generatd")
+    # print(response)
     return response
 
 

@@ -10,10 +10,7 @@ function Home() {
           Machine Learning Using Declarative Language
         </h1>
         <p className="font-secondary max-w-xl mx-auto text-gray-700 ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-          optio dolorem temporibus quia quod fugiat reprehenderit dignissimos
-          veniam error quibusdam voluptatibus iste sapiente odio porro,
-          molestias possimus aperiam placeat tempora.
+          A Database Management Tools using ML
         </p>
         <img src="hero.gif" alt="" className="w-[500px] mx-auto" />
       </div>

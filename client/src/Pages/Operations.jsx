@@ -51,18 +51,21 @@ function Operations() {
     try {
       const formData = new FormData();
       formData.append("input", inputs);
-      if(fileList && fileList[0] && fileList[0].originFileObj) formData.append("file", fileList[0].originFileObj);
-      if(testFileList && testFileList[0] && testFileList[0].originFileObj) formData.append("test", testFileList[0].originFileObj);
-
-
+      if (fileList && fileList[0] && fileList[0].originFileObj)
+        formData.append("file", fileList[0].originFileObj);
+      if (testFileList && testFileList[0] && testFileList[0].originFileObj)
+        formData.append("test", testFileList[0].originFileObj);
 
       const res = await fetch("http://localhost:8000/test_url/", {
         method: "POST",
         body: formData,
       });
       let d = await res.json();
-      d = JSON.parse(d);
+      d = d.replaceAll("NaN", "null");
+
       console.log(d);
+      d = JSON.parse(d);
+
       setData((prev) => [...prev, d]);
     } catch (error) {
       console.log(error);
@@ -74,41 +77,10 @@ function Operations() {
       className={`mt-10 ${data.length > 0 ? "w-full" : "max-w-2xl"} mx-auto`}
     >
       <Toaster />
-      <div className="text-center">
-        <Radio.Group
-          size="large"
-          value={type}
-          onChange={(e) => setType(e.target.value)}
-          className="font-semibold"
-          buttonStyle="solid"
-        >
-          <Radio.Button value={"text"} className=" !font-secondary">
-            <div className="flex items-center gap-2">
-              <span className="">Use Text</span>{" "}
-              <span>
-                <BiText size={22} />
-              </span>
-            </div>
-          </Radio.Button>
-          <Radio.Button value={"audio"} className=" !font-secondary">
-            <div className="flex items-center gap-2">
-              <span>Use Audio</span>{" "}
-              <span>
-                <FaRegFileAudio size={22} />
-              </span>
-            </div>
-          </Radio.Button>
-        </Radio.Group>
-      </div>
-      {type === "audio" && (
-        <AudioInput
-          audioTranscript={audioTranscript}
-          setAudioTranscript={setAudioTranscript}
-        />
-      )}
+     
+      
       <div
-        className={`grid ${
-          data.length > 0 ? "grid-cols-2 gap-8" : "grid-cols-1"
+        className={`grid grid-cols-2 gap-8" : "grid-cols-1"
         }  w-full`}
       >
         <div className="mt-2  flex flex-col  bg-white z-50 py-4 ">

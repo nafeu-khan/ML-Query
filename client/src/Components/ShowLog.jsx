@@ -6,7 +6,7 @@ function ShowLog({ data = [], setData }) {
   return (
     <>
       <h1 className=" font-secondary flex justify-between text-2xl font-semibold ">
-        <span>Execution Log</span>
+        <span>Output</span>
         {data.length > 0 && (
           <button
             className=" text-lg bg-blue-500 w-20 py-1 rounded text-white font-semibold"

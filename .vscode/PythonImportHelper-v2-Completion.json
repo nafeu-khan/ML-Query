@@ -1129,7 +1129,7 @@
         "kind": 2,
         "importPath": "server.backend_app.mlsql.parser.operation.construct",
         "description": "server.backend_app.mlsql.parser.operation.construct",
-        "peekOfCode": "def select_algorithm(operation_type, algorithm_name='default', **kwargs):\n    print(algorithm_name)\n    if algorithm_name == 'default':\n        if operation_type.upper() == \"PREDICTION\":\n            return TPOTRegressor(generations=5, population_size=20, verbosity=2)\n        elif operation_type.upper() == \"CLASSIFICATION\":\n            return TPOTClassifier(generations=5, population_size=20, verbosity=2)\n    else:\n        prediction_algorithms = {\n            \"LR\": LinearRegression(),",
+        "peekOfCode": "def select_algorithm(operation_type, algorithm_name='AUTO_ML', **kwargs):\n    # print(algorithm_name)\n    if algorithm_name == 'AUTO_ML':\n        if operation_type.upper() == \"PREDICTION\":\n            tpot_regressor = TPOTRegressor(generations=5, population_size=20, verbosity=2)\n            return tpot_regressor\n        elif operation_type.upper() == \"CLASSIFICATION\":\n            tpot_classifier = TPOTClassifier(generations=5, population_size=20, verbosity=2)\n            return tpot_classifier\n    else:",
         "detail": "server.backend_app.mlsql.parser.operation.construct",
         "documentation": {}
     },
@@ -1138,8 +1138,44 @@
         "kind": 2,
         "importPath": "server.backend_app.mlsql.parser.operation.construct",
         "description": "server.backend_app.mlsql.parser.operation.construct",
-        "peekOfCode": "def construct(command):\n    '''  \n        CONSTRUCT ModelName AS SUPERVISED  ALGORITHM KMeans OF CLUSTERING WITH CLASS 5 FROM Boston;\n        CONSTRUCT ModelName AS SUPERVISED FOR medv FEATURES age,rad ALGORITHM LR OF PREDICTION TEST ON .3 FROM Boston;\n    '''\n    command_parts = command.split()\n    operation_types = [\"PREDICTION\", \"CLASSIFICATION\", \"CLUSTERING\"]\n    operation_type = command_parts[command_parts.index(\"OF\")+ 1]\n    dataset_train_name = command_parts[command_parts.index(\"FROM\") + 1].split(';')[0]\n    model_name=command_parts[command_parts.index(\"CONSTRUCT\") + 1]",
+        "peekOfCode": "def construct(command):\n    '''  \n    CONSTRUCT LR_retail AS SUPERVISED FOR PREDICTION on TARGET MonthlySales FEATURES Age,Price,StockLevel ALGORITHM LR  TEST ON .3 FROM retail;\n    '''\n    command_parts = [part for part in command.split(\" \") if part.strip()]\n    operation_types = [\"PREDICTION\", \"CLASSIFICATION\", \"CLUSTERING\"]\n    operation_type = command_parts[command_parts.index(\"FOR\")+ 1]\n    dataset_train_name = command_parts[command_parts.index(\"FROM\") + 1].split(';')[0]\n    model_name=command_parts[command_parts.index(\"CONSTRUCT\") + 1]\n    if \"ALGORITHM\" in command_parts:",
         "detail": "server.backend_app.mlsql.parser.operation.construct",
+        "documentation": {}
+    },
+    {
+        "label": "encoding",
+        "kind": 2,
+        "importPath": "server.backend_app.mlsql.parser.operation.encoding",
+        "description": "server.backend_app.mlsql.parser.operation.encoding",
+        "peekOfCode": "def encoding(file):\n    'INSPECT ONE-HOT ENCODING feature from boston'\n    data=file.get(\"file\")\n    data=pd.DataFrame(data)\n    var = file.get(\"select_column\")\n    method = file.get(\"method\")\n    add_pipeline = file.get(\"add_to_pipeline\")\n    file=file.get('data')\n    if method == \"Ordinal Encoding\":\n        return ordinal_encoding(data, var, add_pipeline,file)",
+        "detail": "server.backend_app.mlsql.parser.operation.encoding",
+        "documentation": {}
+    },
+    {
+        "label": "ordinal_encoding",
+        "kind": 2,
+        "importPath": "server.backend_app.mlsql.parser.operation.encoding",
+        "description": "server.backend_app.mlsql.parser.operation.encoding",
+        "peekOfCode": "def ordinal_encoding(data, var, add_pipeline,file):\n    from_zero = file.get(\"start_from_0\") ==True\n    inc_nan = file.get(\"include_nan\") ==True\n    asc_order = file.get(\"sort_values\")  ==True\n    # include null or no\n    unique_val = data[var].unique() if inc_nan else data[var].dropna().unique()\n    unique_val = sorted(unique_val, key=lambda val: (val is np.nan, val)) if asc_order else unique_val\n    # encoding value start from 0 or 1\n    enc_val = range(len(unique_val)) if from_zero else range(1, len(unique_val) + 1)\n    order = file.get(\"set_value_order\")",
+        "detail": "server.backend_app.mlsql.parser.operation.encoding",
+        "documentation": {}
+    },
+    {
+        "label": "onehot_encoding",
+        "kind": 2,
+        "importPath": "server.backend_app.mlsql.parser.operation.encoding",
+        "description": "server.backend_app.mlsql.parser.operation.encoding",
+        "peekOfCode": "def onehot_encoding(data, var, add_pipeline,file):\n    print(data)\n    print(var)\n    drop_first = file.get(\"drop_first\")\n    enc = encoder.Encoder(strategy=\"onehot\", column=var)\n    new_value = enc.fit_transform(data)\n    new_value = new_value.to_dict(orient=\"records\")\n    return JsonResponse(new_value, safe=False)\ndef target_encoding(data,  var, add_pipeline,file):\n    target_var = file.get(\"select_target\")",
+        "detail": "server.backend_app.mlsql.parser.operation.encoding",
+        "documentation": {}
+    },
+    {
+        "label": "target_encoding",
+        "kind": 2,
+        "importPath": "server.backend_app.mlsql.parser.operation.encoding",
+        "description": "server.backend_app.mlsql.parser.operation.encoding",
+        "peekOfCode": "def target_encoding(data,  var, add_pipeline,file):\n    target_var = file.get(\"select_target\")\n    enc = encoder.Encoder(strategy=\"target\", column=var, target_var=target_var)\n    new_value = enc.fit_transform(data)\n    new_value = new_value.to_dict(orient=\"records\")\n    return JsonResponse(new_value, safe=False)",
+        "detail": "server.backend_app.mlsql.parser.operation.encoding",
         "documentation": {}
     },
     {
@@ -1147,7 +1183,7 @@
         "kind": 2,
         "importPath": "server.backend_app.mlsql.parser.operation.Generate",
         "description": "server.backend_app.mlsql.parser.operation.Generate",
-        "peekOfCode": "def select_algorithm(operation_type, algorithm_name='default', **kwargs):\n    print(algorithm_name)\n    if algorithm_name == 'default':\n        if operation_type.upper() == \"PREDICTION\":\n            return TPOTRegressor(generations=5, population_size=20, verbosity=2)\n        elif operation_type.upper() == \"CLASSIFICATION\":\n            return TPOTClassifier(generations=5, population_size=20, verbosity=2)\n    else:\n        prediction_algorithms = {\n            \"LR\": LinearRegression(),",
+        "peekOfCode": "def select_algorithm(operation_type, algorithm_name='AUTO_ML', **kwargs):\n    # print(algorithm_name)\n    if algorithm_name == 'AUTO_ML':\n        if operation_type.upper() == \"PREDICTION\":\n            tpot_regressor = TPOTRegressor(generations=2, population_size=20, verbosity=2)\n            return tpot_regressor\n        elif operation_type.upper() == \"CLASSIFICATION\":\n            tpot_classifier = TPOTClassifier(generations=5, population_size=20, verbosity=2)\n            return tpot_classifier\n    else:",
         "detail": "server.backend_app.mlsql.parser.operation.Generate",
         "documentation": {}
     },
@@ -1156,7 +1192,7 @@
         "kind": 2,
         "importPath": "server.backend_app.mlsql.parser.operation.Generate",
         "description": "server.backend_app.mlsql.parser.operation.Generate",
-        "peekOfCode": "def display_results(operation_type, y_test=None, y_pred=None, model=None, features=None, df=None):\n    if operation_type.upper() == \"PREDICTION\":\n        plt.figure(figsize=(10, 6))\n        plt.scatter(y_test, y_pred, alpha=0.6)\n        plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--', lw=4)\n        plt.xlabel('Measured')\n        plt.ylabel('Predicted')\n        plt.title('Actual vs Predicted Values')\n    elif operation_type.upper() == \"CLASSIFICATION\":\n        cm = confusion_matrix(y_test, y_pred)",
+        "peekOfCode": "def display_results(operation_type, y_test=None, y_pred=None, model=None, features=None, df=None):\n    if operation_type.upper() == \"PREDICTION\":\n        plt.figure(figsize=(10, 6))\n        plt.scatter(y_test, y_pred,alpha=0.6)\n        plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k-o', lw=4)\n        plt.xlabel('Measured')\n        plt.ylabel('Predicted')\n        plt.title('Actual vs Predicted Values')\n    elif operation_type.upper() == \"CLASSIFICATION\":\n        cm = confusion_matrix(y_test, y_pred)",
         "detail": "server.backend_app.mlsql.parser.operation.Generate",
         "documentation": {}
     },
@@ -1165,7 +1201,7 @@
         "kind": 2,
         "importPath": "server.backend_app.mlsql.parser.operation.Generate",
         "description": "server.backend_app.mlsql.parser.operation.Generate",
-        "peekOfCode": "def generate(command):\n    '''GENERATE DISPLAY OF PREDICTION MonthlySales ALGORITHM GB WITH ACCURACY 100 LABEL ProductID FEATURES Age,Price,StockLevel FROM retail OVER retailTestData'''\n    command_parts = command.split(\" \")\n    try:\n        operation_types = [\"PREDICTION\", \"CLASSIFICATION\", \"CLUSTERING\"]\n        operation_type = next((word for word in operation_types if word in command), \"PREDICTION\") ###\n        dataset_train_name = command_parts[command_parts.index(\"FROM\") + 1].split(';')[0]\n        features=command_parts[command_parts.index(\"FEATURES\") + 1].split(',')\n        algorithm_name = command_parts[command_parts.index(\"ALGORITHM\")+ 1] if \"ALGORITHM\" in command_parts else None  ####\n    except:",
+        "peekOfCode": "def generate(command):  \n    '''GENERATE DISPLAY OF PREDICTION MonthlySales ALGORITHM GB WITH ACCURACY 100 LABEL ProductID FEATURES Age,Price,StockLevel FROM retail OVER retailTestData'''\n    command_parts = [part for part in command.split(\" \") if part.strip()]\n    try:\n        operation_types = [\"PREDICTION\", \"CLASSIFICATION\", \"CLUSTERING\"]\n        operation_type = next((word for word in operation_types if word in command), \"PREDICTION\") ###\n        dataset_train_name = command_parts[command_parts.index(\"FROM\") + 1].split(';')[0]\n        features=command_parts[command_parts.index(\"FEATURES\") + 1].split(',')\n        algorithm_name = command_parts[command_parts.index(\"ALGORITHM\")+ 1] if \"ALGORITHM\" in command_parts else None  ####\n    except:",
         "detail": "server.backend_app.mlsql.parser.operation.Generate",
         "documentation": {}
     },
