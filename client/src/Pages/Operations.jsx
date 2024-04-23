@@ -65,8 +65,9 @@ function Operations() {
 
       console.log(d);
       d = JSON.parse(d);
-
+      
       setData((prev) => [...prev, d]);
+      setQuery("");
     } catch (error) {
       console.log(error);
     }
@@ -74,16 +75,43 @@ function Operations() {
 
   return (
     <div
-      className={`mt-10 ${data.length > 0 ? "w-full" : "max-w-2xl"} mx-auto`}
+      className={`mt-10 max-w-6xl mx-auto`}
     >
       <Toaster />
-     
-      
-      <div
-        className={`grid grid-cols-2 gap-8" : "grid-cols-1"
-        }  w-full`}
-      >
-        <div className="mt-2  flex flex-col  bg-white z-50 py-4 ">
+      <div className="text-center">
+        {/* <Radio.Group
+          size="large"
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+          className="font-semibold"
+          buttonStyle="solid"
+        >
+          <Radio.Button value={"text"} className=" !font-secondary">
+            <div className="flex items-center gap-2">
+              <span className="">Use Text</span>{" "}
+              <span>
+                <BiText size={22} />
+              </span>
+            </div>
+          </Radio.Button>
+          <Radio.Button value={"audio"} className=" !font-secondary">
+            <div className="flex items-center gap-2">
+              <span>Use Audio</span>{" "}
+              <span>
+                <FaRegFileAudio size={22} />
+              </span>
+            </div>
+          </Radio.Button>
+        </Radio.Group> */}
+      </div>
+      {/* {type === "audio" && (
+        <AudioInput
+          audioTranscript={audioTranscript}
+          setAudioTranscript={setAudioTranscript}
+        />
+      )} */}
+      <div className={`grid grid-cols-2 gap-8 w-full`}>
+        <div className="mt-2 flex flex-col  bg-white z-50 py-4 ">
           <h1 className="text-left font-secondary text-2xl font-semibold mb-4 ">
             Enter your query:
           </h1>
@@ -147,11 +175,10 @@ function Operations() {
             Execute
           </button>
         </div>
-        {data.length > 0 && (
-          <div className="relative top-8">
-            <ShowLog data={data} setData={setData} />
-          </div>
-        )}
+
+        <div className="relative top-8">
+          <ShowLog data={data} setData={setData} />
+        </div>
       </div>
     </div>
   );

@@ -135,7 +135,7 @@ def generate(command):
                 with open(url, 'rb') as file:
                     model= pickle.load(file)
             except:
-                response["text"]=f"Model: [{model_name}] Not found"
+                response["text"]=f"Model: [{model_name}] Not found. "
                 return response
         else:
             test_s= float(command_parts[command_parts.index("TEST") + 2]) if "TEST" in command_parts  else 20
@@ -161,11 +161,11 @@ def generate(command):
         if operation_type.upper() == "CLASSIFICATION" and y_test is not None:
             # ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else 0
             accuracy = accuracy_score(y_test, y_pred)*100
-            response['text']+=f"Accuracy is {accuracy}"
+            response['text']+=f"Accuracy is {accuracy}. "
         elif operation_type.upper() == "PREDICTION" and y_test is not None:
             # ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else 0
             accuracy = r2_score(y_test, y_pred)*100
-            response['text']+=f"r2_score is  {accuracy}"
+            response['text']+=f"r2_score is  {accuracy}. "
         print(f"Predictions saved to {output_file}")
     elif "USING MODEL" in command.upper() and y is not None:
         '''GENERATE DISPLAY OF CLASSIFICATION Species USING MODEL iris_knn  WITH ACCURACY 10 LABEL ProductID FEATURES SepalLengthCm SepalWidthCm FROM Iris ;'''
@@ -177,7 +177,7 @@ def generate(command):
             with open(url, 'rb') as file:
                 model= pickle.load(file)
         except:
-            response["text"]=f"Model [{model_name}] Not found"
+            response["text"]=f"Model [{model_name}] Not found."
             return response
         y_pred = model.predict(X_test)
         y_pred_df = pd.DataFrame(y_pred, index=y_test.index, columns=["Predicted"])
@@ -196,9 +196,9 @@ def generate(command):
         if operation_type.upper() == "CLASSIFICATION" and y_test is not None:
             accuracy = accuracy_score(y_test, y_pred)*100
             if accuracy < float(ex_ac):
-                response['text']=f"accuracy is less than {accuracy}"
+                response['text']=f"accuracy is less than {accuracy}. "
                 return response
-            response['text']=f"accuracy is {accuracy}"
+            response['text']=f"accuracy is {accuracy}.  "
             print("Accuracy:", accuracy)
         elif operation_type.upper() == "PREDICTION" and y_test is not None:
             accuracy = r2_score(y_test, y_pred)*100
@@ -206,7 +206,7 @@ def generate(command):
             if accuracy < float(ex_ac):
                 response['text']=f"r2_score is less than {accuracy}"
                 return response
-            response['text']=f"r2_score is {accuracy}"
+            response['text']=f"r2_score is {accuracy}. "
             print(response['text'],ex_ac)   
             print("r2_score:", accuracy)
         # print(response)
@@ -220,7 +220,7 @@ def generate(command):
         if "TPOT" in str(model): 
             # print(model,"======")
             # print(model.fitted_pipeline_.steps,"*********")
-            response['text']+=f"{json.dumps( str(model.fitted_pipeline_.steps[0]))}\n"
+            response['text']+=f"{json.dumps( str(model.fitted_pipeline_.steps[0]))}.  "
             # print(response["text"])
         y_pred = model.predict(X_test)
         y_pred_df = pd.DataFrame(y_pred, index=y_test.index, columns=["Predicted"])
@@ -234,7 +234,7 @@ def generate(command):
         if operation_type.upper() == "CLASSIFICATION" and y_test is not None:
             ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else 0
             accuracy = accuracy_score(y_test, y_pred)*100
-            response['text']+=f"Accuracy is {accuracy} \n"
+            response['text']+=f"Accuracy is {accuracy}. "
             # print(response['text'])
             if accuracy < float(ex_ac):
                 response['text']=f"Accuracy is less than {accuracy}. "
@@ -242,23 +242,28 @@ def generate(command):
                     response['text']+=f" Trying another model "
                     model = select_algorithm(operation_type, "AUTO_ML")
                     model.fit(X_train, y_train)
-                    response['text']+=f"{json.dumps( str(model.fitted_pipeline_.steps[0]))} \n"
+                    response['text']+=f"{json.dumps( str(model.fitted_pipeline_.steps[0]))} . "
                     y_pred = model.predict(X_test)
                     y_pred_df = pd.DataFrame(y_pred, index=y_test.index, columns=["Predicted"])
                     df_combined = pd.concat([X_test,y_test, y_pred_df], axis=1)
                     response['table']=df_combined.to_dict(orient="records")
         elif operation_type.upper() == "PREDICTION" and y_test is not None:
-            ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else 0
+            ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else command_parts[command_parts.index("R-SQUARED") + 1] if "R-SQUARED" in command_parts else 0
+
+            # ex_ac = (command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else
+            #  command_parts[command_parts.index("R-SQUARED") + 1] if "R-SQUARED" in command_parts else 0)
+     
             accuracy = r2_score(y_test, y_pred)*100
-            response['text']+=f"R-squared is  {accuracy} \n"
+            response['text']+=f"R-squared is  {accuracy} . "
+            print (response["text"])
             print("R-squared Score:", accuracy)
             if accuracy < float(ex_ac):
-                response['text']=f"R-squared_score is less than  {accuracy}"
+                response['text']=f"R-squared_score is less than  {accuracy} . "
                 if algorithm_name!="AUTO_ML":
-                    response['text']+=f"Trying another model"
+                    response['text']+=f"Trying another model...... "
                     model = select_algorithm(operation_type, "AUTO_ML")
                     model.fit(X_train, y_train)
-                    response['text']+=f"{json.dumps( str(model.fitted_pipeline_.steps[0]))}\n"
+                    response['text']+=f"{json.dumps( str(model.fitted_pipeline_.steps[0]))} . "
                     y_pred = model.predict(X_test)
                     y_pred_df = pd.DataFrame(y_pred, index=y_test.index, columns=["Predicted"])
                     df_combined = pd.concat([X_test,y_test, y_pred_df], axis=1)
