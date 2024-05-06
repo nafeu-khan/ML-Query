@@ -67,11 +67,13 @@ function Operations() {
       d = JSON.parse(d);
       
       setData((prev) => [...prev, d]);
-      setQuery("");
+      // setQuery("");
     } catch (error) {
       console.log(error);
     }
   };
+    /* Add this CSS to your existing stylesheet or component */
+ 
 
   return (
     <div
@@ -110,7 +112,7 @@ function Operations() {
           setAudioTranscript={setAudioTranscript}
         />
       )} */}
-      <div className={`grid grid-cols-2 gap-8 w-full`}>
+      <div className={`grid grid-cols-2 gap-4 w-full`}>
         <div className="mt-2 flex flex-col  bg-white z-50 py-4 ">
           <h1 className="text-left font-secondary text-2xl font-semibold mb-4 ">
             Enter your query:
@@ -175,10 +177,10 @@ function Operations() {
             Execute
           </button>
         </div>
-
-        <div className="relative top-8">
-          <ShowLog data={data} setData={setData} />
-        </div>
+        
+          <div className="relative top-8 resize-both overflow-auto" >
+            <ShowLog data={data} setData={setData} />
+          </div>
       </div>
     </div>
   );

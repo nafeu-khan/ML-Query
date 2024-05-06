@@ -25,96 +25,21 @@
         "documentation": {}
     },
     {
-        "label": "*",
-        "importPath": "peewee",
-        "description": "peewee",
-        "isExtraImport": true,
-        "detail": "peewee",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "peewee",
-        "description": "peewee",
-        "isExtraImport": true,
-        "detail": "peewee",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "peewee",
-        "description": "peewee",
-        "isExtraImport": true,
-        "detail": "peewee",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "peewee",
-        "description": "peewee",
-        "isExtraImport": true,
-        "detail": "peewee",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "peewee",
-        "description": "peewee",
-        "isExtraImport": true,
-        "detail": "peewee",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
+        "label": "category_encoders",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "datetime",
-        "description": "datetime",
-        "detail": "datetime",
+        "importPath": "category_encoders",
+        "description": "category_encoders",
+        "detail": "category_encoders",
         "documentation": {}
     },
     {
-        "label": "logging,",
+        "label": "sqlite3",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "logging.",
-        "description": "logging.",
-        "detail": "logging.",
-        "documentation": {}
-    },
-    {
-        "label": "matplotlib",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "matplotlib",
-        "description": "matplotlib",
-        "detail": "matplotlib",
-        "documentation": {}
-    },
-    {
-        "label": "pyplot",
-        "importPath": "matplotlib",
-        "description": "matplotlib",
-        "isExtraImport": true,
-        "detail": "matplotlib",
-        "documentation": {}
-    },
-    {
-        "label": "pprint",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "pprint",
-        "description": "pprint",
-        "detail": "pprint",
-        "documentation": {}
-    },
-    {
-        "label": "base64",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "base64",
-        "description": "base64",
-        "detail": "base64",
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
         "documentation": {}
     },
     {
@@ -127,20 +52,100 @@
         "documentation": {}
     },
     {
-        "label": "io",
+        "label": "sqlalchemy",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "io",
-        "description": "io",
-        "detail": "io",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "detail": "sqlalchemy",
         "documentation": {}
     },
     {
-        "label": "BytesIO",
-        "importPath": "io",
-        "description": "io",
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
         "isExtraImport": true,
-        "detail": "io",
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
         "documentation": {}
     },
     {
@@ -153,198 +158,12 @@
         "documentation": {}
     },
     {
-        "label": "dill",
+        "label": "psycopg2",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "dill",
-        "description": "dill",
-        "detail": "dill",
-        "documentation": {}
-    },
-    {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
-        "documentation": {}
-    },
-    {
-        "label": "numpy",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "numpy",
-        "description": "numpy",
-        "detail": "numpy",
-        "documentation": {}
-    },
-    {
-        "label": "record",
-        "importPath": "numpy",
-        "description": "numpy",
-        "isExtraImport": true,
-        "detail": "numpy",
-        "documentation": {}
-    },
-    {
-        "label": "train_test_split",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "train_test_split",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "train_test_split",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "Counter",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "LinearRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LinearRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LinearRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LinearRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "median_absolute_error",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "median_absolute_error",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "accuracy_score",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "confusion_matrix",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "r2_score",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "mean_squared_error",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "accuracy_score",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "confusion_matrix",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "r2_score",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "mean_squared_error",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
+        "importPath": "psycopg2",
+        "description": "psycopg2",
+        "detail": "psycopg2",
         "documentation": {}
     },
     {
@@ -369,6 +188,23 @@
         "description": "altair",
         "isExtraImport": true,
         "detail": "altair",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "record",
+        "importPath": "numpy",
+        "description": "numpy",
+        "isExtraImport": true,
+        "detail": "numpy",
         "documentation": {}
     },
     {
@@ -437,12 +273,71 @@
         "documentation": {}
     },
     {
-        "label": "sqlite3",
+        "label": "base64",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "sqlite3",
-        "description": "sqlite3",
-        "detail": "sqlite3",
+        "importPath": "base64",
+        "description": "base64",
+        "detail": "base64",
+        "documentation": {}
+    },
+    {
+        "label": "io",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "io",
+        "description": "io",
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite3,os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3.os",
+        "description": "sqlite3.os",
+        "detail": "sqlite3.os",
+        "documentation": {}
+    },
+    {
+        "label": "OneHotEncoder",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "OrdinalEncoder",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "LabelEncoder",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "SimpleImputer",
+        "importPath": "sklearn.impute",
+        "description": "sklearn.impute",
+        "isExtraImport": true,
+        "detail": "sklearn.impute",
+        "documentation": {}
+    },
+    {
+        "label": "os,psycopg2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os.psycopg2",
+        "description": "os.psycopg2",
+        "detail": "os.psycopg2",
         "documentation": {}
     },
     {
@@ -455,21 +350,124 @@
         "documentation": {}
     },
     {
-        "label": "category_encoders",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "category_encoders",
-        "description": "category_encoders",
-        "detail": "category_encoders",
-        "documentation": {}
-    },
-    {
         "label": "pickle",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "pickle",
         "description": "pickle",
         "detail": "pickle",
+        "documentation": {}
+    },
+    {
+        "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "accuracy_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "confusion_matrix",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "r2_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "mean_squared_error",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "accuracy_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "confusion_matrix",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "r2_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "mean_squared_error",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "LinearRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "LinearRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
         "documentation": {}
     },
     {
@@ -626,6 +624,15 @@
         "documentation": {}
     },
     {
+        "label": "dill",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dill",
+        "description": "dill",
+        "detail": "dill",
+        "documentation": {}
+    },
+    {
         "label": "TPOTRegressor",
         "importPath": "tpot",
         "description": "tpot",
@@ -658,70 +665,12 @@
         "documentation": {}
     },
     {
-        "label": "ply.lex",
+        "label": "matplotlib",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "ply.lex",
-        "description": "ply.lex",
-        "detail": "ply.lex",
-        "documentation": {}
-    },
-    {
-        "label": "TOKEN",
-        "importPath": "ply.lex",
-        "description": "ply.lex",
-        "isExtraImport": true,
-        "detail": "ply.lex",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "tokens.definitions",
-        "description": "tokens.definitions",
-        "isExtraImport": true,
-        "detail": "tokens.definitions",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "tokens.data_types",
-        "description": "tokens.data_types",
-        "isExtraImport": true,
-        "detail": "tokens.data_types",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "tokens.manipulations",
-        "description": "tokens.manipulations",
-        "isExtraImport": true,
-        "detail": "tokens.manipulations",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "tokens.sql",
-        "description": "tokens.sql",
-        "isExtraImport": true,
-        "detail": "tokens.sql",
-        "documentation": {}
-    },
-    {
-        "label": "traceback",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "traceback",
-        "description": "traceback",
-        "detail": "traceback",
-        "documentation": {}
-    },
-    {
-        "label": "ply.yacc",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "ply.yacc",
-        "description": "ply.yacc",
-        "detail": "ply.yacc",
+        "importPath": "matplotlib",
+        "description": "matplotlib",
+        "detail": "matplotlib",
         "documentation": {}
     },
     {
@@ -802,6 +751,14 @@
         "description": "pathlib",
         "isExtraImport": true,
         "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
         "documentation": {}
     },
     {
@@ -1017,849 +974,201 @@
         "documentation": {}
     },
     {
-        "label": "db",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.data.db",
-        "description": "server.backend_app.mlsql.data.db",
-        "peekOfCode": "db = SqliteDatabase('definitions.db')",
-        "detail": "server.backend_app.mlsql.data.db",
-        "documentation": {}
-    },
-    {
-        "label": "EstimatorMeta",
+        "label": "Encoder",
         "kind": 6,
-        "importPath": "server.backend_app.mlsql.data.EstimatorMeta",
-        "description": "server.backend_app.mlsql.data.EstimatorMeta",
-        "peekOfCode": "class EstimatorMeta(Model):\n    name = CharField(primary_key=True)\n    dateCreated = DateTimeField(default=datetime.datetime.now)\n    isAvailable = BooleanField(default=False)\n    estimatorType = CharField()\n    formula = CharField(null=True)\n    loss = CharField(null=True)\n    lr = FloatField(null=True)\n    optimizer = CharField(null=True)\n    regularizer = CharField(null=True)",
-        "detail": "server.backend_app.mlsql.data.EstimatorMeta",
+        "importPath": "server.backend_app.parser.classes.encoder",
+        "description": "server.backend_app.parser.classes.encoder",
+        "peekOfCode": "class Encoder:\n    def __init__(self, strategy: str, column: str, ordinal_dict=None, drop_first=False, target_var=None):\n        \"\"\"\n        Limitation:\n            - Supported strategy: ordinal, onehot, target\n            - Only accept 1 column (str)\n        \"\"\"\n        self.strategy = strategy\n        self.column = column\n        self.ordinal_dict = ordinal_dict",
+        "detail": "server.backend_app.parser.classes.encoder",
         "documentation": {}
     },
     {
-        "label": "setup",
+        "label": "categorize",
         "kind": 2,
-        "importPath": "server.backend_app.mlsql.data.setup",
-        "description": "server.backend_app.mlsql.data.setup",
-        "peekOfCode": "def setup():\n    tables = [EstimatorMeta, TrainingProfile]\n    db.connect()\n    db.drop_tables(tables)\n    db.create_tables(tables)\n    db.close()\n    print(\"setup complete\")\n    pass",
-        "detail": "server.backend_app.mlsql.data.setup",
+        "importPath": "server.backend_app.parser.Function.categorize",
+        "description": "server.backend_app.parser.Function.categorize",
+        "peekOfCode": "def categorize(url,table_name,cmd):\n    feature=cmd[cmd.index(\"INSPECT\") + 1] \n    labels=[cat for cat in cmd[cmd.index(\"INTO\") + 1].split(',')]\n    response={}\n    connection_string = os.getenv(\"POSTGES_URL\")\n    query = f'SELECT * FROM \"{table_name}\"'\n    conn = create_engine(connection_string)\n    df=  pd.read_sql(query,conn)\n    df=pd.DataFrame(df)\n    min_value = df[feature].min()",
+        "detail": "server.backend_app.parser.Function.categorize",
         "documentation": {}
     },
     {
-        "label": "TrainingProfile",
-        "kind": 6,
-        "importPath": "server.backend_app.mlsql.data.TrainingProfile",
-        "description": "server.backend_app.mlsql.data.TrainingProfile",
-        "peekOfCode": "class TrainingProfile(Model):\n    name = CharField(primary_key=True)\n    dateCreated = DateTimeField(default=datetime.datetime.now)\n    source = CharField()\n    sourceType = CharField(default='sql')\n    validationSplit = FloatField(default=0)\n    batchSize = IntegerField(default=0)\n    epoch = IntegerField(default=1)\n    shuffle = BooleanField(default=False)\n    class Meta:",
-        "detail": "server.backend_app.mlsql.data.TrainingProfile",
-        "documentation": {}
-    },
-    {
-        "label": "ASTProcessor",
-        "kind": 6,
-        "importPath": "server.backend_app.mlsql.engine.ASTProcessor",
-        "description": "server.backend_app.mlsql.engine.ASTProcessor",
-        "peekOfCode": "class ASTProcessor:\n    def __init__(self):\n        self.pp = pprint.PrettyPrinter(indent=3)\n        pass\n    def hasDB(self, dbURL, dbEngine='sqlite3'):\n        if dbEngine == 'sqlite3':\n            try:\n                open(dbURL, 'r')\n                return True\n            except FileNotFoundError:",
-        "detail": "server.backend_app.mlsql.engine.ASTProcessor",
-        "documentation": {}
-    },
-    {
-        "label": "EstimatorManager",
-        "kind": 6,
-        "importPath": "server.backend_app.mlsql.engine.EstimatorManager",
-        "description": "server.backend_app.mlsql.engine.EstimatorManager",
-        "peekOfCode": "class EstimatorManager:\n    def __init__(self, clonable):\n        self.clonable = clonable\n        current_directory = os.path.dirname(__file__)\n        self.estimator_folder =  os.path.join(current_directory, \"estimators/\")\n    def getPath(self, estimatorName):\n        return self.estimator_folder + estimatorName + \".dill\"\n    def save(self, name, estimator):\n        fname = self.getPath(name)\n        with open(fname, \"wb\") as fp:",
-        "detail": "server.backend_app.mlsql.engine.EstimatorManager",
-        "documentation": {}
-    },
-    {
-        "label": "FormulaProcessor",
-        "kind": 6,
-        "importPath": "server.backend_app.mlsql.engine.FormulaProcessor",
-        "description": "server.backend_app.mlsql.engine.FormulaProcessor",
-        "peekOfCode": "class FormulaProcessor:\n    def __init__(self, formula):\n            #  ~RAD + AGE,TAX~\n        self.formula = formula\n        yX = self.stringFilter(re.split(r'\\~+', self.formula))\n        if len(yX) != 2:\n            raise Exception(f\"{formula} does not have $a~b$ format\")\n        self.fieldY = yX[0]\n        self.formulaX = yX[1]\n        self.fieldsX = self.stringFilter(re.split(r'\\++', self.formulaX))",
-        "detail": "server.backend_app.mlsql.engine.FormulaProcessor",
-        "documentation": {}
-    },
-    {
-        "label": "SimpleKNNClassifier",
-        "kind": 6,
-        "importPath": "server.backend_app.mlsql.engine.KNN",
-        "description": "server.backend_app.mlsql.engine.KNN",
-        "peekOfCode": "class SimpleKNNClassifier:\n    def __init__(self, k=3):\n        self.k = k\n        self.X_train = None\n        self.y_train = None\n    def fit(self, X, y):\n        self.X_train = X\n        self.y_train = y\n    def predict(self, X):\n        y_pred = [self._predict(x) for x in X]",
-        "detail": "server.backend_app.mlsql.engine.KNN",
-        "documentation": {}
-    },
-    {
-        "label": "KNNManager",
-        "kind": 6,
-        "importPath": "server.backend_app.mlsql.engine.KNN",
-        "description": "server.backend_app.mlsql.engine.KNN",
-        "peekOfCode": "class KNNManager(RegressionManager):\n    def __init__(self):\n        super().__init__(clonable=True)\n    def create(self, name, k=3):\n        estimator = SimpleKNNClassifier(k=k)\n        return self.save(name, estimator)\n    def trainValidate(self, name, Xtrain, Xtest, yTrain, yTest):\n        dic = {}\n        self.train(name, Xtrain, yTrain)\n        dic['training_accuracy'] = np.mean(yTrain == self.predict(name, Xtrain))",
-        "detail": "server.backend_app.mlsql.engine.KNN",
-        "documentation": {}
-    },
-    {
-        "label": "LRManager",
-        "kind": 6,
-        "importPath": "server.backend_app.mlsql.engine.LRManager",
-        "description": "server.backend_app.mlsql.engine.LRManager",
-        "peekOfCode": "class LRManager(RegressionManager):\n    def __init__(self):\n        super(LRManager,self).__init__(clonable=True)\n    def create(self, name):\n        estimator = LinearRegression()\n        return self.save(name, estimator)\n    def trainValidate(self, name, Xtrain, Xtest, yTrain, yTest):\n        dic = {}\n        self.train(name, Xtrain, yTrain)\n        dic['training_mae'] = median_absolute_error(yTrain, self.predict(name, Xtrain))",
-        "detail": "server.backend_app.mlsql.engine.LRManager",
-        "documentation": {}
-    },
-    {
-        "label": "RegressionManager",
-        "kind": 6,
-        "importPath": "server.backend_app.mlsql.engine.RegressionManager",
-        "description": "server.backend_app.mlsql.engine.RegressionManager",
-        "peekOfCode": "class RegressionManager(EstimatorManager):\n    def __init__(self, clonable):\n        super(RegressionManager,self).__init__(clonable=clonable)\n    def getPercentageError(self, y, yPred):\n        return (y - yPred) * 100 / y\n    def getAccuracy(self, y, yPred):\n        # This method can be added for classification tasks\n        correct_predictions = (y == yPred).sum()\n        total_predictions = len(y)\n        return (correct_predictions / total_predictions) * 100",
-        "detail": "server.backend_app.mlsql.engine.RegressionManager",
+        "label": "checknull",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.Function.checknull",
+        "description": "server.backend_app.parser.Function.checknull",
+        "peekOfCode": "def checknull(url, table_name):\n    try:\n        response = []\n        postgres_url = os.getenv(\"POSTGES_URL\")\n        connection = psycopg2.connect(postgres_url)\n        cursor = connection.cursor()\n        cursor.execute(f\"SELECT column_name FROM information_schema.columns WHERE table_name = '{table_name}';\")\n        column_names = [row[0] for row in cursor.fetchall()]\n        print(column_names)\n        cursor.execute(f'SELECT * FROM \"{table_name}\"')",
+        "detail": "server.backend_app.parser.Function.checknull",
         "documentation": {}
     },
     {
         "label": "cluster",
         "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.operation.cluster",
-        "description": "server.backend_app.mlsql.parser.operation.cluster",
+        "importPath": "server.backend_app.parser.Function.cluster",
+        "description": "server.backend_app.parser.Function.cluster",
         "peekOfCode": "def cluster(currentDB,conn, n_cluster):\n    query = f\"SELECT * FROM {currentDB}\"\n    df = pd.read_sql_query(query, conn)\n    # Perform clustering\n    X = df.values  # Assuming all columns are features\n    kmeans = KMeans(n_clusters=int(n_cluster))\n    kmeans.fit(X)\n    labels = kmeans.labels_\n    plt.figure(figsize=(8, 6))\n    plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis')",
-        "detail": "server.backend_app.mlsql.parser.operation.cluster",
-        "documentation": {}
-    },
-    {
-        "label": "select_algorithm",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.operation.construct",
-        "description": "server.backend_app.mlsql.parser.operation.construct",
-        "peekOfCode": "def select_algorithm(operation_type, algorithm_name='AUTO_ML', **kwargs):\n    # print(algorithm_name)\n    if algorithm_name == 'AUTO_ML':\n        if operation_type.upper() == \"PREDICTION\":\n            tpot_regressor = TPOTRegressor(generations=5, population_size=20, verbosity=2)\n            return tpot_regressor\n        elif operation_type.upper() == \"CLASSIFICATION\":\n            tpot_classifier = TPOTClassifier(generations=5, population_size=20, verbosity=2)\n            return tpot_classifier\n    else:",
-        "detail": "server.backend_app.mlsql.parser.operation.construct",
-        "documentation": {}
-    },
-    {
-        "label": "construct",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.operation.construct",
-        "description": "server.backend_app.mlsql.parser.operation.construct",
-        "peekOfCode": "def construct(command):\n    '''  \n    CONSTRUCT LR_retail AS SUPERVISED FOR PREDICTION on TARGET MonthlySales FEATURES Age,Price,StockLevel ALGORITHM LR  TEST ON .3 FROM retail;\n    '''\n    command_parts = [part for part in command.split(\" \") if part.strip()]\n    operation_types = [\"PREDICTION\", \"CLASSIFICATION\", \"CLUSTERING\"]\n    operation_type = command_parts[command_parts.index(\"FOR\")+ 1]\n    dataset_train_name = command_parts[command_parts.index(\"FROM\") + 1].split(';')[0]\n    model_name=command_parts[command_parts.index(\"CONSTRUCT\") + 1]\n    if \"ALGORITHM\" in command_parts:",
-        "detail": "server.backend_app.mlsql.parser.operation.construct",
-        "documentation": {}
-    },
-    {
-        "label": "encoding",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.operation.encoding",
-        "description": "server.backend_app.mlsql.parser.operation.encoding",
-        "peekOfCode": "def encoding(file):\n    'INSPECT ONE-HOT ENCODING feature from boston'\n    data=file.get(\"file\")\n    data=pd.DataFrame(data)\n    var = file.get(\"select_column\")\n    method = file.get(\"method\")\n    add_pipeline = file.get(\"add_to_pipeline\")\n    file=file.get('data')\n    if method == \"Ordinal Encoding\":\n        return ordinal_encoding(data, var, add_pipeline,file)",
-        "detail": "server.backend_app.mlsql.parser.operation.encoding",
-        "documentation": {}
-    },
-    {
-        "label": "ordinal_encoding",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.operation.encoding",
-        "description": "server.backend_app.mlsql.parser.operation.encoding",
-        "peekOfCode": "def ordinal_encoding(data, var, add_pipeline,file):\n    from_zero = file.get(\"start_from_0\") ==True\n    inc_nan = file.get(\"include_nan\") ==True\n    asc_order = file.get(\"sort_values\")  ==True\n    # include null or no\n    unique_val = data[var].unique() if inc_nan else data[var].dropna().unique()\n    unique_val = sorted(unique_val, key=lambda val: (val is np.nan, val)) if asc_order else unique_val\n    # encoding value start from 0 or 1\n    enc_val = range(len(unique_val)) if from_zero else range(1, len(unique_val) + 1)\n    order = file.get(\"set_value_order\")",
-        "detail": "server.backend_app.mlsql.parser.operation.encoding",
-        "documentation": {}
-    },
-    {
-        "label": "onehot_encoding",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.operation.encoding",
-        "description": "server.backend_app.mlsql.parser.operation.encoding",
-        "peekOfCode": "def onehot_encoding(data, var, add_pipeline,file):\n    print(data)\n    print(var)\n    drop_first = file.get(\"drop_first\")\n    enc = encoder.Encoder(strategy=\"onehot\", column=var)\n    new_value = enc.fit_transform(data)\n    new_value = new_value.to_dict(orient=\"records\")\n    return JsonResponse(new_value, safe=False)\ndef target_encoding(data,  var, add_pipeline,file):\n    target_var = file.get(\"select_target\")",
-        "detail": "server.backend_app.mlsql.parser.operation.encoding",
-        "documentation": {}
-    },
-    {
-        "label": "target_encoding",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.operation.encoding",
-        "description": "server.backend_app.mlsql.parser.operation.encoding",
-        "peekOfCode": "def target_encoding(data,  var, add_pipeline,file):\n    target_var = file.get(\"select_target\")\n    enc = encoder.Encoder(strategy=\"target\", column=var, target_var=target_var)\n    new_value = enc.fit_transform(data)\n    new_value = new_value.to_dict(orient=\"records\")\n    return JsonResponse(new_value, safe=False)",
-        "detail": "server.backend_app.mlsql.parser.operation.encoding",
-        "documentation": {}
-    },
-    {
-        "label": "select_algorithm",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.operation.Generate",
-        "description": "server.backend_app.mlsql.parser.operation.Generate",
-        "peekOfCode": "def select_algorithm(operation_type, algorithm_name='AUTO_ML', **kwargs):\n    # print(algorithm_name)\n    if algorithm_name == 'AUTO_ML':\n        if operation_type.upper() == \"PREDICTION\":\n            tpot_regressor = TPOTRegressor(generations=2, population_size=20, verbosity=2)\n            return tpot_regressor\n        elif operation_type.upper() == \"CLASSIFICATION\":\n            tpot_classifier = TPOTClassifier(generations=5, population_size=20, verbosity=2)\n            return tpot_classifier\n    else:",
-        "detail": "server.backend_app.mlsql.parser.operation.Generate",
-        "documentation": {}
-    },
-    {
-        "label": "display_results",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.operation.Generate",
-        "description": "server.backend_app.mlsql.parser.operation.Generate",
-        "peekOfCode": "def display_results(operation_type, y_test=None, y_pred=None, model=None, features=None, df=None):\n    if operation_type.upper() == \"PREDICTION\":\n        plt.figure(figsize=(10, 6))\n        plt.scatter(y_test, y_pred,alpha=0.6)\n        plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k-o', lw=4)\n        plt.xlabel('Measured')\n        plt.ylabel('Predicted')\n        plt.title('Actual vs Predicted Values')\n    elif operation_type.upper() == \"CLASSIFICATION\":\n        cm = confusion_matrix(y_test, y_pred)",
-        "detail": "server.backend_app.mlsql.parser.operation.Generate",
-        "documentation": {}
-    },
-    {
-        "label": "generate",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.operation.Generate",
-        "description": "server.backend_app.mlsql.parser.operation.Generate",
-        "peekOfCode": "def generate(command):  \n    '''GENERATE DISPLAY OF PREDICTION MonthlySales ALGORITHM GB WITH ACCURACY 100 LABEL ProductID FEATURES Age,Price,StockLevel FROM retail OVER retailTestData'''\n    command_parts = [part for part in command.split(\" \") if part.strip()]\n    try:\n        operation_types = [\"PREDICTION\", \"CLASSIFICATION\", \"CLUSTERING\"]\n        operation_type = next((word for word in operation_types if word in command), \"PREDICTION\") ###\n        dataset_train_name = command_parts[command_parts.index(\"FROM\") + 1].split(';')[0]\n        features=command_parts[command_parts.index(\"FEATURES\") + 1].split(',')\n        algorithm_name = command_parts[command_parts.index(\"ALGORITHM\")+ 1] if \"ALGORITHM\" in command_parts else None  ####\n    except:",
-        "detail": "server.backend_app.mlsql.parser.operation.Generate",
-        "documentation": {}
-    },
-    {
-        "label": "dataTypeTokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.tokens.data_types",
-        "description": "server.backend_app.mlsql.parser.tokens.data_types",
-        "peekOfCode": "dataTypeTokens = [\n    'WORD',\n    # 'CHAR'\n    'FLOAT',\n    'INT',\n    'DELIMITER',\n    'BOOL',\n    'URL'\n]\n#regular expressions",
-        "detail": "server.backend_app.mlsql.parser.tokens.data_types",
-        "documentation": {}
-    },
-    {
-        "label": "t_WORD",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.tokens.data_types",
-        "description": "server.backend_app.mlsql.parser.tokens.data_types",
-        "peekOfCode": "t_WORD = r'[a-zA-Z_][a-zA-Z_0-9]*'\nt_FLOAT = r'[0-9]+\\.[0-9]*|[0-9]*\\.[0-9]+'\nt_INT = r'[0-9]+'\nt_DELIMITER = r';'\n# t_CHAR = r'[a-zA-Z_][a-zA-Z_0-9]*'",
-        "detail": "server.backend_app.mlsql.parser.tokens.data_types",
-        "documentation": {}
-    },
-    {
-        "label": "t_FLOAT",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.tokens.data_types",
-        "description": "server.backend_app.mlsql.parser.tokens.data_types",
-        "peekOfCode": "t_FLOAT = r'[0-9]+\\.[0-9]*|[0-9]*\\.[0-9]+'\nt_INT = r'[0-9]+'\nt_DELIMITER = r';'\n# t_CHAR = r'[a-zA-Z_][a-zA-Z_0-9]*'",
-        "detail": "server.backend_app.mlsql.parser.tokens.data_types",
-        "documentation": {}
-    },
-    {
-        "label": "t_INT",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.tokens.data_types",
-        "description": "server.backend_app.mlsql.parser.tokens.data_types",
-        "peekOfCode": "t_INT = r'[0-9]+'\nt_DELIMITER = r';'\n# t_CHAR = r'[a-zA-Z_][a-zA-Z_0-9]*'",
-        "detail": "server.backend_app.mlsql.parser.tokens.data_types",
-        "documentation": {}
-    },
-    {
-        "label": "t_DELIMITER",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.tokens.data_types",
-        "description": "server.backend_app.mlsql.parser.tokens.data_types",
-        "peekOfCode": "t_DELIMITER = r';'\n# t_CHAR = r'[a-zA-Z_][a-zA-Z_0-9]*'",
-        "detail": "server.backend_app.mlsql.parser.tokens.data_types",
-        "documentation": {}
-    },
-    {
-        "label": "modelTokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.tokens.definitions",
-        "description": "server.backend_app.mlsql.parser.tokens.definitions",
-        "peekOfCode": "modelTokens = [\n    'CREATE',\n    'CLONE',\n    'MODEL',\n    'ESTIMATOR',\n    'REGULARIZER',\n    'MODEL_TYPE',\n    'FORMULA',\n    'FORMULA_EXP',\n    'LOSS',",
-        "detail": "server.backend_app.mlsql.parser.tokens.definitions",
-        "documentation": {}
-    },
-    {
-        "label": "trainProfileTokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.tokens.definitions",
-        "description": "server.backend_app.mlsql.parser.tokens.definitions",
-        "peekOfCode": "trainProfileTokens = [\n    'CREATE',\n    'AND',\n    'TRAINING_PROFILE',\n    'BATCH_SIZE',\n    'EPOCH',\n    'SHUFFLE',\n    'VALIDATION_SPLIT',\n    'WITH',\n    'USE',",
-        "detail": "server.backend_app.mlsql.parser.tokens.definitions",
-        "documentation": {}
-    },
-    {
-        "label": "trainTokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.tokens.definitions",
-        "description": "server.backend_app.mlsql.parser.tokens.definitions",
-        "peekOfCode": "trainTokens = [\n    'TRAIN'\n]\npredictTokens = [\n    'PREDICT',\n    'TEST'\n]\nsqlKeywords = [\n    'TABLE',\n]",
-        "detail": "server.backend_app.mlsql.parser.tokens.definitions",
-        "documentation": {}
-    },
-    {
-        "label": "predictTokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.tokens.definitions",
-        "description": "server.backend_app.mlsql.parser.tokens.definitions",
-        "peekOfCode": "predictTokens = [\n    'PREDICT',\n    'TEST'\n]\nsqlKeywords = [\n    'TABLE',\n]",
-        "detail": "server.backend_app.mlsql.parser.tokens.definitions",
-        "documentation": {}
-    },
-    {
-        "label": "sqlKeywords",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.tokens.definitions",
-        "description": "server.backend_app.mlsql.parser.tokens.definitions",
-        "peekOfCode": "sqlKeywords = [\n    'TABLE',\n]",
-        "detail": "server.backend_app.mlsql.parser.tokens.definitions",
-        "documentation": {}
-    },
-    {
-        "label": "trainTokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.tokens.manipulations",
-        "description": "server.backend_app.mlsql.parser.tokens.manipulations",
-        "peekOfCode": "trainTokens = [\n    'TRAIN',\n    'WITH',\n    'TRAINING_PROFILE'\n]\nutilityTokens = [\n    'SET',\n    'DEBUG',\n    'AS'\n]",
-        "detail": "server.backend_app.mlsql.parser.tokens.manipulations",
-        "documentation": {}
-    },
-    {
-        "label": "utilityTokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.tokens.manipulations",
-        "description": "server.backend_app.mlsql.parser.tokens.manipulations",
-        "peekOfCode": "utilityTokens = [\n    'SET',\n    'DEBUG',\n    'AS'\n]",
-        "detail": "server.backend_app.mlsql.parser.tokens.manipulations",
-        "documentation": {}
-    },
-    {
-        "label": "basicSQL",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.tokens.sql",
-        "description": "server.backend_app.mlsql.parser.tokens.sql",
-        "peekOfCode": "basicSQL = [\n    'SQL'\n]",
-        "detail": "server.backend_app.mlsql.parser.tokens.sql",
-        "documentation": {}
-    },
-    {
-        "label": "t_BOOL",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "def t_BOOL(t):\n    r'true|false'\n    if t.value == 'true':\n        t.value = True\n    else:\n        t.value = False\n    return t\ndef t_SQL(t):\n    r'\\[\\s*[SELECT,UPDATE]+[^\\];]*\\]'\n    t.value = t.value[1:len(t.value)-1].strip()",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_SQL",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "def t_SQL(t):\n    r'\\[\\s*[SELECT,UPDATE]+[^\\];]*\\]'\n    t.value = t.value[1:len(t.value)-1].strip()\n    return t\ndef t_URL(t):\n    r'\\'[a-z0-9A-Z\\.\\/\\:\\%\\+\\-\\_\\&\\@ ]+\\''\n    t.value = t.value[1:len(t.value)-1].strip()\n    return t\ndef t_FORMULA_EXP(t):\n    r'\\$[a-zA-Z_0-9]+\\~[a-zA-Z_0-9\\+\\-]+\\$'",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_URL",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "def t_URL(t):\n    r'\\'[a-z0-9A-Z\\.\\/\\:\\%\\+\\-\\_\\&\\@ ]+\\''\n    t.value = t.value[1:len(t.value)-1].strip()\n    return t\ndef t_FORMULA_EXP(t):\n    r'\\$[a-zA-Z_0-9]+\\~[a-zA-Z_0-9\\+\\-]+\\$'\n    t.value = t.value[1:len(t.value)-1].strip()\n    return t\n# keywords rule\n# reKyewords = \"(\" + \"|\".join(keywords) + \")+[ \\n\\t]{1}\"",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_FORMULA_EXP",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "def t_FORMULA_EXP(t):\n    r'\\$[a-zA-Z_0-9]+\\~[a-zA-Z_0-9\\+\\-]+\\$'\n    t.value = t.value[1:len(t.value)-1].strip()\n    return t\n# keywords rule\n# reKyewords = \"(\" + \"|\".join(keywords) + \")+[ \\n\\t]{1}\"\nreKyewords = r'\\b(' + '|'.join(keywords) + r')\\b'\n@TOKEN(reKyewords)\ndef t_KEYWORD(t):\n    # print(f\"found keyword: {t.value}\")",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_KEYWORD",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "def t_KEYWORD(t):\n    # print(f\"found keyword: {t.value}\")\n    t.value = t.value.strip()\n    t.type = t.value\n    return t\n# Define a rule so we can track line numbers\ndef t_newline(t):\n    r'\\n+'\n    t.lexer.lineno += len(t.value)\ndef t_TRAINING_PROFILE(t):",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_newline",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "def t_newline(t):\n    r'\\n+'\n    t.lexer.lineno += len(t.value)\ndef t_TRAINING_PROFILE(t):\n    r'TRAINING[_ \\t\\n]+PROFILE'\n    t.type = 'TRAINING_PROFILE'\n    t.value = 'TRAINING_PROFILE'\n    # print(\"found t_TRAINING_PROFILE\")\n    return t\ndef t_LEARNING_RATE(t):",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_TRAINING_PROFILE",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "def t_TRAINING_PROFILE(t):\n    r'TRAINING[_ \\t\\n]+PROFILE'\n    t.type = 'TRAINING_PROFILE'\n    t.value = 'TRAINING_PROFILE'\n    # print(\"found t_TRAINING_PROFILE\")\n    return t\ndef t_LEARNING_RATE(t):\n    r'LEARNING[_ \\t\\n]+RATE'\n    t.type = 'LEARNING_RATE'\n    t.value = 'LEARNING_RATE'",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_LEARNING_RATE",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "def t_LEARNING_RATE(t):\n    r'LEARNING[_ \\t\\n]+RATE'\n    t.type = 'LEARNING_RATE'\n    t.value = 'LEARNING_RATE'\n    # print(\"found t_LEARNING_RATE\")\n    return t\ndef t_VALIDATION_SPLIT(t):\n    r'VALIDATION[_ \\t\\n]+SPLIT'\n    t.type = 'VALIDATION_SPLIT'\n    t.value = 'VALIDATION_SPLIT'",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_VALIDATION_SPLIT",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "def t_VALIDATION_SPLIT(t):\n    r'VALIDATION[_ \\t\\n]+SPLIT'\n    t.type = 'VALIDATION_SPLIT'\n    t.value = 'VALIDATION_SPLIT'\n    # print(\"found t_VALIDATION_SPLIT\")\n    return t\ndef t_FORMULA_OPERATOR(t):\n    r'~'\n    t.type = 'FORMULA_OPERATOR'\n    t.value = 'FORMULA_OPERATOR'",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_FORMULA_OPERATOR",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "def t_FORMULA_OPERATOR(t):\n    r'~'\n    t.type = 'FORMULA_OPERATOR'\n    t.value = 'FORMULA_OPERATOR'\n    # print(\"found t_FORMULA_OPERATOR\")\n    return t\n# A string containing ignored characters (spaces and tabs)\nt_ignore  = ' \\t'\n# Error handling rule\ndef t_error(t):",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_error",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "def t_error(t):\n    print(\"Illegal character '%s'\" % t.value[0])\n    t.lexer.skip(1)\nlexer = lex.lex()\ncurrent_directory = os.path.dirname(__file__)\ncurrentDBURL = os.path.join(current_directory,\"lexer.dill\")\nwith open(currentDBURL, \"wb\") as f:\n    dill.dump(lexer, f)",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "dataTypeTokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "dataTypeTokens = [\n    'WORD',\n    # 'CHAR'\n    'FLOAT',\n    'INT',\n    'DELIMITER',\n    'BOOL',\n    'URL'\n]\n#regular expressions",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_WORD",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "t_WORD = r'[a-zA-Z_][a-zA-Z_0-9]*'\nt_FLOAT = r'[0-9]+\\.[0-9]*|[0-9]*\\.[0-9]+'\nt_INT = r'[0-9]+'\nt_DELIMITER = r';'\n# t_CHAR = r'[a-zA-Z_][a-zA-Z_0-9]*'\ntrainTokens = [\n    'TRAIN',\n    'WITH',\n    'TRAINING_PROFILE'\n]",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_FLOAT",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "t_FLOAT = r'[0-9]+\\.[0-9]*|[0-9]*\\.[0-9]+'\nt_INT = r'[0-9]+'\nt_DELIMITER = r';'\n# t_CHAR = r'[a-zA-Z_][a-zA-Z_0-9]*'\ntrainTokens = [\n    'TRAIN',\n    'WITH',\n    'TRAINING_PROFILE'\n]\nutilityTokens = [",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_INT",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "t_INT = r'[0-9]+'\nt_DELIMITER = r';'\n# t_CHAR = r'[a-zA-Z_][a-zA-Z_0-9]*'\ntrainTokens = [\n    'TRAIN',\n    'WITH',\n    'TRAINING_PROFILE'\n]\nutilityTokens = [\n    'SET',",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_DELIMITER",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "t_DELIMITER = r';'\n# t_CHAR = r'[a-zA-Z_][a-zA-Z_0-9]*'\ntrainTokens = [\n    'TRAIN',\n    'WITH',\n    'TRAINING_PROFILE'\n]\nutilityTokens = [\n    'SET',\n    'DEBUG',",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "trainTokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "trainTokens = [\n    'TRAIN',\n    'WITH',\n    'TRAINING_PROFILE'\n]\nutilityTokens = [\n    'SET',\n    'DEBUG',\n    'AS'\n]",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "utilityTokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "utilityTokens = [\n    'SET',\n    'DEBUG',\n    'AS'\n]\nmodelTokens = [\n    'CREATE',\n    'CLONE',\n    'MODEL',\n    'ESTIMATOR',",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "modelTokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "modelTokens = [\n    'CREATE',\n    'CLONE',\n    'MODEL',\n    'ESTIMATOR',\n    'REGULARIZER',\n    'MODEL_TYPE',\n    'FORMULA',\n    'FORMULA_EXP',\n    'LOSS',",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "trainProfileTokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "trainProfileTokens = [\n    'CREATE',\n    'AND',\n    'TRAINING_PROFILE',\n    'BATCH_SIZE',\n    'EPOCH',\n    'SHUFFLE',\n    'VALIDATION_SPLIT',\n    'WITH',\n    'USE',",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "trainTokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "trainTokens = [\n    'TRAIN'\n]\npredictTokens = [\n    'PREDICT',\n    'TEST'\n]\nsqlKeywords = [\n    'TABLE',\n]",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "predictTokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "predictTokens = [\n    'PREDICT',\n    'TEST'\n]\nsqlKeywords = [\n    'TABLE',\n]\n#-------modified end ----------\nkeywords = list(set().union(\n            modelTokens,",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "sqlKeywords",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "sqlKeywords = [\n    'TABLE',\n]\n#-------modified end ----------\nkeywords = list(set().union(\n            modelTokens,\n            trainTokens,\n            trainProfileTokens,\n            predictTokens,\n            utilityTokens,",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "keywords",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "keywords = list(set().union(\n            modelTokens,\n            trainTokens,\n            trainProfileTokens,\n            predictTokens,\n            utilityTokens,\n            sqlKeywords\n            ))\ntokens =  list(set().union(\n            dataTypeTokens,",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "tokens",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "tokens =  list(set().union(\n            dataTypeTokens,\n            basicSQL\n            )) + keywords\ntokens += ['LPAREN', 'RPAREN']\nt_LPAREN = r'\\('\nt_RPAREN = r'\\)'\n# print(tokens)\ndef t_BOOL(t):\n    r'true|false'",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_LPAREN",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "t_LPAREN = r'\\('\nt_RPAREN = r'\\)'\n# print(tokens)\ndef t_BOOL(t):\n    r'true|false'\n    if t.value == 'true':\n        t.value = True\n    else:\n        t.value = False\n    return t",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "t_RPAREN",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "t_RPAREN = r'\\)'\n# print(tokens)\ndef t_BOOL(t):\n    r'true|false'\n    if t.value == 'true':\n        t.value = True\n    else:\n        t.value = False\n    return t\ndef t_SQL(t):",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "reKyewords",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "reKyewords = r'\\b(' + '|'.join(keywords) + r')\\b'\n@TOKEN(reKyewords)\ndef t_KEYWORD(t):\n    # print(f\"found keyword: {t.value}\")\n    t.value = t.value.strip()\n    t.type = t.value\n    return t\n# Define a rule so we can track line numbers\ndef t_newline(t):\n    r'\\n+'",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "lexer",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "lexer = lex.lex()\ncurrent_directory = os.path.dirname(__file__)\ncurrentDBURL = os.path.join(current_directory,\"lexer.dill\")\nwith open(currentDBURL, \"wb\") as f:\n    dill.dump(lexer, f)",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "current_directory",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "current_directory = os.path.dirname(__file__)\ncurrentDBURL = os.path.join(current_directory,\"lexer.dill\")\nwith open(currentDBURL, \"wb\") as f:\n    dill.dump(lexer, f)",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "currentDBURL",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.lexer",
-        "description": "server.backend_app.mlsql.parser.lexer",
-        "peekOfCode": "currentDBURL = os.path.join(current_directory,\"lexer.dill\")\nwith open(currentDBURL, \"wb\") as f:\n    dill.dump(lexer, f)",
-        "detail": "server.backend_app.mlsql.parser.lexer",
-        "documentation": {}
-    },
-    {
-        "label": "LexerBuilder",
-        "kind": 6,
-        "importPath": "server.backend_app.mlsql.parser.LexerBuilder_del",
-        "description": "server.backend_app.mlsql.parser.LexerBuilder_del",
-        "peekOfCode": "class LexerBuilder:\n    tokens = ()\n    def __init__(self):\n        LexerBuilder.tokens = list(set().union(\n            modelTokens,\n            dataTypeTokens,\n            trainTokens,\n            trainProfileTokens,\n            basicSQL\n            ))",
-        "detail": "server.backend_app.mlsql.parser.LexerBuilder_del",
-        "documentation": {}
-    },
-    {
-        "label": "setDebug",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "def setDebug(debug = False):\n    global DEBUG\n    DEBUG = debug\n#******Environment Setup Ends******\nglobal response\nresponse=''\n#***********Grammar******************\ndef p_create_model(p):\n    '''exp : CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP DELIMITER\n            | CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD DELIMITER",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "p_create_model",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "def p_create_model(p):\n    '''exp : CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP DELIMITER\n            | CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD DELIMITER\n            | CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD LEARNING_RATE FLOAT DELIMITER\n            | CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD LEARNING_RATE FLOAT OPTIMIZER WORD REGULARIZER WORD DELIMITER'''\n    setup()\n    printMatchedRule('p_create_model')\n    global currentState, formula\n    currentState = ESTIMATOR\n    length = len(p)",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "p_training_profile",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "def p_training_profile(p):\n    '''exp : CREATE TRAINING_PROFILE WORD WITH SQL DELIMITER\n                | CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT DELIMITER\n                | CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT BATCH_SIZE INT EPOCH INT DELIMITER\n                | CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT BATCH_SIZE INT EPOCH INT SHUFFLE BOOL DELIMITER'''\n    printMatchedRule('p_training_profile')\n    global currentState\n    currentState = TRAINING_PROFILE\n    length = len(p)\n    name = p[3]",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "p_train",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "def p_train(p):\n    '''exp : TRAIN WORD WITH WORD DELIMITER\n           | TRAIN WORD WITH TRAINING_PROFILE WORD DELIMITER'''\n    printMatchedRule('p_train')\n    global currentState, currentDB\n    currentState = TRAIN\n    length = len(p)\n    estimatorName = p[2]\n    if length == 6:\n        trainingProfileName = p[4]",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "p_predict",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "def p_predict(p):\n    '''exp : PREDICT WITH SQL BY ESTIMATOR WORD DELIMITER\n           | PREDICT WITH TRAINING_PROFILE WORD BY ESTIMATOR WORD DELIMITER'''\n    printMatchedRule('p_predict')\n    global currentState, currentDB\n    currentState = PREDICT\n    length = len(p)\n    sql = p[3]\n    estimatorName = p[6]\n    trainingProfileName = None",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "p_clone_model",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "def p_clone_model(p):\n    '''exp : CLONE ESTIMATOR WORD AS WORD DELIMITER\n           | CLONE ESTIMATOR WORD AS WORD WITH WEIGHTS DELIMITER'''\n    printMatchedRule('p_clone_model')\n    global currentState\n    currentState = ESTIMATOR\n    length = len(p)\n    fromName = p[3]\n    toName = p[5]\n    keepWeights = False",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "p_use_database",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "def p_use_database(p):\n    'exp : USE URL DELIMITER'\n    printMatchedRule('p_use_database')\n    global currentDB, response\n    current_directory = os.path.dirname(__file__)\n    currentDBURL = os.path.join(current_directory,f'../{p[2]}')\n    if ASTProcessor.hasDB(currentDBURL):\n        print(f\"selected {currentDBURL}\")\n        response = {'text': f\"selected {p[2]}\"}\n        currentDB = ASTProcessor.getDB(currentDBURL)",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "p_SQL",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "def p_SQL(p):\n    'exp : SQL DELIMITER'\n    printMatchedRule('p_SQL')\n    p[0] = p[1]\n    print( f\" p[0] = {p[0]}\" )\n    pass\ndef p_DEBUG(p):\n    'exp : SET DEBUG BOOL DELIMITER'\n    printMatchedRule('p_DEBUG')\n    global DEBUG",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "p_DEBUG",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "def p_DEBUG(p):\n    'exp : SET DEBUG BOOL DELIMITER'\n    printMatchedRule('p_DEBUG')\n    global DEBUG\n    DEBUG = p[3]\n    # if p[3] == 'true':\n    #     DEBUG = True\n    # else:\n    #     DEBUG = False\n    print(f\"Debug set to {p[3]}\")",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "p_error",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "def p_error(t):\n    printError('Syntax error at \"%s\"' % t.value if t else 'NULL')\n    global current_state\n    current_state = None\n    pass\ndef printError(e):\n    global DEBUG\n    print(\"Error:\", end=\" \")\n    print(e)\n    if DEBUG:",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "printError",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "def printError(e):\n    global DEBUG\n    print(\"Error:\", end=\" \")\n    print(e)\n    if DEBUG:\n        print(\"strack trace:\")\n        for line in traceback.format_stack():\n            print(line.strip())\ndef printMatchedRule(rule):\n    if DEBUG:",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "printMatchedRule",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "def printMatchedRule(rule):\n    if DEBUG:\n        print(f\"Matched Grammar Rule: {rule}\")\n#***********Grammar Ends******************\n# parser = yacc.yacc(debug=True, errorlog=log)\nparser = yacc.yacc(debug=True)\n# with open(\"parser/parser.dill\", \"wb\") as f:\n#     dill.dump(parser, f)\n# def welcome():\n#     print(f'''",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "ASTProcessor",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "ASTProcessor = ASTProcessor()\nESTIMATOR, TRAIN, TRAINING_PROFILE, USE, PREDICT = range(5)\nstates = ['ESTIMATOR', 'TRAIN', 'TRAINING_PROFILE', 'USE', 'PREDICT' ]\ncurrentState = None\ncurrentDB = None #database connector instance, not url.\nDEBUG = True\ndef setDebug(debug = False):\n    global DEBUG\n    DEBUG = debug\n#******Environment Setup Ends******",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "states",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "states = ['ESTIMATOR', 'TRAIN', 'TRAINING_PROFILE', 'USE', 'PREDICT' ]\ncurrentState = None\ncurrentDB = None #database connector instance, not url.\nDEBUG = True\ndef setDebug(debug = False):\n    global DEBUG\n    DEBUG = debug\n#******Environment Setup Ends******\nglobal response\nresponse=''",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "currentState",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "currentState = None\ncurrentDB = None #database connector instance, not url.\nDEBUG = True\ndef setDebug(debug = False):\n    global DEBUG\n    DEBUG = debug\n#******Environment Setup Ends******\nglobal response\nresponse=''\n#***********Grammar******************",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "currentDB",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "currentDB = None #database connector instance, not url.\nDEBUG = True\ndef setDebug(debug = False):\n    global DEBUG\n    DEBUG = debug\n#******Environment Setup Ends******\nglobal response\nresponse=''\n#***********Grammar******************\ndef p_create_model(p):",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "DEBUG",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "DEBUG = True\ndef setDebug(debug = False):\n    global DEBUG\n    DEBUG = debug\n#******Environment Setup Ends******\nglobal response\nresponse=''\n#***********Grammar******************\ndef p_create_model(p):\n    '''exp : CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP DELIMITER",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "parser",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.parser",
-        "description": "server.backend_app.mlsql.parser.parser",
-        "peekOfCode": "parser = yacc.yacc(debug=True)\n# with open(\"parser/parser.dill\", \"wb\") as f:\n#     dill.dump(parser, f)\n# def welcome():\n#     print(f'''\n# ******** Welcome to MLSQL (version egg)*******\n# The first open-source SQL for Machine Learning\n# **********************************************\n# ''')\n#     pass",
-        "detail": "server.backend_app.mlsql.parser.parser",
-        "documentation": {}
-    },
-    {
-        "label": "_tabversion",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.parsetab",
-        "description": "server.backend_app.mlsql.parser.parsetab",
-        "peekOfCode": "_tabversion = '3.10'\n_lr_method = 'LALR'\n_lr_signature = 'AND AS BATCH_SIZE BOOL BY CLONE CREATE DEBUG DELIMITER EPOCH ESTIMATOR FLOAT FORMULA FORMULA_EXP INT LEARNING_RATE LOSS LPAREN MODEL MODEL_TYPE OPTIMIZER PREDICT REGULARIZER RPAREN SET SHUFFLE SQL TABLE TEST TRAIN TRAINING_PROFILE URL USE VALIDATION_SPLIT WEIGHTS WITH WORDexp : CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP DELIMITER\\n            | CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD DELIMITER\\n            | CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD LEARNING_RATE FLOAT DELIMITER\\n            | CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD LEARNING_RATE FLOAT OPTIMIZER WORD REGULARIZER WORD DELIMITERexp : CREATE TRAINING_PROFILE WORD WITH SQL DELIMITER\\n                | CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT DELIMITER\\n                | CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT BATCH_SIZE INT EPOCH INT DELIMITER\\n                | CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT BATCH_SIZE INT EPOCH INT SHUFFLE BOOL DELIMITERexp : TRAIN WORD WITH WORD DELIMITER\\n           | TRAIN WORD WITH TRAINING_PROFILE WORD DELIMITERexp : PREDICT WITH SQL BY ESTIMATOR WORD DELIMITER\\n           | PREDICT WITH TRAINING_PROFILE WORD BY ESTIMATOR WORD DELIMITERexp : CLONE ESTIMATOR WORD AS WORD DELIMITER\\n           | CLONE ESTIMATOR WORD AS WORD WITH WEIGHTS DELIMITERexp : USE URL DELIMITERexp : SQL DELIMITERexp : SET DEBUG BOOL DELIMITER'\n_lr_action_items = {'CREATE':([0,],[2,]),'TRAIN':([0,],[4,]),'PREDICT':([0,],[5,]),'CLONE':([0,],[6,]),'USE':([0,],[7,]),'SQL':([0,13,26,],[3,20,34,]),'SET':([0,],[8,]),'$end':([1,11,23,32,35,41,43,46,50,53,56,57,59,61,66,70,75,76,],[0,-16,-15,-17,-9,-5,-10,-13,-11,-1,-12,-14,-6,-2,-3,-7,-8,-4,]),'ESTIMATOR':([2,6,29,38,],[9,14,37,45,]),'TRAINING_PROFILE':([2,13,19,],[10,21,28,]),'DELIMITER':([3,15,24,27,34,36,39,44,48,51,52,55,58,64,68,73,74,],[11,23,32,35,41,43,46,50,53,56,57,59,61,66,70,75,76,]),'WORD':([4,9,10,14,19,21,25,28,31,37,45,54,67,72,],[12,17,18,22,27,30,33,36,39,44,51,58,69,74,]),'WITH':([5,12,18,39,],[13,19,26,47,]),'URL':([7,],[15,]),'DEBUG':([8,],[16,]),'BOOL':([16,71,],[24,73,]),'MODEL_TYPE':([17,],[25,]),'BY':([20,30,],[29,38,]),'AS':([22,],[31,]),'FORMULA':([33,],[40,]),'AND':([34,],[42,]),'FORMULA_EXP':([40,],[48,]),'VALIDATION_SPLIT':([42,],[49,]),'WEIGHTS':([47,],[52,]),'LOSS':([48,],[54,]),'FLOAT':([49,62,],[55,64,]),'BATCH_SIZE':([55,],[60,]),'LEARNING_RATE':([58,],[62,]),'INT':([60,65,],[63,68,]),'EPOCH':([63,],[65,]),'OPTIMIZER':([64,],[67,]),'SHUFFLE':([68,],[71,]),'REGULARIZER':([69,],[72,]),}\n_lr_action = {}\nfor _k, _v in _lr_action_items.items():\n   for _x,_y in zip(_v[0],_v[1]):\n      if not _x in _lr_action:  _lr_action[_x] = {}\n      _lr_action[_x][_k] = _y\ndel _lr_action_items",
-        "detail": "server.backend_app.mlsql.parser.parsetab",
-        "documentation": {}
-    },
-    {
-        "label": "_lr_method",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.parsetab",
-        "description": "server.backend_app.mlsql.parser.parsetab",
-        "peekOfCode": "_lr_method = 'LALR'\n_lr_signature = 'AND AS BATCH_SIZE BOOL BY CLONE CREATE DEBUG DELIMITER EPOCH ESTIMATOR FLOAT FORMULA FORMULA_EXP INT LEARNING_RATE LOSS LPAREN MODEL MODEL_TYPE OPTIMIZER PREDICT REGULARIZER RPAREN SET SHUFFLE SQL TABLE TEST TRAIN TRAINING_PROFILE URL USE VALIDATION_SPLIT WEIGHTS WITH WORDexp : CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP DELIMITER\\n            | CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD DELIMITER\\n            | CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD LEARNING_RATE FLOAT DELIMITER\\n            | CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD LEARNING_RATE FLOAT OPTIMIZER WORD REGULARIZER WORD DELIMITERexp : CREATE TRAINING_PROFILE WORD WITH SQL DELIMITER\\n                | CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT DELIMITER\\n                | CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT BATCH_SIZE INT EPOCH INT DELIMITER\\n                | CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT BATCH_SIZE INT EPOCH INT SHUFFLE BOOL DELIMITERexp : TRAIN WORD WITH WORD DELIMITER\\n           | TRAIN WORD WITH TRAINING_PROFILE WORD DELIMITERexp : PREDICT WITH SQL BY ESTIMATOR WORD DELIMITER\\n           | PREDICT WITH TRAINING_PROFILE WORD BY ESTIMATOR WORD DELIMITERexp : CLONE ESTIMATOR WORD AS WORD DELIMITER\\n           | CLONE ESTIMATOR WORD AS WORD WITH WEIGHTS DELIMITERexp : USE URL DELIMITERexp : SQL DELIMITERexp : SET DEBUG BOOL DELIMITER'\n_lr_action_items = {'CREATE':([0,],[2,]),'TRAIN':([0,],[4,]),'PREDICT':([0,],[5,]),'CLONE':([0,],[6,]),'USE':([0,],[7,]),'SQL':([0,13,26,],[3,20,34,]),'SET':([0,],[8,]),'$end':([1,11,23,32,35,41,43,46,50,53,56,57,59,61,66,70,75,76,],[0,-16,-15,-17,-9,-5,-10,-13,-11,-1,-12,-14,-6,-2,-3,-7,-8,-4,]),'ESTIMATOR':([2,6,29,38,],[9,14,37,45,]),'TRAINING_PROFILE':([2,13,19,],[10,21,28,]),'DELIMITER':([3,15,24,27,34,36,39,44,48,51,52,55,58,64,68,73,74,],[11,23,32,35,41,43,46,50,53,56,57,59,61,66,70,75,76,]),'WORD':([4,9,10,14,19,21,25,28,31,37,45,54,67,72,],[12,17,18,22,27,30,33,36,39,44,51,58,69,74,]),'WITH':([5,12,18,39,],[13,19,26,47,]),'URL':([7,],[15,]),'DEBUG':([8,],[16,]),'BOOL':([16,71,],[24,73,]),'MODEL_TYPE':([17,],[25,]),'BY':([20,30,],[29,38,]),'AS':([22,],[31,]),'FORMULA':([33,],[40,]),'AND':([34,],[42,]),'FORMULA_EXP':([40,],[48,]),'VALIDATION_SPLIT':([42,],[49,]),'WEIGHTS':([47,],[52,]),'LOSS':([48,],[54,]),'FLOAT':([49,62,],[55,64,]),'BATCH_SIZE':([55,],[60,]),'LEARNING_RATE':([58,],[62,]),'INT':([60,65,],[63,68,]),'EPOCH':([63,],[65,]),'OPTIMIZER':([64,],[67,]),'SHUFFLE':([68,],[71,]),'REGULARIZER':([69,],[72,]),}\n_lr_action = {}\nfor _k, _v in _lr_action_items.items():\n   for _x,_y in zip(_v[0],_v[1]):\n      if not _x in _lr_action:  _lr_action[_x] = {}\n      _lr_action[_x][_k] = _y\ndel _lr_action_items\n_lr_goto_items = {'exp':([0,],[1,]),}",
-        "detail": "server.backend_app.mlsql.parser.parsetab",
-        "documentation": {}
-    },
-    {
-        "label": "_lr_signature",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.parsetab",
-        "description": "server.backend_app.mlsql.parser.parsetab",
-        "peekOfCode": "_lr_signature = 'AND AS BATCH_SIZE BOOL BY CLONE CREATE DEBUG DELIMITER EPOCH ESTIMATOR FLOAT FORMULA FORMULA_EXP INT LEARNING_RATE LOSS LPAREN MODEL MODEL_TYPE OPTIMIZER PREDICT REGULARIZER RPAREN SET SHUFFLE SQL TABLE TEST TRAIN TRAINING_PROFILE URL USE VALIDATION_SPLIT WEIGHTS WITH WORDexp : CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP DELIMITER\\n            | CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD DELIMITER\\n            | CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD LEARNING_RATE FLOAT DELIMITER\\n            | CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD LEARNING_RATE FLOAT OPTIMIZER WORD REGULARIZER WORD DELIMITERexp : CREATE TRAINING_PROFILE WORD WITH SQL DELIMITER\\n                | CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT DELIMITER\\n                | CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT BATCH_SIZE INT EPOCH INT DELIMITER\\n                | CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT BATCH_SIZE INT EPOCH INT SHUFFLE BOOL DELIMITERexp : TRAIN WORD WITH WORD DELIMITER\\n           | TRAIN WORD WITH TRAINING_PROFILE WORD DELIMITERexp : PREDICT WITH SQL BY ESTIMATOR WORD DELIMITER\\n           | PREDICT WITH TRAINING_PROFILE WORD BY ESTIMATOR WORD DELIMITERexp : CLONE ESTIMATOR WORD AS WORD DELIMITER\\n           | CLONE ESTIMATOR WORD AS WORD WITH WEIGHTS DELIMITERexp : USE URL DELIMITERexp : SQL DELIMITERexp : SET DEBUG BOOL DELIMITER'\n_lr_action_items = {'CREATE':([0,],[2,]),'TRAIN':([0,],[4,]),'PREDICT':([0,],[5,]),'CLONE':([0,],[6,]),'USE':([0,],[7,]),'SQL':([0,13,26,],[3,20,34,]),'SET':([0,],[8,]),'$end':([1,11,23,32,35,41,43,46,50,53,56,57,59,61,66,70,75,76,],[0,-16,-15,-17,-9,-5,-10,-13,-11,-1,-12,-14,-6,-2,-3,-7,-8,-4,]),'ESTIMATOR':([2,6,29,38,],[9,14,37,45,]),'TRAINING_PROFILE':([2,13,19,],[10,21,28,]),'DELIMITER':([3,15,24,27,34,36,39,44,48,51,52,55,58,64,68,73,74,],[11,23,32,35,41,43,46,50,53,56,57,59,61,66,70,75,76,]),'WORD':([4,9,10,14,19,21,25,28,31,37,45,54,67,72,],[12,17,18,22,27,30,33,36,39,44,51,58,69,74,]),'WITH':([5,12,18,39,],[13,19,26,47,]),'URL':([7,],[15,]),'DEBUG':([8,],[16,]),'BOOL':([16,71,],[24,73,]),'MODEL_TYPE':([17,],[25,]),'BY':([20,30,],[29,38,]),'AS':([22,],[31,]),'FORMULA':([33,],[40,]),'AND':([34,],[42,]),'FORMULA_EXP':([40,],[48,]),'VALIDATION_SPLIT':([42,],[49,]),'WEIGHTS':([47,],[52,]),'LOSS':([48,],[54,]),'FLOAT':([49,62,],[55,64,]),'BATCH_SIZE':([55,],[60,]),'LEARNING_RATE':([58,],[62,]),'INT':([60,65,],[63,68,]),'EPOCH':([63,],[65,]),'OPTIMIZER':([64,],[67,]),'SHUFFLE':([68,],[71,]),'REGULARIZER':([69,],[72,]),}\n_lr_action = {}\nfor _k, _v in _lr_action_items.items():\n   for _x,_y in zip(_v[0],_v[1]):\n      if not _x in _lr_action:  _lr_action[_x] = {}\n      _lr_action[_x][_k] = _y\ndel _lr_action_items\n_lr_goto_items = {'exp':([0,],[1,]),}\n_lr_goto = {}",
-        "detail": "server.backend_app.mlsql.parser.parsetab",
-        "documentation": {}
-    },
-    {
-        "label": "_lr_action_items",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.parsetab",
-        "description": "server.backend_app.mlsql.parser.parsetab",
-        "peekOfCode": "_lr_action_items = {'CREATE':([0,],[2,]),'TRAIN':([0,],[4,]),'PREDICT':([0,],[5,]),'CLONE':([0,],[6,]),'USE':([0,],[7,]),'SQL':([0,13,26,],[3,20,34,]),'SET':([0,],[8,]),'$end':([1,11,23,32,35,41,43,46,50,53,56,57,59,61,66,70,75,76,],[0,-16,-15,-17,-9,-5,-10,-13,-11,-1,-12,-14,-6,-2,-3,-7,-8,-4,]),'ESTIMATOR':([2,6,29,38,],[9,14,37,45,]),'TRAINING_PROFILE':([2,13,19,],[10,21,28,]),'DELIMITER':([3,15,24,27,34,36,39,44,48,51,52,55,58,64,68,73,74,],[11,23,32,35,41,43,46,50,53,56,57,59,61,66,70,75,76,]),'WORD':([4,9,10,14,19,21,25,28,31,37,45,54,67,72,],[12,17,18,22,27,30,33,36,39,44,51,58,69,74,]),'WITH':([5,12,18,39,],[13,19,26,47,]),'URL':([7,],[15,]),'DEBUG':([8,],[16,]),'BOOL':([16,71,],[24,73,]),'MODEL_TYPE':([17,],[25,]),'BY':([20,30,],[29,38,]),'AS':([22,],[31,]),'FORMULA':([33,],[40,]),'AND':([34,],[42,]),'FORMULA_EXP':([40,],[48,]),'VALIDATION_SPLIT':([42,],[49,]),'WEIGHTS':([47,],[52,]),'LOSS':([48,],[54,]),'FLOAT':([49,62,],[55,64,]),'BATCH_SIZE':([55,],[60,]),'LEARNING_RATE':([58,],[62,]),'INT':([60,65,],[63,68,]),'EPOCH':([63,],[65,]),'OPTIMIZER':([64,],[67,]),'SHUFFLE':([68,],[71,]),'REGULARIZER':([69,],[72,]),}\n_lr_action = {}\nfor _k, _v in _lr_action_items.items():\n   for _x,_y in zip(_v[0],_v[1]):\n      if not _x in _lr_action:  _lr_action[_x] = {}\n      _lr_action[_x][_k] = _y\ndel _lr_action_items\n_lr_goto_items = {'exp':([0,],[1,]),}\n_lr_goto = {}\nfor _k, _v in _lr_goto_items.items():",
-        "detail": "server.backend_app.mlsql.parser.parsetab",
-        "documentation": {}
-    },
-    {
-        "label": "_lr_action",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.parsetab",
-        "description": "server.backend_app.mlsql.parser.parsetab",
-        "peekOfCode": "_lr_action = {}\nfor _k, _v in _lr_action_items.items():\n   for _x,_y in zip(_v[0],_v[1]):\n      if not _x in _lr_action:  _lr_action[_x] = {}\n      _lr_action[_x][_k] = _y\ndel _lr_action_items\n_lr_goto_items = {'exp':([0,],[1,]),}\n_lr_goto = {}\nfor _k, _v in _lr_goto_items.items():\n   for _x, _y in zip(_v[0], _v[1]):",
-        "detail": "server.backend_app.mlsql.parser.parsetab",
-        "documentation": {}
-    },
-    {
-        "label": "_lr_goto_items",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.parsetab",
-        "description": "server.backend_app.mlsql.parser.parsetab",
-        "peekOfCode": "_lr_goto_items = {'exp':([0,],[1,]),}\n_lr_goto = {}\nfor _k, _v in _lr_goto_items.items():\n   for _x, _y in zip(_v[0], _v[1]):\n       if not _x in _lr_goto: _lr_goto[_x] = {}\n       _lr_goto[_x][_k] = _y\ndel _lr_goto_items\n_lr_productions = [\n  (\"S' -> exp\",\"S'\",1,None,None,None),\n  ('exp -> CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP DELIMITER','exp',8,'p_create_model','parser.py',49),",
-        "detail": "server.backend_app.mlsql.parser.parsetab",
-        "documentation": {}
-    },
-    {
-        "label": "_lr_goto",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.parsetab",
-        "description": "server.backend_app.mlsql.parser.parsetab",
-        "peekOfCode": "_lr_goto = {}\nfor _k, _v in _lr_goto_items.items():\n   for _x, _y in zip(_v[0], _v[1]):\n       if not _x in _lr_goto: _lr_goto[_x] = {}\n       _lr_goto[_x][_k] = _y\ndel _lr_goto_items\n_lr_productions = [\n  (\"S' -> exp\",\"S'\",1,None,None,None),\n  ('exp -> CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP DELIMITER','exp',8,'p_create_model','parser.py',49),\n  ('exp -> CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD DELIMITER','exp',10,'p_create_model','parser.py',50),",
-        "detail": "server.backend_app.mlsql.parser.parsetab",
-        "documentation": {}
-    },
-    {
-        "label": "_lr_productions",
-        "kind": 5,
-        "importPath": "server.backend_app.mlsql.parser.parsetab",
-        "description": "server.backend_app.mlsql.parser.parsetab",
-        "peekOfCode": "_lr_productions = [\n  (\"S' -> exp\",\"S'\",1,None,None,None),\n  ('exp -> CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP DELIMITER','exp',8,'p_create_model','parser.py',49),\n  ('exp -> CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD DELIMITER','exp',10,'p_create_model','parser.py',50),\n  ('exp -> CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD LEARNING_RATE FLOAT DELIMITER','exp',12,'p_create_model','parser.py',51),\n  ('exp -> CREATE ESTIMATOR WORD MODEL_TYPE WORD FORMULA FORMULA_EXP LOSS WORD LEARNING_RATE FLOAT OPTIMIZER WORD REGULARIZER WORD DELIMITER','exp',16,'p_create_model','parser.py',52),\n  ('exp -> CREATE TRAINING_PROFILE WORD WITH SQL DELIMITER','exp',6,'p_training_profile','parser.py',103),\n  ('exp -> CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT DELIMITER','exp',9,'p_training_profile','parser.py',104),\n  ('exp -> CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT BATCH_SIZE INT EPOCH INT DELIMITER','exp',13,'p_training_profile','parser.py',105),\n  ('exp -> CREATE TRAINING_PROFILE WORD WITH SQL AND VALIDATION_SPLIT FLOAT BATCH_SIZE INT EPOCH INT SHUFFLE BOOL DELIMITER','exp',15,'p_training_profile','parser.py',106),",
-        "detail": "server.backend_app.mlsql.parser.parsetab",
-        "documentation": {}
-    },
-    {
-        "label": "query_process",
-        "kind": 2,
-        "importPath": "server.backend_app.mlsql.parser.query_process",
-        "description": "server.backend_app.mlsql.parser.query_process",
-        "peekOfCode": "def query_process(data):\n    global type_name, model_table_name, target_var, other_ftr, response,currentDB\n    if data.upper().startswith(\"USE\"):\n        splitted_data = data.split()\n        currentDB = splitted_data[1].split(';')[0]\n        response = _parser(f\"USE 'data/{currentDB}.db';\")\n        yield response\n    elif data.upper().startswith(\"CONSTRUCT\"):\n        '''CONSTRUCT PREDICTION MonthlySales ALGORITHM GB WITH  LABEL ProductID FEATURES Age Price StockLevel FROM retail OVER retailTestData ;\n           CONSTRUCT CLASSIFICATION Species ALGORITHM KNN WITH  LABEL ProductID FEATURES SepalLengthCm SepalWidthCm FROM Iris ;",
-        "detail": "server.backend_app.mlsql.parser.query_process",
+        "detail": "server.backend_app.parser.Function.cluster",
         "documentation": {}
     },
     {
         "label": "csvToDB",
         "kind": 2,
-        "importPath": "server.backend_app.mlsql.test.csvToDB",
-        "description": "server.backend_app.mlsql.test.csvToDB",
-        "peekOfCode": "def csvToDB(csv_file):\n    df = pd.read_csv(csv_file)\n    file_name,_=os.path.splitext(csv_file.name)\n    current_directory = os.path.dirname(__file__)\n    file_location=os.path.join(current_directory,f'../data/files/{file_name}.db')\n    conn = sqlite3.connect(file_location)\n    df.to_sql(file_name, conn, index=False, if_exists='replace')\n    conn.commit()\n    conn.close()\n    print(\"CSV dataset successfully converted to SQLite database.\")",
-        "detail": "server.backend_app.mlsql.test.csvToDB",
+        "importPath": "server.backend_app.parser.Function.csvToDB",
+        "description": "server.backend_app.parser.Function.csvToDB",
+        "peekOfCode": "def csvToDB(csv_file):\n    connection_string = os.getenv(\"POSTGES_URL\")\n    df = pd.read_csv(csv_file)\n    file_name, _ = os.path.splitext(csv_file.name)\n    column_data_types = {column: 'TEXT' for column in df.columns}\n    conn = psycopg2.connect(connection_string)\n    engine = create_engine(connection_string)\n    # Write the DataFrame to the database using the engine\n    df.to_sql(file_name, engine, index=False, if_exists='replace')\n    conn.commit()",
+        "detail": "server.backend_app.parser.Function.csvToDB",
+        "documentation": {}
+    },
+    {
+        "label": "deduplicate",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.Function.deduplicate",
+        "description": "server.backend_app.parser.Function.deduplicate",
+        "peekOfCode": "def deduplicate(url,command):\n    '''INSPECT * DEDUPLICATE FROM Boston;\n        INSPECT medv DEDUPLICATE FROM Boston;\n    '''\n    response = {'text': \"\"}\n    command_parts = command\n    table_name = command_parts[command_parts.index(\"FROM\") + 1].split(';')[0]\n    feature = command_parts[command_parts.index(\"INSPECT\") + 1]\n    connection_string = os.getenv(\"POSTGES_URL\")\n    query = f'SELECT * FROM \"{table_name}\"'",
+        "detail": "server.backend_app.parser.Function.deduplicate",
+        "documentation": {}
+    },
+    {
+        "label": "encoding",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.Function.encoding",
+        "description": "server.backend_app.parser.Function.encoding",
+        "peekOfCode": "def encoding(url, table_name, cmd):\n    ''' INSPECT ENCODING USING ONE-HOT feature medv from boston '''\n    # conn = sqlite3.connect(url)\n    connection_string = os.getenv(\"POSTGES_URL\")\n    query = f'SELECT * FROM \"{table_name}\"'\n    conn = create_engine(connection_string)\n    data = pd.read_sql_query(query, conn)\n    features = cmd[cmd.index(\"INSPECT\") + 1]\n    method = cmd[cmd.index(\"METHOD\")+ 1] if \"METHOD\" in cmd else \"Ordinal\"\n    print(method)",
+        "detail": "server.backend_app.parser.Function.encoding",
+        "documentation": {}
+    },
+    {
+        "label": "ordinal_encoding",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.Function.encoding",
+        "description": "server.backend_app.parser.Function.encoding",
+        "peekOfCode": "def ordinal_encoding(data, var, cmd, conn, table_name):\n    \"\"\"INSPECT ENCODING USING Ordinal FEATURE Species FROM Iris;\"\"\"\n    unique_val = data[var].unique()  \n    enc_val = range(len(unique_val)) \n    order = cmd[cmd.index(\"ORDER\") + 1].split(',') if \"ORDER\" in cmd else data[var].unique()\n    ordinal_enc_dict = {val: new_val for val, new_val in zip(order, enc_val)}\n    if len(ordinal_enc_dict) == len(unique_val):\n        encoder = OrdinalEncoder(categories=[list(ordinal_enc_dict.keys())])\n        data[var] = encoder.fit_transform(data[[var]])\n        data.to_sql(table_name, conn, if_exists='replace', index=False)",
+        "detail": "server.backend_app.parser.Function.encoding",
+        "documentation": {}
+    },
+    {
+        "label": "onehot_encoding",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.Function.encoding",
+        "description": "server.backend_app.parser.Function.encoding",
+        "peekOfCode": "def onehot_encoding(data, var, cmd, conn, table_name):\n    \"\"\"INSPECT ENCODING USING One-Hot ENCODING FEATURE Species FROM Iris;\"\"\"\n    # data = pd.get_dummies(data[var]) it will also return one hot encoded data\n    encoder = OneHotEncoder()\n    encoded_data = encoder.fit_transform(data[[var]])\n    encoded_df = pd.DataFrame(encoded_data.toarray(), columns=encoder.get_feature_names_out([var]))\n    data = pd.concat([data, encoded_df], axis=1)\n    data.drop(columns=[var], inplace=True)\n    data.to_sql(table_name, conn, if_exists='replace', index=False)\n    print(data)",
+        "detail": "server.backend_app.parser.Function.encoding",
+        "documentation": {}
+    },
+    {
+        "label": "label_encoding",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.Function.encoding",
+        "description": "server.backend_app.parser.Function.encoding",
+        "peekOfCode": "def label_encoding(data, var, cmd, conn, table_name):\n    \"\"\"INSPECT ENCODING USING Label ENCODING FEATURE Species FROM Iris;\"\"\"\n    print('label encode')\n    label_encoder = LabelEncoder()\n    data[var] = label_encoder.fit_transform(data[var])\n    data.to_sql(table_name, conn, if_exists='replace', index=False)\n    print(data)\n    return f\"Label Encoding Succcessfully Done!\"\ndef target_encoding(data, cat_var, cmd, conn, table_name):\n    \"\"\"INSPECT ENCODING USING TARGET ENCODING FEATURE Species  TARGET-FEATURE SepalLengthCm FROM Iris;\"\"\"",
+        "detail": "server.backend_app.parser.Function.encoding",
+        "documentation": {}
+    },
+    {
+        "label": "target_encoding",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.Function.encoding",
+        "description": "server.backend_app.parser.Function.encoding",
+        "peekOfCode": "def target_encoding(data, cat_var, cmd, conn, table_name):\n    \"\"\"INSPECT ENCODING USING TARGET ENCODING FEATURE Species  TARGET-FEATURE SepalLengthCm FROM Iris;\"\"\"\n    try: target_var = cmd[cmd.index(\"TARGET-FEATURE\") + 1] if \"TARGET-FEATURE\" in cmd else None\n    except ValueError as ve: return None\n    # data = {\n    #     \"Make\": [\"Toyota\", \"Honda\", \"Toyota\", \"Ford\", \"Honda\", \"Ford\"],\n    #     # \"Price Range\": [\"High\", \"Medium\", \"Low\", \"Medium\", \"Low\", \"High\"],\n    #     \"Mileage\": [50000, 60000, 30000, 70000, 40000, 80000],\n    #     \"Age\": [5, 3, 7, 2, 4, 6],\n    #     \"Price\": [15000, 18000, 12000, 20000, 17000, 22000]",
+        "detail": "server.backend_app.parser.Function.encoding",
+        "documentation": {}
+    },
+    {
+        "label": "impute",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.Function.Imputer",
+        "description": "server.backend_app.parser.Function.Imputer",
+        "peekOfCode": "def impute(command):\n    response = {'text': \"\"}\n    command_parts = [part for part in command.split(\" \") if part.strip()]\n    table_name = command_parts[command_parts.index(\"FROM\") + 1].split(';')[0]\n    features = command_parts[command_parts.index(\"IMPUTE\") + 1]\n    strat = command_parts[command_parts.index(\"STRATEGY\") + 1] if \"STRATEGY\" in command_parts else \"mean\"\n    connection_string = os.getenv(\"POSTGES_URL\")\n    query = f'SELECT * FROM \"{table_name}\"'\n    conn = create_engine(connection_string)\n    data = pd.read_sql_query(query, conn)",
+        "detail": "server.backend_app.parser.Function.Imputer",
+        "documentation": {}
+    },
+    {
+        "label": "show_db",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.Function.Show_db",
+        "description": "server.backend_app.parser.Function.Show_db",
+        "peekOfCode": "def show_db(data):\n    splitted_data = data.split()\n    table_name = splitted_data[1].split(';')[0]\n    connection_string = os.getenv(\"POSTGES_URL\")\n    query = f'SELECT * FROM \"{table_name}\"'\n    engine = create_engine(connection_string)\n    data = pd.read_sql_query(query,engine)\n    conn = psycopg2.connect(connection_string)\n    response={}\n    response['table']=data.to_dict(orient=\"records\")",
+        "detail": "server.backend_app.parser.Function.Show_db",
+        "documentation": {}
+    },
+    {
+        "label": "check_null_values_in_db",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.operation.CheckNull",
+        "description": "server.backend_app.parser.operation.CheckNull",
+        "peekOfCode": "def check_null_values_in_db(db_file, table_name):\n    global response\n    # connection = sqlite3.connect(db_file)\n    connection_string = os.getenv(\"POSTGES_URL\")\n    query = f'SELECT * FROM \"{table_name}\"'\n    conn = create_engine(connection_string)\n    cursor = conn.cursor()\n    # Get column names\n    cursor.execute(f\"PRAGMA table_info({table_name})\")\n    columns_info = cursor.fetchall()",
+        "detail": "server.backend_app.parser.operation.CheckNull",
+        "documentation": {}
+    },
+    {
+        "label": "select_algorithm",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.operation.Construct",
+        "description": "server.backend_app.parser.operation.Construct",
+        "peekOfCode": "def select_algorithm(operation_type, algorithm_name='AUTO_ML', **kwargs):\n    if algorithm_name == 'AUTO_ML':\n        if operation_type.upper() == \"PREDICTION\":\n            tpot_regressor = TPOTRegressor(generations=5, population_size=20, verbosity=2)\n            return tpot_regressor\n        elif operation_type.upper() == \"CLASSIFICATION\":\n            tpot_classifier = TPOTClassifier(generations=5, population_size=20, verbosity=2)\n            return tpot_classifier\n    else:\n        prediction_algorithms = {",
+        "detail": "server.backend_app.parser.operation.Construct",
+        "documentation": {}
+    },
+    {
+        "label": "construct",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.operation.Construct",
+        "description": "server.backend_app.parser.operation.Construct",
+        "peekOfCode": "def construct(command):\n    '''  \n    CONSTRUCT LR_retail AS SUPERVISED FOR PREDICTION on TARGET MonthlySales FEATURES Age,Price,StockLevel ALGORITHM LR  TEST ON .3 FROM retail;\n    '''\n    command_parts = [part for part in command.split(\" \") if part.strip()]\n    operation_types = [\"PREDICTION\", \"CLASSIFICATION\", \"CLUSTERING\"]\n    operation_type = command_parts[command_parts.index(\"FOR\")+ 1]\n    dataset_train_name = command_parts[command_parts.index(\"FROM\") + 1].split(';')[0]\n    model_name=command_parts[command_parts.index(\"CONSTRUCT\") + 1]\n    if \"ALGORITHM\" in command_parts:",
+        "detail": "server.backend_app.parser.operation.Construct",
+        "documentation": {}
+    },
+    {
+        "label": "select_algorithm",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.operation.Generate",
+        "description": "server.backend_app.parser.operation.Generate",
+        "peekOfCode": "def select_algorithm(operation_type, algorithm_name='AUTO_ML', **kwargs):\n    # print(algorithm_name)\n    if algorithm_name == 'AUTO_ML':\n        if operation_type.upper() == \"PREDICTION\":\n            tpot_regressor = TPOTRegressor(generations=2, population_size=20, verbosity=2)\n            return tpot_regressor\n        elif operation_type.upper() == \"CLASSIFICATION\":\n            tpot_classifier = TPOTClassifier(generations=2, population_size=20, verbosity=2)\n            return tpot_classifier\n    else:",
+        "detail": "server.backend_app.parser.operation.Generate",
+        "documentation": {}
+    },
+    {
+        "label": "display_results",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.operation.Generate",
+        "description": "server.backend_app.parser.operation.Generate",
+        "peekOfCode": "def display_results(operation_type, y_test=None, y_pred=None, model=None, features=None, df=None):\n    if operation_type.upper() == \"PREDICTION\":\n        plt.figure(figsize=(10, 6))\n        plt.scatter(y_test, y_pred,alpha=0.6)\n        plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()])\n        plt.xlabel('Measured')\n        plt.ylabel('Predicted')\n        plt.title('Actual vs Predicted Values')\n    elif operation_type.upper() == \"CLASSIFICATION\":\n        cm = confusion_matrix(y_test, y_pred)",
+        "detail": "server.backend_app.parser.operation.Generate",
+        "documentation": {}
+    },
+    {
+        "label": "generate",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.operation.Generate",
+        "description": "server.backend_app.parser.operation.Generate",
+        "peekOfCode": "def generate(command):  \n    '''GENERATE DISPLAY OF PREDICTION MonthlySales ALGORITHM GB WITH ACCURACY 100 LABEL ProductID FEATURES Age,Price,StockLevel FROM retail OVER retailTestData'''\n    command_parts = [part for part in command.split(\" \") if part.strip()]\n    try:\n        operation_types = [\"PREDICTION\", \"CLASSIFICATION\", \"CLUSTERING\"]\n        operation_type = next((word for word in operation_types if word in command), \"PREDICTION\") ###\n        dataset_train_name = command_parts[command_parts.index(\"FROM\") + 1].split(';')[0]\n        features=command_parts[command_parts.index(\"FEATURES\") + 1].split(',')\n        algorithm_name = command_parts[command_parts.index(\"ALGORITHM\")+ 1] if \"ALGORITHM\" in command_parts else None  ####\n    except:",
+        "detail": "server.backend_app.parser.operation.Generate",
+        "documentation": {}
+    },
+    {
+        "label": "inspect",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.operation.Inspect",
+        "description": "server.backend_app.parser.operation.Inspect",
+        "peekOfCode": "def inspect(command):\n    '''\n            INSPECT CHECKNULL FEATURES medv FROM Boston\n            INSPECT ENCODING USING ONE-HOT ENCODING feature medv from boston\n    '''\n    command_parts = [part for part in command.split(\" \") if part.strip()]\n    try:\n        operation_types = [\"CHECKNULL\", \"ENCODING\",\"DEDUPLICATE\",\"CATEGORIZE\"]\n        operation_type = next((word for word in operation_types if word in command), \"\") \n        dataset_name = command_parts[command_parts.index(\"FROM\") + 1].split(';')[0]",
+        "detail": "server.backend_app.parser.operation.Inspect",
+        "documentation": {}
+    },
+    {
+        "label": "Query_manipulate",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.operation.query_manipulate",
+        "description": "server.backend_app.parser.operation.query_manipulate",
+        "peekOfCode": "def Query_manipulate(query):\n    response={}\n    print(query)\n    query=query.replace('\\n', '').replace('\\r', '')\n    try:\n        connection_string = os.getenv(\"POSTGES_URL\")\n        conn = create_engine(connection_string)\n        if query.strip().upper().startswith(\"SELECT\"):\n            # Execute DQL query\n            with conn.connect():",
+        "detail": "server.backend_app.parser.operation.query_manipulate",
+        "documentation": {}
+    },
+    {
+        "label": "query_process",
+        "kind": 2,
+        "importPath": "server.backend_app.parser.query_process",
+        "description": "server.backend_app.parser.query_process",
+        "peekOfCode": "def query_process(data):\n    global type_name, model_table_name, target_var, other_ftr, response,currentDB\n    if data.upper().startswith(\"SHOW\"):\n        yield show_db(data)\n    if data.upper().startswith(\"CONSTRUCT\"):\n        '''CONSTRUCT PREDICTION MonthlySales ALGORITHM GB WITH  LABEL ProductID FEATURES Age Price StockLevel FROM retail OVER retailTestData ;\n           CONSTRUCT CLASSIFICATION Species ALGORITHM KNN WITH  LABEL ProductID FEATURES SepalLengthCm SepalWidthCm FROM Iris ;\n            '''\n        yield construct(data)\n    elif data.upper().startswith(\"GENERATE\"):",
+        "detail": "server.backend_app.parser.query_process",
         "documentation": {}
     },
     {
@@ -1867,7 +1176,7 @@
         "kind": 2,
         "importPath": "server.backend_app.views",
         "description": "server.backend_app.views",
-        "peekOfCode": "def test_view(req):\n    if req.method == 'POST':\n        current_directory = os.path.dirname(__file__)\n        if 'file' in req.FILES:\n            file = req.FILES['file']\n            file_name = file.name\n            file_path = os.path.join(current_directory, f'./mlsql/data/files/{file_name}')\n            if file_name.endswith('.csv'):\n                csvToDB(file)\n            else:",
+        "peekOfCode": "def test_view(req):\n    if req.method == 'POST':\n        current_directory = os.path.dirname(__file__)\n        if 'file' in req.FILES:\n            file = req.FILES['file']\n            file_name = file.name\n            file_path = os.path.join(current_directory, f'./data/files/{file_name}')\n            if file_name.endswith('.csv'):\n                csvToDB(file)\n            else:",
         "detail": "server.backend_app.views",
         "documentation": {}
     },
@@ -1885,7 +1194,7 @@
         "kind": 5,
         "importPath": "server.dl4ml.settings",
         "description": "server.dl4ml.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-j1zm0jk%a)=9u2r(n6q%&ey2zp$xt5^0txs=ws!iew=p-%d(=='\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-j1zm0jk%a)=9u2r(n6q%&ey2zp$xt5^0txs=ws!iew=p-%d(=='\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nfrom dotenv import load_dotenv\n# Load environment variables from .env file\nload_dotenv()",
         "detail": "server.dl4ml.settings",
         "documentation": {}
     },
@@ -1894,7 +1203,7 @@
         "kind": 5,
         "importPath": "server.dl4ml.settings",
         "description": "server.dl4ml.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-j1zm0jk%a)=9u2r(n6q%&ey2zp$xt5^0txs=ws!iew=p-%d(=='\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-j1zm0jk%a)=9u2r(n6q%&ey2zp$xt5^0txs=ws!iew=p-%d(=='\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nfrom dotenv import load_dotenv\n# Load environment variables from .env file\nload_dotenv()\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',",
         "detail": "server.dl4ml.settings",
         "documentation": {}
     },
@@ -1903,7 +1212,7 @@
         "kind": 5,
         "importPath": "server.dl4ml.settings",
         "description": "server.dl4ml.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\nfrom dotenv import load_dotenv\n# Load environment variables from .env file\nload_dotenv()\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
         "detail": "server.dl4ml.settings",
         "documentation": {}
     },
@@ -2085,6 +1394,69 @@
         "description": "server.manage",
         "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dl4ml.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
         "detail": "server.manage",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "server.test",
+        "description": "server.test",
+        "peekOfCode": "data = {\n    \"Make\": [\"Toyota\", \"Honda\", \"Toyota\", \"Ford\", \"Honda\", \"Ford\"],\n    # \"Price Range\": [\"High\", \"Medium\", \"Low\", \"Medium\", \"Low\", \"High\"],\n    \"Mileage\": [50000, 60000, 30000, 70000, 40000, 80000],\n    \"Age\": [5, 3, 7, 2, 4, 6],\n    \"Price\": [15000, 18000, 12000, 20000, 17000, 22000]\n}\ndf = pd.DataFrame(data)\nprint(df)\n# Define the target variable",
+        "detail": "server.test",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "server.test",
+        "description": "server.test",
+        "peekOfCode": "df = pd.DataFrame(data)\nprint(df)\n# Define the target variable\ntarget_var = \"Price\"\n# Define the categorical variable to be target encoded\ncat_var = \"Make\"\ngrouped = df.groupby(cat_var)\n# Iterating over the groups and printing them\nfor name, group in grouped:\n    print(name)  # Print the name of the group (unique value of cat_var)",
+        "detail": "server.test",
+        "documentation": {}
+    },
+    {
+        "label": "target_var",
+        "kind": 5,
+        "importPath": "server.test",
+        "description": "server.test",
+        "peekOfCode": "target_var = \"Price\"\n# Define the categorical variable to be target encoded\ncat_var = \"Make\"\ngrouped = df.groupby(cat_var)\n# Iterating over the groups and printing them\nfor name, group in grouped:\n    print(name)  # Print the name of the group (unique value of cat_var)\n    print(group)  # Print the DataFrame corresponding to the group\n    print('---------------')  #\n# Calculate mean of target variable for each category",
+        "detail": "server.test",
+        "documentation": {}
+    },
+    {
+        "label": "cat_var",
+        "kind": 5,
+        "importPath": "server.test",
+        "description": "server.test",
+        "peekOfCode": "cat_var = \"Make\"\ngrouped = df.groupby(cat_var)\n# Iterating over the groups and printing them\nfor name, group in grouped:\n    print(name)  # Print the name of the group (unique value of cat_var)\n    print(group)  # Print the DataFrame corresponding to the group\n    print('---------------')  #\n# Calculate mean of target variable for each category\ntarget_means = df.groupby(cat_var)[target_var].mean()\nprint(target_means)",
+        "detail": "server.test",
+        "documentation": {}
+    },
+    {
+        "label": "grouped",
+        "kind": 5,
+        "importPath": "server.test",
+        "description": "server.test",
+        "peekOfCode": "grouped = df.groupby(cat_var)\n# Iterating over the groups and printing them\nfor name, group in grouped:\n    print(name)  # Print the name of the group (unique value of cat_var)\n    print(group)  # Print the DataFrame corresponding to the group\n    print('---------------')  #\n# Calculate mean of target variable for each category\ntarget_means = df.groupby(cat_var)[target_var].mean()\nprint(target_means)\n# Map the mean values back to the original DataFrame",
+        "detail": "server.test",
+        "documentation": {}
+    },
+    {
+        "label": "target_means",
+        "kind": 5,
+        "importPath": "server.test",
+        "description": "server.test",
+        "peekOfCode": "target_means = df.groupby(cat_var)[target_var].mean()\nprint(target_means)\n# Map the mean values back to the original DataFrame\ndf[f\"{cat_var}_encoded\"] = df[cat_var].map(target_means)\n# Drop the original categorical variable\ndf.drop(columns=[cat_var], inplace=True)\nprint (df)\n# Display the DataFrame ready for linear regression\nprint(\"DataFrame ready for linear regression:\")\n# from sklearn.linear_model import LinearRegression",
+        "detail": "server.test",
+        "documentation": {}
+    },
+    {
+        "label": "df[f\"{cat_var}_encoded\"]",
+        "kind": 5,
+        "importPath": "server.test",
+        "description": "server.test",
+        "peekOfCode": "df[f\"{cat_var}_encoded\"] = df[cat_var].map(target_means)\n# Drop the original categorical variable\ndf.drop(columns=[cat_var], inplace=True)\nprint (df)\n# Display the DataFrame ready for linear regression\nprint(\"DataFrame ready for linear regression:\")\n# from sklearn.linear_model import LinearRegression\n# from sklearn.model_selection import train_test_split\n# from sklearn.metrics import mean_squared_error\n# # Splitting the data into features and target variable",
+        "detail": "server.test",
         "documentation": {}
     }
 ]
