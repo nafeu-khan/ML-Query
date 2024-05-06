@@ -15,8 +15,8 @@ function ShowLog({ data = [], setData }) {
 const outputpanel= {
   resize: "both",
   overflow: "auto",
-  minWidth: "400px", /* Adjust minimum width as needed */
-  minHeight: "300px", /* Adjust minimum height as needed */
+  minWidth: "400px", 
+  minHeight: "300px",
   // maxHeight: "calc(100vh - 250px)",
   backgroundColor:"#eaf0fd"
 }

@@ -72,8 +72,6 @@ function Operations() {
       console.log(error);
     }
   };
-    /* Add this CSS to your existing stylesheet or component */
- 
 
   return (
     <div
@@ -188,6 +186,3 @@ function Operations() {
 
 export default Operations;
 
-/*
-
-*/
