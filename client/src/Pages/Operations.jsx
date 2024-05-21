@@ -8,6 +8,7 @@ import { BiText } from "react-icons/bi";
 import { FaRegFileAudio } from "react-icons/fa6";
 import AudioInput from "../Components/AudioInput";
 import ShowLog from "../Components/ShowLog";
+import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 
 /*
 CREATE ESTIMATOR salaryPredictor TYPE LR FORMULA $salary~years$;
@@ -65,120 +66,99 @@ function Operations() {
 
       console.log(d);
       d = JSON.parse(d);
-      
+
       setData((prev) => [...prev, d]);
-      // setQuery("");
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div
-      className={`mt-10 max-w-6xl mx-auto`}
-    >
+    <div className={` max-w-7xl mx-auto`}>
       <Toaster />
-      <div className="text-center">
-        {/* <Radio.Group
-          size="large"
-          value={type}
-          onChange={(e) => setType(e.target.value)}
-          className="font-semibold"
-          buttonStyle="solid"
-        >
-          <Radio.Button value={"text"} className=" !font-secondary">
-            <div className="flex items-center gap-2">
-              <span className="">Use Text</span>{" "}
-              <span>
-                <BiText size={22} />
-              </span>
-            </div>
-          </Radio.Button>
-          <Radio.Button value={"audio"} className=" !font-secondary">
-            <div className="flex items-center gap-2">
-              <span>Use Audio</span>{" "}
-              <span>
-                <FaRegFileAudio size={22} />
-              </span>
-            </div>
-          </Radio.Button>
-        </Radio.Group> */}
-      </div>
       {/* {type === "audio" && (
         <AudioInput
           audioTranscript={audioTranscript}
           setAudioTranscript={setAudioTranscript}
         />
       )} */}
-      <div className={`grid grid-cols-2 gap-4 w-full`}>
-        <div className="mt-2 flex flex-col  bg-white z-50 py-4 ">
-          <h1 className="text-left font-secondary text-2xl font-semibold mb-4 ">
-            Enter your query:
-          </h1>
-          <TextArea
-            value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              let q = e.target.value.toLowerCase().includes(" over ");
-              setTestFile(q);
-            }}
-            rows={5}
-            placeholder="Enter your SQL query"
-            className="font-secondary text-gray-800 text-lg"
-          />
-          <div className="mt-4">
-            <Upload
-              className="!text-2xl"
-              fileList={fileList.map((file) => ({
-                ...file,
-                status: "done",
-              }))}
-              beforeUpload={(file) => {
-                setFileList([
-                  { uid: file.uid, name: file.name, status: "done" },
-                ]);
-                return false;
-              }}
-              onChange={(e) => setFileList(e.fileList)}
-            >
-              {fileList.length === 0 && (
-                <Button icon={<UploadOutlined />}>Upload File</Button>
-              )}
-            </Upload>
-          </div>
-          {showTestFile && (
-            <div className="mt-4">
-              <Upload
-                className="!text-2xl"
-                fileList={testFileList.map((file) => ({
-                  ...file,
-                  status: "done",
-                }))}
-                beforeUpload={(file) => {
-                  setTestFileList([
-                    { uid: file.uid, name: file.name, status: "done" },
-                  ]);
-                  return false;
+      <div className="">
+        <PanelGroup direction="horizontal" className="flex !flex-row gap-4">
+          <Panel defaultSize={25} minSize={20}>
+            <div className="mt-2 flex flex-col  bg-white z-50 py-4 overflow-y-auto">
+              <h1 className="text-center font-secondary text-2xl font-semibold mb-4 ">
+                Enter your query
+              </h1>
+              <TextArea
+                value={query}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  let q = e.target.value.toLowerCase().includes(" over ");
+                  setTestFile(q);
                 }}
-                onChange={(e) => setTestFileList(e.fileList)}
+                rows={8}
+                placeholder="Enter your SQL query"
+                className="font-secondary text-gray-800 text-lg"
+              />
+              <div className="mt-4">
+                <Upload
+                  className="!text-2xl"
+                  fileList={fileList.map((file) => ({
+                    ...file,
+                    status: "done",
+                  }))}
+                  beforeUpload={(file) => {
+                    setFileList([
+                      { uid: file.uid, name: file.name, status: "done" },
+                    ]);
+                    return false;
+                  }}
+                  onChange={(e) => setFileList(e.fileList)}
+                >
+                  {fileList.length === 0 && (
+                    <Button icon={<UploadOutlined />}>Upload File</Button>
+                  )}
+                </Upload>
+              </div>
+              {showTestFile && (
+                <div className="mt-4">
+                  <Upload
+                    className="!text-2xl"
+                    fileList={testFileList.map((file) => ({
+                      ...file,
+                      status: "done",
+                    }))}
+                    beforeUpload={(file) => {
+                      setTestFileList([
+                        { uid: file.uid, name: file.name, status: "done" },
+                      ]);
+                      return false;
+                    }}
+                    onChange={(e) => setTestFileList(e.fileList)}
+                  >
+                    {testFileList.length === 0 && (
+                      <Button icon={<UploadOutlined />}>
+                        Upload Test File
+                      </Button>
+                    )}
+                  </Upload>
+                </div>
+              )}
+              <button
+                className="mt-4 w-28 ml-auto text-xl bg-blue-500 rounded text-white p-2 px-4 font-secondary font-semibold"
+                onClick={handleExecute}
               >
-                {testFileList.length === 0 && (
-                  <Button icon={<UploadOutlined />}>Upload Test File</Button>
-                )}
-              </Upload>
+                Execute
+              </button>
             </div>
-          )}
-          <button
-            className="mt-4 w-28 ml-auto text-xl bg-blue-500 rounded text-white p-2 px-4 font-secondary font-semibold"
-            onClick={handleExecute}
-          >
-            Execute
-          </button>
-        </div>
-        
-          <div className="relative top-8 resize-both overflow-auto" >
-            <ShowLog data={data} setData={setData} />
-          </div>
+          </Panel>
+          <PanelResizeHandle  className="border border-dotted border-gray-300" />
+          <Panel defaultSize={30} minSize={50}>
+            <div className="relative top-8 pb-8 overflow-y-auto">
+              <ShowLog data={data} setData={setData} />
+            </div>
+          </Panel>
+        </PanelGroup>
       </div>
     </div>
   );
@@ -186,3 +166,6 @@ function Operations() {
 
 export default Operations;
 
+/*
+
+*/

@@ -38,7 +38,11 @@ def test_view(req):
         data = req.POST.get('input')  # json.loads(req.body)
         data = data.strip()
         data = data.split(';')
-        print("in : ",data)
+        if "WHERE" in  data[0].upper():
+            data=data[0].split("WHERE")
+            data[0],data[1]=data[1].strip(),data[0].strip()
+            print(data)
+            
         responses = {}  
         for index, cmd in enumerate(data):
             if cmd != " " and cmd !="" and cmd != ";":
@@ -48,6 +52,5 @@ def test_view(req):
 
         # print(responses)
         response_json = json.dumps(responses)
-
         # print("response is", response_json)
         return JsonResponse(response_json, safe=False)

@@ -213,11 +213,11 @@ def generate(command):
             accuracy = r2_score(y_test, y_pred)*100
             print("R2 Score:", accuracy)
             if accuracy < float(ex_ac):
-                response['text']=f"r2_score is less than {accuracy}"
+                response['text']=f"R-squared_score is less than {accuracy}"
                 return response
-            response['text']=f"r2_score is {accuracy}. "
+            response['text']=f"R-squared_score is {accuracy}. "
             print(response['text'],ex_ac)   
-            print("r2_score:", accuracy)
+            print("R-squared_score:", accuracy)
     elif y is not None and operation_type !="CLUSTERING":
         test_s= float(command_parts[command_parts.index("TEST") + 2]) if "TEST" in command_parts  else 20
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= test_s/100, random_state=42)
@@ -253,7 +253,7 @@ def generate(command):
             else:
                 response['text']+=f"Accuracy is {accuracy}. "
         elif operation_type.upper() == "PREDICTION" and y_test is not None:
-            ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else command_parts[command_parts.index("R-SQUARED") + 1] if "R-SQUARED" in command_parts else 0
+            ex_ac=command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else command_parts[command_parts.index("        -SQUARED") + 1] if "R-SQUARED" in command_parts else 0
 
             # ex_ac = (command_parts[command_parts.index("ACCURACY") + 1] if "ACCURACY" in command_parts else
             #  command_parts[command_parts.index("R-SQUARED") + 1] if "R-SQUARED" in command_parts else 0)

@@ -15,18 +15,16 @@ function AgGridTable({ rowData }) {
     () => ({
       filter: true, // Enable filtering on all columns
       resizable: true,
+      minWidth: 150,
     }),
     []
   );
 
   const onGridReady = (params) => {
     gridApi.current = params.api;
-    gridApi.current.sizeColumnsToFit();
-    // Alternatively, use autoSizeColumns for specific columns
-    // gridApi.current.autoSizeColumns(colDefs.map(c => c.field), false);
   };
   return (
-    <div className="ag-theme-quartz " style={{ height: 310, width: "100%" }}>
+    <div className="ag-theme-quartz !w-full" style={{ height: 330, width: "100%" }}>
       {/* The AG Grid component */}
       <AgGridReact
         onGridReady={onGridReady}

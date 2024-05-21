@@ -14,9 +14,11 @@ from .Function.Imputer import impute
 
 def query_process(data):
     global type_name, model_table_name, target_var, other_ftr, response,currentDB
+    response={}
     if data.upper().startswith("SHOW"):
         yield show_db(data)
-    if data.upper().startswith("CONSTRUCT"):
+    
+    elif data.upper().startswith("CONSTRUCT"):
         '''CONSTRUCT PREDICTION MonthlySales ALGORITHM GB WITH  LABEL ProductID FEATURES Age Price StockLevel FROM retail OVER retailTestData ;
            CONSTRUCT CLASSIFICATION Species ALGORITHM KNN WITH  LABEL ProductID FEATURES SepalLengthCm SepalWidthCm FROM Iris ;
             '''

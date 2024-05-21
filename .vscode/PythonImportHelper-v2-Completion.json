@@ -1167,7 +1167,7 @@
         "kind": 2,
         "importPath": "server.backend_app.parser.query_process",
         "description": "server.backend_app.parser.query_process",
-        "peekOfCode": "def query_process(data):\n    global type_name, model_table_name, target_var, other_ftr, response,currentDB\n    if data.upper().startswith(\"SHOW\"):\n        yield show_db(data)\n    if data.upper().startswith(\"CONSTRUCT\"):\n        '''CONSTRUCT PREDICTION MonthlySales ALGORITHM GB WITH  LABEL ProductID FEATURES Age Price StockLevel FROM retail OVER retailTestData ;\n           CONSTRUCT CLASSIFICATION Species ALGORITHM KNN WITH  LABEL ProductID FEATURES SepalLengthCm SepalWidthCm FROM Iris ;\n            '''\n        yield construct(data)\n    elif data.upper().startswith(\"GENERATE\"):",
+        "peekOfCode": "def query_process(data):\n    global type_name, model_table_name, target_var, other_ftr, response,currentDB\n    response={}\n    if data.upper().startswith(\"SHOW\"):\n        yield show_db(data)\n    elif data.upper().startswith(\"CONSTRUCT\"):\n        '''CONSTRUCT PREDICTION MonthlySales ALGORITHM GB WITH  LABEL ProductID FEATURES Age Price StockLevel FROM retail OVER retailTestData ;\n           CONSTRUCT CLASSIFICATION Species ALGORITHM KNN WITH  LABEL ProductID FEATURES SepalLengthCm SepalWidthCm FROM Iris ;\n            '''\n        yield construct(data)",
         "detail": "server.backend_app.parser.query_process",
         "documentation": {}
     },
@@ -1248,7 +1248,7 @@
         "kind": 5,
         "importPath": "server.dl4ml.settings",
         "description": "server.dl4ml.settings",
-        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    'http://localhost:5173',\n]\nROOT_URLCONF = 'dl4ml.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [os.path.join(BASE_DIR, 'templates')],\n        'APP_DIRS': True,\n        'OPTIONS': {",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    'http://localhost:5173',\n    'http://localhost:5174',\n]\nROOT_URLCONF = 'dl4ml.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [os.path.join(BASE_DIR, 'templates')],\n        'APP_DIRS': True,",
         "detail": "server.dl4ml.settings",
         "documentation": {}
     },

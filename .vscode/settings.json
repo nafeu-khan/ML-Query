@@ -1,7 +1,7 @@
 {
     "files.autoSave": "afterDelay",
     "editor.fontFamily": "'JetBrainsMonoRoman-Light', Consolas, 'Courier New', monospace",
-    "editor.fontSize": 15,
+    "editor.fontSize": 19,
     "editor.fontLigatures": true,
     "editor.letterSpacing": 0.3,
     "editor.lineHeight": 1.2,
